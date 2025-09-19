@@ -1,9 +1,276 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Jonathan Gomez</title>
+  <style>
+    :root{
+      --bg:#050607;
+      --panel:#0b0d0f;
+      --neon:#39ff14; /* verde hacker */
+      --neon-dim:#22b30e;
+      --muted:#9aa0a6;
+      --glass: rgba(255,255,255,0.03);
+    }
+
+    /* Reset minimal */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+      background:
+        radial-gradient(1200px 600px at 10% 10%, rgba(57,255,20,0.03), transparent 6%),
+        radial-gradient(900px 400px at 90% 90%, rgba(57,255,20,0.02), transparent 6%),
+        var(--bg);
+      color:var(--neon);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+      overflow:hidden;
+    }
+
+    /* subtle scanlines */
+    .scanlines::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background-image: linear-gradient(rgba(255,255,255,0.01) 1px, transparent 1px);
+      background-size:100% 4px;
+      pointer-events:none;
+      mix-blend-mode: overlay;
+      opacity:0.6;
+    }
+
+    .container{
+      width:min(960px, 96%);
+      padding:28px;
+      border-radius:14px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:20px;
+      align-items:center;
+      justify-items:center;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    /* matrix / subtle falling digits */
+    .matrix {
+      position:absolute; inset:0;
+      pointer-events:none;
+      opacity:0.06;
+      mix-blend-mode: screen;
+      background-image: linear-gradient(transparent, rgba(0,0,0,0.25));
+      background-repeat:no-repeat;
+    }
+    /* content */
+    h1.site-title{
+      font-size: clamp(28px, 6vw, 52px);
+      letter-spacing: 0.06em;
+      line-height:1;
+      color:var(--neon);
+      text-shadow:
+        0 0 8px rgba(57,255,20,0.12),
+        0 0 24px rgba(57,255,20,0.06);
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .subtitle{
+      font-size:clamp(12px, 2.2vw, 16px);
+      color:var(--muted);
+      margin-top:8px;
+      margin-bottom:12px;
+    }
+
+    /* Big hacker button */
+    .cta{
+      --pad: clamp(14px, 2.2vw, 22px);
+      display:inline-block;
+      text-decoration:none;
+      background: linear-gradient(90deg, rgba(57,255,20,0.12), rgba(34,179,14,0.06));
+      color:var(--neon);
+      border: 1px solid rgba(57,255,20,0.18);
+      padding: var(--pad) 44px;
+      border-radius:12px;
+      font-weight:700;
+      font-size: clamp(18px, 3.2vw, 26px);
+      box-shadow:
+        0 6px 30px rgba(57,255,20,0.06),
+        0 2px 0 rgba(0,0,0,0.6) inset;
+      transition: transform .15s ease, box-shadow .15s ease, filter .12s ease;
+      display:inline-flex;
+      gap:12px;
+      align-items:center;
+      justify-content:center;
+    }
+    .cta:hover{ transform: translateY(-4px) scale(1.02); filter:brightness(1.05)}
+    .cta:active{ transform: translateY(-1px) scale(.995) }
+
+    .cta .arrow{
+      display:inline-block;
+      transform:translateX(-2px);
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6));
+      font-size:1.05em;
+    }
+
+    /* small terminal-ish panel below */
+    .meta {
+      margin-top:8px;
+      font-size:12px;
+      color:var(--muted);
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+      padding:10px 14px;
+      border-radius:8px;
+      border: 1px solid rgba(255,255,255,0.02);
+      width:100%;
+      max-width:680px;
+      text-align:left;
+      box-shadow: 0 6px 30px rgba(0,0,0,0.35);
+    }
+
+    .meta code{
+      color:var(--neon);
+      font-weight:700;
+      background:rgba(0,0,0,0.18);
+      padding:2px 6px;
+      border-radius:6px;
+      display:inline-block;
+      margin-right:8px;
+    }
+
+    /* small glitch effect for title */
+    .glitch {
+      position:relative;
+      display:inline-block;
+    }
+    .glitch::before,
+    .glitch::after{
+      content:attr(data-text);
+      position:absolute;
+      left:0; top:0;
+      width:100%; height:100%;
+      clip-path: inset(0 0 0 0);
+      opacity:0.8;
+    }
+    .glitch::before{
+      transform:translateX(-2px);
+      color: var(--neon-dim);
+      mix-blend-mode: screen;
+      filter: blur(0.6px);
+      animation: glitch-1 2.5s infinite linear;
+    }
+    .glitch::after{
+      transform:translateX(2px);
+      color: rgba(57,255,20,0.12);
+      mix-blend-mode: screen;
+      filter: blur(1.2px);
+      animation: glitch-2 3.1s infinite linear;
+    }
+    @keyframes glitch-1{
+      0%{clip-path: inset(0 0 0 0)}
+      10%{clip-path: inset(0 0 65% 0)}
+      20%{clip-path: inset(0 0 0 0)}
+      30%{clip-path: inset(30% 0 0 0)}
+      100%{clip-path: inset(0 0 0 0)}
+    }
+    @keyframes glitch-2{
+      0%{clip-path: inset(0 0 0 0)}
+      15%{clip-path: inset(70% 0 0 0)}
+      35%{clip-path: inset(0 0 0 0)}
+      55%{clip-path: inset(0 0 40% 0)}
+      100%{clip-path: inset(0 0 0 0)}
+    }
+
+    /* footer small */
+    .footer{
+      font-size:12px;
+      color:var(--muted);
+      margin-top:6px;
+      opacity:0.9;
+    }
+
+    /* responsive adjustments */
+    @media (max-width:520px){
+      .meta{font-size:11px}
+      .cta{padding:12px 28px}
+    }
+  </style>
 </head>
-<body>
-  <h1>🚀 Coming Soon</h1>
+<body class="scanlines">
+  <div class="container" role="main" aria-labelledby="mainTitle">
+    <div class="matrix" aria-hidden="true"></div>
+
+    <header>
+      <h1 id="mainTitle" class="site-title">
+        <span class="glitch" data-text="Jonathan Gomez">Jonathan Gomez</span>
+      </h1>
+      <div class="subtitle">A little lab — experiments, tools & things I break and fix</div>
+    </header>
+
+    <a class="cta" href="/check" title="Ir al check" role="button" aria-label="Ir al check">
+      <span style="font-variant: small-caps; opacity:0.95">Enter the Lab</span>
+      <span class="arrow">→</span>
+    </a>
+
+    <div class="meta" aria-live="polite">
+      <div><code>Host</code> jonathangomez.qzz.io</div>
+      <div style="margin-top:6px; color:var(--muted)">If you see this page, the basics are up. Click the big button to go to the Netlify check site.</div>
+    </div>
+
+    <div class="footer" aria-hidden="true">Made with : &lt;code&gt; and curiosity — Jonathan</div>
+  </div>
+
+  <script>
+    // small decorative effect: floating green characters in the back (lightweight)
+    (function(){
+      const el = document.querySelector('.matrix');
+      const canvas = document.createElement('canvas');
+      el.appendChild(canvas);
+      const ctx = canvas.getContext('2d');
+      let w, h, cols, ypos;
+
+      function init(){
+        w = canvas.width = el.clientWidth || window.innerWidth;
+        h = canvas.height = el.clientHeight || window.innerHeight;
+        cols = Math.floor(w / 14);
+        ypos = Array(cols).fill(0).map(()=>Math.random() * h);
+      }
+
+      function draw(){
+        ctx.fillStyle = 'rgba(5,6,7,0.08)';
+        ctx.fillRect(0,0,w,h);
+        ctx.fillStyle = 'rgba(57,255,20,0.08)';
+        ctx.font = '12px monospace';
+        for(let i=0;i<cols;i++){
+          const text = String.fromCharCode(48 + Math.floor(Math.random()*42));
+          const x = i * 14;
+          ctx.fillText(text, x, ypos[i]);
+          ypos[i] += 12 + Math.random()*8;
+          if (ypos[i] > h) ypos[i] = 0;
+        }
+      }
+
+      init();
+      let raf;
+      function loop(){ draw(); raf = requestAnimationFrame(loop); }
+      loop();
+
+      window.addEventListener('resize', ()=>{
+        cancelAnimationFrame(raf);
+        init();
+        loop();
+      });
+    })();
+  </script>
 </body>
 </html>
