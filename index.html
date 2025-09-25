@@ -260,13 +260,12 @@
       .cta{ width:100%; justify-content:center }
     }
   </style>
-</head>
-<body class="scanlines">
+</head><body class="scanlines">
   <div class="container" role="main" aria-labelledby="mainTitle">
     <div class="matrix" aria-hidden="true"></div>
 
-    <header>
-      <h2 class="ascii-heading ascii-desktop">
+    <header aria-label="Cabecera principal">
+      <h2 class="ascii-heading ascii-desktop" aria-hidden="true">
         <pre>
        ______  __________  __  ______________
       / / __ \/ ____/ __ \/  |/  / ____/__  /
@@ -276,47 +275,95 @@
         </pre>
       </h2>
 
-      <!-- Subtítulo debajo del ASCII -->
-      <div class="subtitle">
-        A little lab — experiments, tools & things I break and fix
-      </div>
+      <!-- Subtítulo -->
+      <div class="subtitle">A little lab — experiments, tools & things I break and fix</div>
 
-      <!-- Nuevo menú con estilo "cta" -->
-      <nav style="margin-top: 18px; display: flex; flex-wrap: wrap; gap: 14px; justify-content: center;">
+      <!-- Botones principales (estilo .cta) -->
+      <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:14px; z-index:5;">
         <a class="cta" href="https://check.jonathangomez.qzz.io/check" title="Ir al check" role="button" aria-label="Ir al Website Analyzer">
           <span style="font-variant: small-caps; opacity:0.95">Website Analyzer Tool</span>
           <span class="arrow">→</span>
         </a>
+
         <a class="cta" href="https://jonathangomez.qzz.io/tools-for-awareness.html" title="Ir a Tools" role="button" aria-label="Ir a Tools">
           <span style="font-variant: small-caps; opacity:0.95">Tools</span>
           <span class="arrow">→</span>
         </a>
-        <a class="cta" href="portfolio.html" title="Ir al Portafolio" role="button" aria-label="Ir al Portafolio">
-          <span style="font-variant: small-caps; opacity:0.95">Portfolio</span>
-          <span class="arrow">→</span>
-        </a>
-        <a class="cta" href="lab.html" title="Ir al Lab" role="button" aria-label="Ir al Lab">
-          <span style="font-variant: small-caps; opacity:0.95">Lab</span>
-          <span class="arrow">→</span>
-        </a>
-        <a class="cta" href="about.html" title="Ir a About" role="button" aria-label="Ir a About">
-          <span style="font-variant: small-caps; opacity:0.95">About</span>
-          <span class="arrow">→</span>
-        </a>
+      </div>
+
+      <!-- Menú de recursos (mismo estilo, tamaño reducido) -->
+      <nav aria-label="Recursos" style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-top:12px; z-index:5;">
+        <a class="cta" href="#proyectos" style="padding:8px 14px; font-size:13px;" title="Proyectos">Proyectos <span class="arrow">→</span></a>
+        <a class="cta" href="#repos" style="padding:8px 14px; font-size:13px;" title="Repositorios">Repositorios <span class="arrow">→</span></a>
+        <a class="cta" href="#cv" style="padding:8px 14px; font-size:13px;" title="CV y Certs">CV / Certs <span class="arrow">→</span></a>
+        <a class="cta" href="#recursos" style="padding:8px 14px; font-size:13px;" title="Recursos">Recursos <span class="arrow">→</span></a>
+        <a class="cta" href="#contacto" style="padding:8px 14px; font-size:13px;" title="Contacto">Contacto <span class="arrow">→</span></a>
       </nav>
     </header>
 
     <div class="meta" aria-live="polite">
       <div><code>Host</code> jonathangomez.qzz.io</div>
-      <div style="margin-top:6px; color:var(--muted)">
-        ⚠️ Este sitio es solo para fines educativos. Todo lo publicado corresponde a entornos propios, autorizados o sanitizados.<br><br>
-      </div>
+      <div style="margin-top:8px; color:var(--muted)">⚠️ Este sitio es solo para fines educativos. Todo lo publicado corresponde a entornos propios, autorizados o sanitizados.<br><br></div>
     </div>
 
     <div class="footer" aria-hidden="true">Made with : &lt;code&gt; and curiosity — Jonathan</div>
   </div>
-</body>
+
+  <!-- (mantén tu script matrix al final del body) -->
   <script>
+    (function(){
+      const el = document.querySelector('.matrix');
+      if(!el) return;
+
+      const canvas = document.createElement('canvas');
+      canvas.style.width = '100%';
+      canvas.style.height = '100%';
+      el.appendChild(canvas);
+      const ctx = canvas.getContext('2d');
+
+      let cols = 0;
+      let ypos = [];
+      let w = 0, h = 0;
+      let rafId = null;
+
+      function resize(){
+        const rect = el.getBoundingClientRect();
+        w = canvas.width = Math.max(200, Math.floor(rect.width));
+        h = canvas.height = Math.max(100, Math.floor(rect.height));
+        const colSize = 14;
+        cols = Math.floor(w / colSize) || 1;
+        ypos = Array.from({length: cols}, ()=> Math.random()*h);
+        ctx.font = '12px monospace';
+      }
+
+      function draw(){
+        ctx.fillStyle = 'rgba(5,6,7,0.09)';
+        ctx.fillRect(0,0,w,h);
+
+        ctx.fillStyle = 'rgba(57,255,20,0.08)';
+        for(let i=0;i<cols;i++){
+          const text = String.fromCharCode(48 + Math.floor(Math.random()*42));
+          const x = i * 14;
+          ctx.fillText(text, x, ypos[i]);
+          ypos[i] += 12 + Math.random()*8;
+          if (ypos[i] > h) ypos[i] = 0;
+        }
+        rafId = requestAnimationFrame(draw);
+      }
+
+      resize();
+      draw();
+
+      let resizeTimeout = null;
+      window.addEventListener('resize', ()=>{
+        clearTimeout(resizeTimeout);
+        cancelAnimationFrame(rafId);
+        resizeTimeout = setTimeout(()=>{ resize(); draw(); }, 120);
+      });
+      window.addEventListener('pagehide', ()=> cancelAnimationFrame(rafId));
+    })();
+  </script>
+</body> <script>
     // matrix effect: compacto y sin código innecesario
     (function(){
       const el = document.querySelector('.matrix');
