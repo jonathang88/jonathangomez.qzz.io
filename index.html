@@ -200,6 +200,23 @@
     }
 
 
+.ascii-heading pre {
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  line-height: 1.1;
+  color: var(--accent);
+  text-shadow: 0 0 6px rgba(57, 255, 20, 0.2);
+  white-space: pre-wrap;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 10px;
+  overflow-x: auto;
+}
+
+.ascii-heading {
+  margin-bottom: 16px;
+}
+
 /* Oculta el de mobile por defecto */
 .ascii-mobile {
   display: none;
@@ -212,7 +229,6 @@
   }
   .ascii-mobile {
     display: none;
-  }
 }
 
 /* Solo muestra en pantallas pequeñas */
@@ -222,8 +238,8 @@
   }
   .ascii-mobile {
     display: block;
-  }
 }
+
 
     /* responsive adjustments */
     @media (max-width:520px){
