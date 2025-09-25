@@ -265,8 +265,8 @@
   <div class="container" role="main" aria-labelledby="mainTitle">
     <div class="matrix" aria-hidden="true"></div>
 
-    <header aria-label="Cabecera principal">
-      <h2 class="ascii-heading ascii-desktop" aria-hidden="true">
+    <header>
+      <h2 class="ascii-heading ascii-desktop">
         <pre>
        ______  __________  __  ______________
       / / __ \/ ____/ __ \/  |/  / ____/__  /
@@ -276,38 +276,46 @@
         </pre>
       </h2>
 
-      <nav class="main-nav" aria-label="Menú principal">
-        <a href="#inicio" aria-current="page">Inicio</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#repos">Repositorios</a>
-        <a href="#cv">CV / Certs</a>
-        <a href="#recursos">Recursos</a>
-        <a href="#contacto">Contacto</a>
+      <!-- Subtítulo debajo del ASCII -->
+      <div class="subtitle">
+        A little lab — experiments, tools & things I break and fix
+      </div>
+
+      <!-- Nuevo menú con estilo "cta" -->
+      <nav style="margin-top: 18px; display: flex; flex-wrap: wrap; gap: 14px; justify-content: center;">
+        <a class="cta" href="https://check.jonathangomez.qzz.io/check" title="Ir al check" role="button" aria-label="Ir al Website Analyzer">
+          <span style="font-variant: small-caps; opacity:0.95">Website Analyzer Tool</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="cta" href="https://jonathangomez.qzz.io/tools-for-awareness.html" title="Ir a Tools" role="button" aria-label="Ir a Tools">
+          <span style="font-variant: small-caps; opacity:0.95">Tools</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="cta" href="portfolio.html" title="Ir al Portafolio" role="button" aria-label="Ir al Portafolio">
+          <span style="font-variant: small-caps; opacity:0.95">Portfolio</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="cta" href="lab.html" title="Ir al Lab" role="button" aria-label="Ir al Lab">
+          <span style="font-variant: small-caps; opacity:0.95">Lab</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="cta" href="about.html" title="Ir a About" role="button" aria-label="Ir a About">
+          <span style="font-variant: small-caps; opacity:0.95">About</span>
+          <span class="arrow">→</span>
+        </a>
       </nav>
-
-      <div class="subtitle">A little lab — experiments, tools & things I break and fix</div>
     </header>
-
-    <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center; z-index:5;">
-      <a class="cta" href="https://check.jonathangomez.qzz.io/check" title="Ir al check" role="button" aria-label="Ir al check">
-        <span style="font-variant: small-caps; opacity:0.95">Website Analyzer Tool</span>
-        <span class="arrow">→</span>
-      </a>
-
-      <a class="cta" href="https://jonathangomez.qzz.io/tools-for-awareness.html" title="tools" role="button" aria-label="Ir a herramientas">
-        <span style="font-variant: small-caps; opacity:0.95">Tools</span>
-        <span class="arrow">→</span>
-      </a>
-    </div>
 
     <div class="meta" aria-live="polite">
       <div><code>Host</code> jonathangomez.qzz.io</div>
-      <div style="margin-top:8px; color:var(--muted)">⚠️ Este sitio es solo para fines educativos. Todo lo publicado corresponde a entornos propios, autorizados o sanitizados.<br><br></div>
+      <div style="margin-top:6px; color:var(--muted)">
+        ⚠️ Este sitio es solo para fines educativos. Todo lo publicado corresponde a entornos propios, autorizados o sanitizados.<br><br>
+      </div>
     </div>
 
     <div class="footer" aria-hidden="true">Made with : &lt;code&gt; and curiosity — Jonathan</div>
   </div>
-
+</body>
   <script>
     // matrix effect: compacto y sin código innecesario
     (function(){
