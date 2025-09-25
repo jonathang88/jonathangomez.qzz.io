@@ -200,28 +200,31 @@
     }
 
 
-.ascii-link {
-  text-decoration: none;
-  display: block;
-  color: var(--accent);
-  text-align: center;
-  margin-bottom: 4px;
-  transition: transform 0.2s ease;
+/* Oculta el de mobile por defecto */
+.ascii-mobile {
+  display: none;
 }
 
-.ascii-link:hover {
-  transform: scale(1.02);
-  filter: brightness(1.2);
+/* Solo muestra en pantallas grandes */
+@media (min-width: 768px) {
+  .ascii-desktop {
+    display: block;
+  }
+  .ascii-mobile {
+    display: none;
+  }
 }
 
-.ascii-heading pre {
-  font-family: "Courier New", monospace;
-  font-size: 12px;
-  line-height: 1.1;
-  color: var(--accent);
-  text-shadow: 0 0 6px rgba(57, 255, 20, 0.2);
-  white-space: pre-wrap;
+/* Solo muestra en pantallas pequeñas */
+@media (max-width: 767px) {
+  .ascii-desktop {
+    display: none;
+  }
+  .ascii-mobile {
+    display: block;
+  }
 }
+
     /* responsive adjustments */
     @media (max-width:520px){
       .meta{font-size:11px}
@@ -234,17 +237,28 @@
     <div class="matrix" aria-hidden="true"></div>
 
     <header>
-  <h2 class="ascii-heading">
-    <pre>
-       __      ______                        
-      / /___  / ____/___  ____ ___  ___  ____
- __  / / __ \/ / __/ __ \/ __ `__ \/ _ \/_  /
-/ /_/ / /_/ / /_/ / /_/ / / / / / /  __/ / /_
-\____/\____/\____/\____/_/ /_/ /_/\___/ /___/
-                                                                                                                                                                                                                                                                                                                   
+<h2 class="ascii-heading ascii-desktop">
+  <pre>
+       ______  __________  __  ______________
+      / / __ \/ ____/ __ \/  |/  / ____/__  /
+ __  / / / / / / __/ / / / /|_/ / __/    / / 
+/ /_/ / /_/ / /_/ / /_/ / /  / / /___   / /__
+\____/\____/\____/\____/_/  /_/_____/  /____/
+                                             
+                                                                                                                                                                                                                                                                      
+ </pre>
+</h2>
+
+<h2 class="ascii-heading ascii-mobile">
+  <pre>                           
+      _                            
+     (_)__  ___ ____  __ _  ___ ___
+    / / _ \/ _ `/ _ \/  ' \/ -_)_ /
+ __/ /\___/\_, /\___/_/_/_/\__//__/
+|___/     /___/                                        
     </pre>
   </h2>
-</a>
+
       <div class="subtitle">A little lab — experiments, tools & things I break and fix</div>
     </header>
 
