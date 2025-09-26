@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recursos - Hacker Toolkit</title>
+  <link rel="stylesheet" href="css/styles2.css">
+</head>
+<body class="scanlines">
+  <div class="container">
+    <header>
+      <div>
+        <a href="index.html" class="ascii-link" title="Volver al inicio">
+          <h2 class="ascii-heading">
+            <pre>
+  ____                                      
+ |  _ \ ___  ___ ___  _ __ ___  ___  ___ ___ 
+ | |_) / _ \/ __/ _ \| '__/ _ \/ __|/ __/ _ \
+ |  _ <  __/ (_| (_) | | |  __/\__ \ (_|  __/
+ |_| \_\___|\___\___/|_|  \___||___/\___\___|
+            </pre>
+          </h2>
+        </a>
+        <h1>Repositorio de Recursos <small style="font-weight:600;color:var(--muted)"> (Personal & Legal)</small></h1>
+        <p class="lead">Colección organizada de scripts, notas, wordlists, plantillas y enlaces útiles para pentesting y aprendizaje.</p>
+      </div>
+    </header>
+
+    <div class="card">
+      <nav class="toc">
+        <strong>Enlaces rápidos:</strong>
+        <ul>
+          <li><a href="#scripts">Scripts</a></li>
+          <li><a href="#wordlists">Wordlists</a></li>
+          <li><a href="#cheatsheets">Cheatsheets (PDF)</a></li>
+          <li><a href="#templates">Plantillas</a></li>
+          <li><a href="#platforms">Plataformas</a></li>
+          <li><a href="#notes">Notas Personales</a></li>
+          <li><a href="#misc">Otros Recursos</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="grid">
+      <aside class="card">
+        <strong>Buscador</strong>
+        <div class="search-row">
+          <input id="searchbox" type="search" placeholder="Buscar recurso..." aria-label="Buscar recurso">
+          <button id="clearBtn">Limpiar</button>
+        </div>
+      </aside>
+
+      <main>
+
+        <!-- Scripts -->
+        <section id="scripts" class="card">
+          <h2>Scripts</h2>
+          <div class="tool" data-name="nmap-massive.sh" data-desc="Script bash para escanear rangos completos usando Nmap + Masscan">
+            <h3>nmap-massive.sh</h3>
+            <p>Script bash para escanear rangos completos usando Nmap + Masscan.</p>
+            <a href="scripts/nmap-massive.sh" download>📥 Descargar</a>
+          </div>
+        </section>
+
+        <!-- Wordlists -->
+        <section id="wordlists" class="card">
+          <h2>Wordlists</h2>
+          <div class="tool" data-name="rockyou.txt" data-desc="Diccionario clásico de contraseñas">
+            <h3>rockyou.txt</h3>
+            <p>Diccionario clásico de contraseñas.</p>
+            <a href="wordlists/rockyou.txt" download>📥 Descargar</a>
+          </div>
+        </section>
+
+        <!-- Cheatsheets -->
+        <section id="cheatsheets" class="card">
+          <h2>Cheatsheets</h2>
+          <div class="tool" data-name="Linux Privilege Escalation" data-desc="PDF con técnicas para escalada de privilegios en Linux">
+            <h3>Linux Privilege Escalation</h3>
+            <p>PDF con técnicas para escalada de privilegios en Linux.</p>
+            <a href="cheatsheets/linux-privesc.pdf" download>📥 Descargar</a>
+          </div>
+        </section>
+
+        <!-- Templates -->
+        <section id="templates" class="card">
+          <h2>Plantillas</h2>
+          <div class="tool" data-name="Reporte Scope" data-desc="Plantilla para definir el alcance de un pentest">
+            <h3>Reporte Scope</h3>
+            <p>Plantilla para definir el alcance de un pentest.</p>
+            <a href="templates/scope-template.docx" download>📥 Descargar</a>
+          </div>
+        </section>
+
+        <!-- Plataformas -->
+        <section id="platforms" class="card">
+          <h2>Plataformas</h2>
+          <div class="tool" data-name="Hack The Box" data-desc="Plataforma de laboratorio de pentesting online.">
+            <h3>Hack The Box</h3>
+            <p><a href="https://www.hackthebox.com/" target="_blank">Ir a HTB 🔗</a></p>
+          </div>
+          <div class="tool" data-name="TryHackMe" data-desc="Aprende hacking desde lo básico.">
+            <h3>TryHackMe</h3>
+            <p><a href="https://tryhackme.com/" target="_blank">Ir a TryHackMe 🔗</a></p>
+          </div>
+        </section>
+
+        <!-- Notas Personales -->
+        <section id="notes" class="card">
+          <h2>Notas Personales</h2>
+          <div class="tool" data-name="Obsidian" data-desc="Notas locales en Markdown">
+            <h3>Obsidian Vault</h3>
+            <p>Mis notas organizadas en Markdown.</p>
+            <a href="https://obsidian.md/" target="_blank">Abrir Obsidian 🔗</a>
+          </div>
+        </section>
+
+        <!-- Otros -->
+        <section id="misc" class="card">
+          <h2>Otros Recursos</h2>
+          <p>Próximamente...</p>
+        </section>
+
+        <footer>
+          <p>Esta sección está en construcción. Iré añadiendo recursos a medida que avanzo en el aprendizaje.</p>
+        </footer>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    // Funcionalidad búsqueda
+    const searchbox = document.getElementById('searchbox');
+    const clearBtn = document.getElementById('clearBtn');
+
+    searchbox.addEventListener('input', filterResources);
+    clearBtn.addEventListener('click', () => {
+      searchbox.value = '';
+      filterResources();
+    });
+
+    function filterResources() {
+      const query = searchbox.value.toLowerCase().trim();
+      const tools = document.querySelectorAll('.tool');
+      tools.forEach(el => {
+        const name = el.dataset.name?.toLowerCase() || '';
+        const desc = el.dataset.desc?.toLowerCase() || '';
+        el.style.display = (name.includes(query) || desc.includes(query)) ? 'block' : 'none';
+      });
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== searchbox) {
+        e.preventDefault();
+        searchbox.focus();
+      }
+    });
+  </script>
+</body>
+</html>
