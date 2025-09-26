@@ -97,6 +97,7 @@ p.lead {
   text-shadow: 0 0 6px rgba(57,255,20,0.2);
   white-space: pre-wrap;
   margin-bottom:12px;
+  text-align: center;
 }
 
 .ascii-link {
@@ -118,6 +119,7 @@ p.lead {
   margin-top:4px;
   margin-bottom:12px;
   padding-bottom:10px;
+  text-align: center;
 }
 
 .cta{
