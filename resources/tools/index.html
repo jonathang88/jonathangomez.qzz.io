@@ -1,1 +1,900 @@
 
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" href="css/styles2.css">
+  <title>Tools For Awareness & Research (Authorized Use Only)</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <a href="https://jonathangomez.qzz.io/resources" class="ascii-link" title="Ir atras">
+  <h2 class="ascii-heading">
+    <pre>
+       _                         _____
+      (_)___ _____  ____ ___  __/__  /
+     / / __ `/ __ \/ __ `__ \/ _ \/ / 
+    / / /_/ / /_/ / / / / / /  __/ /__
+ __/ /\__, /\____/_/ /_/ /_/\___/____/
+/___//____/                         
+    </pre>
+  </h2>
+</a>
+
+        <h1>Tools For Awareness & Research <small style="font-weight:600;color:var(--muted)"> (Authorized Use Only)</small></h1>
+        <p class="lead">Listado y organización de 100 herramientas de seguridad ofensiva, forense, y de investigación. Uso autorizado únicamente.</p>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:13px;color:var(--muted)">Última actualización: <strong>2025</strong></div>
+      </div>
+<a class="back-btn" href="resources.html" title="Volver a Inicio (cd ..)"> 
+  <span class="prompt">~$</span> <code>cd ..</code>
+</a>
+
+    </header>
+
+    <div class="card">
+      <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+        <div style="flex:1">
+          <strong>Índice rápido:</strong>
+          <nav class="toc" aria-label="Índice">
+            <ul>
+              <li><a href="#recon">Recon & Enumeración</a></li>
+              <li><a href="#network">Network & Packet Analysis</a></li>
+              <li><a href="#wireless">Wireless</a></li>
+              <li><a href="#webapp">Web Application</a></li>
+              <li><a href="#exploitation">Exploitation & Frameworks</a></li>
+              <li><a href="#passwords">Passwords & Brute-force</a></li>
+              <li><a href="#vuln">Vulnerability Scanners</a></li>
+              <li><a href="#reverse">Reverse & Binary Analysis</a></li>
+              <li><a href="#forensics">Forensics & IR</a></li>
+              <li><a href="#memory">Memory & Malware</a></li>
+              <li><a href="#mobile">Mobile & APK</a></li>
+              <li><a href="#infra">Containers, Virtualization & Infra</a></li>
+              <li><a href="#automation">Automation / Config Mgmt</a></li>
+              <li><a href="#misc">Misc & Databases</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div style="min-width:320px">
+          <div class="search-row">
+            <input id="searchbox" type="search" placeholder="Buscar herramienta o descripción..." aria-label="Buscar"/>
+            <button id="clearBtn" title="Limpiar">Limpiar</button>
+          </div>
+          <div style="font-size:13px;color:var(--muted)">Filtrado en tiempo real por nombre y descripción.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <aside class="card">
+        <strong>Índice completo (por herramienta)</strong>
+        <ul id="indexList">
+          <!-- JS will populate alphabetical index links -->
+        </ul>
+      </aside>
+
+      <main>
+        <!-- CATEGORÍA: Recon & Enumeration -->
+        <section id="recon" class="card">
+          <h2>Recon &amp; Enumeración</h2>
+          <p class="lead" style="margin-bottom:12px;color:var(--muted)">Herramientas usadas para descubrimiento, recolección de información, mapeo de red y enumeración.</p>
+
+          <div class="tool" data-name="Nmap" data-desc="Network scanning tool used to discover hosts and services on a computer network.">
+            <h3 id="nmap">1. Nmap</h3>
+            <p>Network scanning tool used to discover hosts and services on a computer network.</p>
+          </div>
+
+          <div class="tool" data-name="Masscan" data-desc="TCP port scanner, potentially faster than Nmap.">
+            <h3 id="masscan">2. Masscan</h3>
+            <p>TCP port scanner, potentially faster than Nmap.</p>
+          </div>
+
+          <div class="tool" data-name="Amass" data-desc="In-depth DNS enumeration and network mapping.">
+            <h3 id="amass">3. Amass</h3>
+            <p>In-depth DNS enumeration and network mapping.</p>
+          </div>
+
+          <div class="tool" data-name="theHarvester" data-desc="E-mail, subdomain, and people names harvester.">
+            <h3 id="theharvester">4. theHarvester</h3>
+            <p>E-mail, subdomain, and people names harvester.</p>
+          </div>
+
+          <div class="tool" data-name="Sublist3r" data-desc="Fast subdomains enumeration tool for penetration testers.">
+            <h3 id="sublist3r">5. Sublist3r</h3>
+            <p>Fast subdomains enumeration tool for penetration testers.</p>
+          </div>
+
+          <div class="tool" data-name="WhatWeb" data-desc="Next generation web scanner.">
+            <h3 id="whatweb">6. WhatWeb</h3>
+            <p>Next generation web scanner.</p>
+          </div>
+
+          <div class="tool" data-name="DMitry" data-desc="Deepmagic Information Gathering Tool, a UNIX/(GNU)Linux CLI program coded in C.">
+            <h3 id="dmitry">7. DMitry</h3>
+            <p>Deepmagic Information Gathering Tool, a UNIX/(GNU)Linux CLI program coded in C.</p>
+          </div>
+
+          <div class="tool" data-name="theHarvester" data-desc="E-mail, subdomain, and people names harvester.">
+            <!-- duplicate intentionally not added -->
+          </div>
+
+          <div class="tool" data-name="Recon-ng" data-desc="Full-featured web reconnaissance framework written in Python.">
+            <h3 id="recon-ng">8. Recon-ng</h3>
+            <p>Full-featured web reconnaissance framework written in Python.</p>
+          </div>
+
+          <div class="tool" data-name="Amass" data-desc="In-depth DNS enumeration and network mapping.">
+            <!-- (already above) -->
+          </div>
+
+          <div class="tool" data-name="Sublist3r" data-desc="Fast subdomains enumeration tool for penetration testers.">
+            <!-- (already above) -->
+          </div>
+
+        </section>
+
+        <!-- CATEGORÍA: Network & Packet Analysis -->
+        <section id="network" class="card">
+          <h2>Network &amp; Packet Analysis</h2>
+  <p class="lead" style="margin-bottom:12px;color:var(--muted)">Herramientas para inspeccionar, capturar y analizar tráfico de red y paquetes de datos en tiempo real.</p>
+          <div class="tool" data-name="Wireshark" data-desc="Network protocol analyzer used for network troubleshooting and analysis.">
+            <h3 id="wireshark">9. Wireshark</h3>
+            <p>Network protocol analyzer used for network troubleshooting and analysis.</p>
+          </div>
+
+          <div class="tool" data-name="Tcpdump" data-desc="Command-line packet analyzer.">
+            <h3 id="tcpdump">10. Tcpdump</h3>
+            <p>Command-line packet analyzer.</p>
+          </div>
+
+          <div class="tool" data-name="dsniff" data-desc="Collection of tools for network auditing and penetration testing.">
+            <h3 id="dsniff">11. dsniff</h3>
+            <p>Collection of tools for network auditing and penetration testing.</p>
+          </div>
+
+          <div class="tool" data-name="Ettercap" data-desc="Comprehensive suite for man-in-the-middle attacks on LAN.">
+            <h3 id="ettercap">12. Ettercap</h3>
+            <p>Comprehensive suite for man-in-the-middle attacks on LAN.</p>
+          </div>
+
+          <div class="tool" data-name="Responder" data-desc="Tool for LLMNR, NBT-NS and MDNS poisoning.">
+            <h3 id="responder">13. Responder</h3>
+            <p>Tool for LLMNR, NBT-NS and MDNS poisoning.</p>
+          </div>
+
+          <div class="tool" data-name="Kismet" data-desc="Wireless network and device detector, sniffer, and intrusion detection system.">
+            <h3 id="kismet">14. Kismet</h3>
+            <p>Wireless network and device detector, sniffer, and intrusion detection system.</p>
+          </div>
+
+          <div class="tool" data-name="Binwalk" data-desc="Firmware analysis tool.">
+            <h3 id="binwalk">15. Binwalk</h3>
+            <p>Firmware analysis tool.</p>
+          </div>
+
+        </section>
+
+        <!-- CATEGORÍA: Wireless -->
+        <section id="wireless" class="card">
+          <h2>Wireless</h2>
+<p class="lead" style="margin-bottom:12px;color:var(--muted)">Utilidades para análisis, monitoreo y auditoría de redes inalámbricas y protocolos Wi-Fi.</p>
+          <div class="tool" data-name="Aircrack-ng" data-desc="Suite of tools for assessing Wi-Fi network security.">
+            <h3 id="aircrack-ng">16. Aircrack-ng</h3>
+            <p>Suite of tools for assessing Wi-Fi network security.</p>
+          </div>
+
+          <div class="tool" data-name="Wifite" data-desc="Automated wireless attack tool.">
+            <h3 id="wifite">17. Wifite</h3>
+            <p>Automated wireless attack tool.</p>
+          </div>
+
+          <div class="tool" data-name="Reaver" data-desc="Tool for breaking into Wi-Fi Protected Setup (WPS) enabled networks.">
+            <h3 id="reaver">18. Reaver</h3>
+            <p>Tool for breaking into Wi-Fi Protected Setup (WPS) enabled networks.</p>
+          </div>
+
+        </section>
+
+        <!-- CATEGORÍA: Web Application -->
+        <section id="webapp" class="card">
+          <h2>Web Application Testing</h2>
+          <p class="lead" style="margin-bottom:12px;color:var(--muted)">Herramientas para pruebas de seguridad en aplicaciones web, detección de vulnerabilidades y análisis de comportamiento.</p>
+          <div class="tool" data-name="Burp Suite" data-desc="Integrated platform for performing security testing of web applications.">
+            <h3 id="burp-suite">19. Burp Suite</h3>
+            <p>Integrated platform for performing security testing of web applications.</p>
+          </div>
+
+          <div class="tool" data-name="OWASP ZAP" data-desc="Open-source web application security scanner.">
+            <h3 id="owasp-zap">20. OWASP ZAP</h3>
+            <p>Open-source web application security scanner.</p>
+          </div>
+
+          <div class="tool" data-name="Nikto" data-desc="Web server scanner that detects vulnerabilities and misconfigurations.">
+            <h3 id="nikto">21. Nikto</h3>
+            <p>Web server scanner that detects vulnerabilities and misconfigurations.</p>
+          </div>
+
+          <div class="tool" data-name="Wapiti" data-desc="Web application vulnerability scanner.">
+            <h3 id="wapiti">22. Wapiti</h3>
+            <p>Web application vulnerability scanner.</p>
+          </div>
+
+          <div class="tool" data-name="Skipfish" data-desc="Fully automated, active web application security reconnaissance tool.">
+            <h3 id="skipfish">23. Skipfish</h3>
+            <p>Fully automated, active web application security reconnaissance tool.</p>
+          </div>
+
+          <div class="tool" data-name="Arachni" data-desc="High-performance web application security scanner framework.">
+            <h3 id="arachni">24. Arachni</h3>
+            <p>High-performance web application security scanner framework.</p>
+          </div>
+
+          <div class="tool" data-name="Sqlmap" data-desc="Automated tool for SQL injection and database takeover.">
+            <h3 id="sqlmap">25. sqlmap</h3>
+            <p>Automated tool for SQL injection and database takeover.</p>
+          </div>
+
+          <div class="tool" data-name="Sqlsus" data-desc="MySQL injection and takeover tool.">
+            <h3 id="sqlsus">26. Sqlsus</h3>
+            <p>MySQL injection and takeover tool.</p>
+          </div>
+
+          <div class="tool" data-name="Sqlninja" data-desc="Tool for exploiting SQL injection vulnerabilities on Microsoft SQL Server.">
+            <h3 id="sqlninja">27. Sqlninja</h3>
+            <p>Tool for exploiting SQL injection vulnerabilities on Microsoft SQL Server.</p>
+          </div>
+
+          <div class="tool" data-name="Fimap" data-desc="Tool for finding, exploiting and managing file inclusion bugs in web applications.">
+            <h3 id="fimap">28. Fimap</h3>
+            <p>Tool for finding, exploiting and managing file inclusion bugs in web applications.</p>
+          </div>
+
+          <div class="tool" data-name="W3af" data-desc="Web application attack and audit framework.">
+            <h3 id="w3af">29. W3af</h3>
+            <p>Web application attack and audit framework.</p>
+          </div>
+
+          <div class="tool" data-name="ZAP Proxy" data-desc="Integrated penetration testing tool for finding vulnerabilities in web applications.">
+            <h3 id="zap-proxy">30. ZAP Proxy</h3>
+            <p>Integrated penetration testing tool for finding vulnerabilities in web applications.</p>
+          </div>
+
+          <div class="tool" data-name="Dirbuster" data-desc="Multi-threaded application designed to brute-force directories and files names on web servers.">
+            <h3 id="dirbuster">31. Dirbuster</h3>
+            <p>Multi-threaded application designed to brute-force directories and file names on web servers.</p>
+          </div>
+
+          <div class="tool" data-name="Gobuster" data-desc="Tool used to brute-force URIs (directories and files) and DNS subdomains.">
+            <h3 id="gobuster">32. Gobuster</h3>
+            <p>Tool used to brute-force URIs (directories and files) and DNS subdomains.</p>
+          </div>
+
+          <div class="tool" data-name="WhatWeb" data-desc="Next generation web scanner.">
+            <!-- already included above -->
+          </div>
+
+          <div class="tool" data-name="MobSF" data-desc="Mobile Security Framework for automated mobile app analysis.">
+            <h3 id="mobsf">33. MobSF</h3>
+            <p>Mobile Security Framework for automated mobile app analysis.</p>
+          </div>
+
+          <div class="tool" data-name="WPSCan" data-desc="WordPress vulnerability scanner.">
+            <h3 id="wpscan">34. WPScan</h3>
+            <p>WordPress vulnerability scanner.</p>
+          </div>
+
+          <div class="tool" data-name="BeEF" data-desc="Browser Exploitation Framework, focusing on client-side attacks.">
+            <h3 id="beef">35. BeEF</h3>
+            <p>Browser Exploitation Framework, focusing on client-side attacks.</p>
+          </div>
+
+          <div class="tool" data-name="Skipfish" data-desc="Fully automated web application scanning tool.">
+            <!-- already included above -->
+          </div>
+
+        </section>
+
+        <!-- CATEGORÍA: Exploitation & Frameworks -->
+        <section id="exploitation" class="card">
+          <h2>Exploitation &amp; Frameworks</h2>
+<p class="lead" style="margin-bottom:12px;color:var(--muted)">Plataformas y scripts para desarrollar y ejecutar exploits, así como marcos de trabajo para pruebas ofensivas.</p>
+          <div class="tool" data-name="Metasploit" data-desc="Penetration testing framework that allows for the discovery and exploitation of vulnerabilities.">
+            <h3 id="metasploit">36. Metasploit</h3>
+            <p>Penetration testing framework that allows for the discovery and exploitation of vulnerabilities.</p>
+          </div>
+
+          <div class="tool" data-name="Armitage" data-desc="GUI for Metasploit that makes penetration testing easier.">
+            <h3 id="armitage">37. Armitage</h3>
+            <p>GUI for Metasploit that makes penetration testing easier.</p>
+          </div>
+
+          <div class="tool" data-name="PowerSploit" data-desc="Collection of Microsoft PowerShell modules for exploiting and auditing Windows machines.">
+            <h3 id="powersploit">38. PowerSploit</h3>
+            <p>Collection of Microsoft PowerShell modules for exploiting and auditing Windows machines.</p>
+          </div>
+
+          <div class="tool" data-name="Veil-Evasion" data-desc="Tool designed to generate payloads that bypass antivirus solutions.">
+            <h3 id="veil-evasion">39. Veil-Evasion</h3>
+            <p>Tool designed to generate payloads that bypass antivirus solutions.</p>
+          </div>
+
+          <div class="tool" data-name="Commix" data-desc="Automated command injection and exploitation tool.">
+            <h3 id="commix">40. Commix</h3>
+            <p>Automated command injection and exploitation tool.</p>
+          </div>
+
+          <div class="tool" data-name="ExploitDB" data-desc="Database of exploits and vulnerable software.">
+            <h3 id="exploitdb">41. ExploitDB</h3>
+            <p>Database of exploits and vulnerable software.</p>
+          </div>
+
+          <div class="tool" data-name="SearchSploit" data-desc="Command line search tool for ExploitDB.">
+            <h3 id="searchsploit">42. SearchSploit</h3>
+            <p>Command line search tool for ExploitDB.</p>
+          </div>
+
+        </section>
+
+        <!-- CATEGORÍA: Passwords & Brute-force -->
+        <section id="passwords" class="card">
+          <h2>Passwords &amp; Brute-force</h2>
+<p class="lead" style="margin-bottom:12px;color:var(--muted)">Herramientas diseñadas para ataques de fuerza bruta, diccionario y recuperación de contraseñas.</p>
+
+          <div class="tool" data-name="John the Ripper" data-desc="Password cracking tool that detects weak passwords.">
+            <h3 id="john-the-ripper">43. John the Ripper</h3>
+            <p>Password cracking tool that detects weak passwords.</p>
+          </div>
+
+          <div class="tool" data-name="Hashcat" data-desc="Advanced password recovery tool.">
+            <h3 id="hashcat">44. Hashcat</h3>
+            <p>Advanced password recovery tool.</p>
+          </div>
+
+          <div class="tool" data-name="Hydra" data-desc="Network logon cracker supporting many protocols.">
+            <h3 id="hydra">45. Hydra</h3>
+            <p>Network logon cracker supporting many protocols.</p>
+          </div>
+
+          <div class="tool" data-name="THC-Hydra" data-desc="Fast network logon cracker supporting many different services.">
+            <h3 id="thc-hydra">46. THC-Hydra</h3>
+            <p>Fast network logon cracker supporting many different services.</p>
+          </div>
+
+          <div class="tool" data-name="Medusa" data-desc="Speedy, massively parallel, modular, login brute-forcer.">
+            <h3 id="medusa">47. Medusa</h3>
+            <p>Speedy, massively parallel, modular, login brute-forcer.</p>
+          </div>
+
+          <div class="tool" data-name="Cain & Abel" data-desc="Password recovery tool for Microsoft Operating Systems.">
+            <h3 id="cain--abel">48. Cain &amp; Abel</h3>
+            <p>Password recovery tool for Microsoft Operating Systems.</p>
+          </div>
+
+          <div class="tool" data-name="Hydra (again)" data-desc="">
+            <!-- placeholder -->
+          </div>
+        </section>
+
+        <!-- CATEGORÍA: Vulnerability Scanners -->
+        <section id="vuln" class="card">
+          <h2>Vulnerability Scanners</h2>
+<p class="lead" style="margin-bottom:12px;color:var(--muted)">Sistemas automatizados para detectar vulnerabilidades y configuraciones inseguras en sistemas y aplicaciones.</p>
+
+          <div class="tool" data-name="OpenVAS" data-desc="Full-featured vulnerability scanner.">
+            <h3 id="openvas">49. OpenVAS</h3>
+            <p>Full-featured vulnerability scanner.</p>
+          </div>
+
+          <div class="tool" data-name="Nessus" data-desc="Comprehensive vulnerability scanner.">
+            <h3 id="nessus">50. Nessus</h3>
+            <p>Comprehensive vulnerability scanner.</p>
+          </div>
+
+          <div class="tool" data-name="RIPS" data-desc="Static code analysis tool to find vulnerabilities in PHP applications.">
+            <h3 id="rips">51. RIPS</h3>
+            <p>Static code analysis tool to find vulnerabilities in PHP applications.</p>
+          </div>
+
+          <div class="tool" data-name="W3af" data-desc="Web application attack and audit framework.">
+            <!-- included earlier -->
+          </div>
+
+        </section>
+
+        <!-- CATEGORÍA: Reverse Engineering & Binary Analysis -->
+        <section id="reverse" class="card">
+          <h2>Reverse Engineering &amp; Binary Analysis</h2>
+<p class="lead" style="margin-bottom:12px;color:var(--muted)">Herramientas para desensamblar, analizar y comprender binarios, firmware y ejecutables.</p>
+
+          <div class="tool" data-name="GDB" data-desc="The GNU Project debugger, a standard debugger for the GNU operating system.">
+            <h3 id="gdb">52. GDB</h3>
+            <p>The GNU Project debugger, a standard debugger for the GNU operating system.</p>
+          </div>
+
+          <div class="tool" data-name="Radare2" data-desc="Open-source software for reverse engineering and analyzing binaries.">
+            <h3 id="radare2">53. Radare2</h3>
+            <p>Open-source software for reverse engineering and analyzing binaries.</p>
+          </div>
+
+          <div class="tool" data-name="Immunity Debugger" data-desc="Powerful way to write exploits, analyze malware, and reverse engineer binary files.">
+            <h3 id="immunity-debugger">54. Immunity Debugger</h3>
+            <p>Powerful way to write exploits, analyze malware, and reverse engineer binary files.</p>
+          </div>
+
+          <div class="tool" data-name="OllyDbg" data-desc="32-bit assembler level analyzing debugger for Microsoft Windows.">
+            <h3 id="ollydbg">55. OllyDbg</h3>
+            <p>32-bit assembler level analyzing debugger for Microsoft Windows.</p>
+          </div>
+
+          <div class="tool" data-name="Clang" data-desc="A compiler front end for the C, C++, and Objective-C programming languages.">
+            <h3 id="clang">56. Clang</h3>
+            <p>A compiler front end for the C, C++, and Objective-C programming languages.</p>
+          </div>
+
+          <div class="tool" data-name="UPX" data-desc="Ultimate Packer for Executables, a free and portable executable packer for several file formats.">
+            <h3 id="upx">57. UPX</h3>
+            <p>Ultimate Packer for Executables, a free and portable executable packer for several file formats.</p>
+          </div>
+
+          <div class="tool" data-name="Radare2 (repeat)" data-desc="">
+            <!-- placeholder -->
+          </div>
+
+        </section>
+
+        <!-- CATEGORÍA: Forensics & Incident Response -->
+        <section id="forensics" class="card">
+          <h2>Forensics &amp; Incident Response</h2>
+<p class="lead" style="margin-bottom:12px;color:var(--muted)">Utilidades enfocadas en el análisis forense digital y la respuesta ante incidentes de seguridad.</p>
+
+          <div class="tool" data-name="Sleuth Kit" data-desc="Collection of command-line tools for investigating disk images.">
+            <h3 id="sleuth-kit">58. Sleuth Kit</h3>
+            <p>Collection of command-line tools for investigating disk images.</p>
+          </div>
+
+          <div class="tool" data-name="Autopsy" data-desc="Graphical interface to The Sleuth Kit and other digital forensics tools.">
+            <h3 id="autopsy">59. Autopsy</h3>
+            <p>Graphical interface to The Sleuth Kit and other digital forensics tools.</p>
+          </div>
+
+          <div class="tool" data-name="Foremost" data-desc="Console program to recover files based on their headers, footers, and internal data structures.">
+            <h3 id="foremost">60. Foremost</h3>
+            <p>Console program to recover files based on their headers, footers, and internal data structures.</p>
+          </div>
+
+          <div class="tool" data-name="Scalpel" data-desc="File carving and indexing application.">
+            <h3 id="scalpel">61. Scalpel</h3>
+            <p>File carving and indexing application.</p>
+          </div>
+
+          <div class="tool" data-name="Bulk Extractor" data-desc="Forensic tool to scan a disk image, directory, or file for features of interest.">
+            <h3 id="bulk-extractor">62. Bulk Extractor</h3>
+            <p>Forensic tool to scan a disk image, directory, or file for features of interest.</p>
+          </div>
+
+          <div class="tool" data-name="CAINE" data-desc="Computer Aided INvestigative Environment, a Linux live distribution for digital forensics.">
+            <h3 id="caine">63. CAINE</h3>
+            <p>Computer Aided INvestigative Environment, a Linux live distribution for digital forensics.</p>
+          </div>
+
+          <div class="tool" data-name="DEFT" data-desc="Digital Evidence and Forensics Toolkit, another Linux distribution for forensics.">
+            <h3 id="deft">64. DEFT</h3>
+            <p>Digital Evidence and Forensics Toolkit, another Linux distribution for forensics.</p>
+          </div>
+
+          <div class="tool" data-name="REMnux" data-desc="Linux distribution for reverse-engineering and analyzing malicious software.">
+            <h3 id="remnux">65. REMnux</h3>
+            <p>Linux distribution for reverse-engineering and analyzing malicious software.</p>
+          </div>
+
+          <div class="tool" data-name="Tsurugi Linux" data-desc="Linux distribution for digital forensics, OSINT, and incident response.">
+            <h3 id="tsurugi-linux">66. Tsurugi Linux</h3>
+            <p>Linux distribution for digital forensics, OSINT, and incident response.</p>
+          </div>
+
+          <div class="tool" data-name="Paladin Forensics" data-desc="Live operating system based on Ubuntu that provides a range of forensic tools.">
+            <h3 id="paladin-forensics">67. Paladin Forensics</h3>
+            <p>Live operating system based on Ubuntu that provides a range of forensic tools.</p>
+          </div>
+
+          <div class="tool" data-name="SIFT Workstation" data-desc="Forensics and incident response toolkit.">
+            <h3 id="sift-workstation">68. SIFT Workstation</h3>
+            <p>Forensics and incident response toolkit.</p>
+          </div>
+
+          <div class="tool" data-name="Plaso" data-desc="Tool for automatic creation of a super timeline from various digital artifacts.">
+            <h3 id="plaso">69. Plaso</h3>
+            <p>Tool for automatic creation of a super timeline from various digital artifacts.</p>
+          </div>
+
+          <div class="tool" data-name="Rekall" data-desc="Memory forensic framework.">
+            <h3 id="rekall">70. Rekall</h3>
+            <p>Memory forensic framework.</p>
+          </div>
+
+          <div class="tool" data-name="Bulk Extractor (repeat)" data-desc="">
+            <!-- placeholder -->
+          </div>
+
+        </section>
+
+        <!-- CATEGORÍA: Memory & Malware Analysis -->
+        <section id="memory" class="card">
+          <h2>Memory &amp; Malware Analysis</h2>
+<p class="lead" style="margin-bottom:12px;color:var(--muted)">Herramientas para el análisis de memoria volátil, detección y estudio de malware.</p>
+
+          <div class="tool" data-name="Volatility" data-desc="Advanced memory forensics framework.">
+            <h3 id="volatility">71. Volatility</h3>
+            <p>Advanced memory forensics framework.</p>
+          </div>
+
+          <div class="tool" data-name="Yara" data-desc="Tool for identifying and classifying malware samples.">
+            <h3 id="yara">72. Yara</h3>
+            <p>Tool for identifying and classifying malware samples.</p>
+          </div>
+
+          <div class="tool" data-name="Cuckoo Sandbox" data-desc="Malware analysis system.">
+            <h3 id="cuckoo-sandbox">73. Cuckoo Sandbox</h3>
+            <p>Malware analysis system.</p>
+          </div>
+
+          <div class="tool" data-name="Flawfinder" data-desc="Scans C/C++ source code for security vulnerabilities.">
+            <h3 id="flawfinder">74. Flawfinder</h3>
+            <p>Scans C/C++ source code for security vulnerabilities.</p>
+          </div>
+
+          <div class="tool" data-name="Valgrind" data-desc="Programming tool for memory debugging, memory leak detection, and profiling.">
+            <h3 id="valgrind">75. Valgrind</h3>
+            <p>Programming tool for memory debugging, memory leak detection, and profiling.</p>
+          </div>
+
+        </section>
+
+        <!-- CATEGORÍA: Mobile & APK -->
+        <section id="mobile" class="card">
+          <h2>Mobile &amp; APK Tools</h2>
+<p class="lead" style="margin-bottom:12px;color:var(--muted)">Herramientas para análisis de aplicaciones móviles, ingeniería inversa de APKs y pruebas de seguridad en dispositivos móviles.</p>
+
+          <div class="tool" data-name="Apktool" data-desc="A tool for reverse engineering Android APK files.">
+            <h3 id="apktool">76. Apktool</h3>
+            <p>A tool for reverse engineering Android APK files.</p>
+          </div>
+
+          <div class="tool" data-name="MobSF" data-desc="Mobile Security Framework for automated mobile app analysis.">
+            <!-- included earlier -->
+          </div>
+
+        </section>
+
+        <!-- CATEGORÍA: Containers, Virtualization & Infrastructure -->
+        <section id="infra" class="card">
+          <h2>Containers, Virtualization &amp; Infrastructure</h2>
+<p class="lead" style="margin-bottom:12px;color:var(--muted)">Utilidades para la gestión, análisis y seguridad de contenedores, entornos virtualizados y sistemas de infraestructura.</p>
+
+          <div class="tool" data-name="Docker" data-desc="Platform to develop, ship, and run applications inside containers.">
+            <h3 id="docker">77. Docker</h3>
+            <p>Platform to develop, ship, and run applications inside containers.</p>
+          </div>
+
+          <div class="tool" data-name="QEMU" data-desc="Generic and open-source machine emulator and virtualizer.">
+            <h3 id="qemu">78. QEMU</h3>
+            <p>Generic and open-source machine emulator and virtualizer.</p>
+          </div>
+
+          <div class="tool" data-name="VirtualBox" data-desc="Free and open-source hosted hypervisor for x86 virtualization.">
+            <h3 id="virtualbox">79. VirtualBox</h3>
+            <p>Free and open-source hosted hypervisor for x86 virtualization.</p>
+          </div>
+
+          <div class="tool" data-name="Kubernetes" data-desc="Open-source container orchestration system for automating software deployment, scaling, and management.">
+            <h3 id="kubernetes">80. Kubernetes</h3>
+            <p>Open-source container orchestration system for automating software deployment, scaling, and management.</p>
+          </div>
+
+          <div class="tool" data-name="Vagrant" data-desc="Tool for building and maintaining portable virtual software development environments.">
+            <h3 id="vagrant">81. Vagrant</h3>
+            <p>Tool for building and maintaining portable virtual software development environments.</p>
+          </div>
+
+        </section>
+<!-- CATEGORÍA: Automation & Config Management -->
+<section id="automation" class="card">
+  <h2>Automation &amp; Configuration Management</h2>
+<p class="lead" style="margin-bottom:12px;color:var(--muted)">Herramientas para análisis de código, pruebas de carga y evaluación de seguridad en entornos de desarrollo.</p>
+
+  <div class="tool" data-name="Ansible" data-desc="Open-source software provisioning, configuration management, and application-deployment tool.">
+    <h3 id="ansible">82. Ansible</h3>
+    <p>Open-source software provisioning, configuration management, and application-deployment tool.</p>
+  </div>
+
+  <div class="tool" data-name="Puppet" data-desc="Configuration management tool for automating the management of server infrastructure.">
+    <h3 id="puppet">83. Puppet</h3>
+    <p>Configuration management tool for automating the management of server infrastructure.</p>
+  </div>
+
+  <div class="tool" data-name="Chef" data-desc="Configuration management tool for streamlining the task of configuring and maintaining servers.">
+    <h3 id="chef">84. Chef</h3>
+    <p>Configuration management tool for streamlining the task of configuring and maintaining servers.</p>
+  </div>
+
+  <div class="tool" data-name="SaltStack" data-desc="Configuration management software for managing server infrastructure.">
+    <h3 id="saltstack">85. SaltStack</h3>
+    <p>Configuration management software for managing server infrastructure.</p>
+  </div>
+
+  <div class="tool" data-name="Terraform" data-desc="Infrastructure as code tool for building, changing, and versioning infrastructure safely.">
+    <h3 id="terraform">86. Terraform</h3>
+    <p>Infrastructure as code tool for building, changing, and versioning infrastructure safely.</p>
+  </div>
+
+  <div class="tool" data-name="Kubernetes" data-desc="Open-source container orchestration system for automating software deployment, scaling, and management.">
+    <h3 id="kubernetes">87. Kubernetes</h3>
+    <p>Open-source container orchestration system for automating software deployment, scaling, and management.</p>
+  </div>
+</section>
+
+<!-- CATEGORÍA: Dev / Testing Tools -->
+<section id="devtools" class="card">
+  <h2>Dev, Load Testing &amp; Code Analysis</h2>
+<p class="lead" style="margin-bottom:12px;color:var(--muted)">Herramientas para análisis de código, pruebas de carga y evaluación de seguridad en entornos de desarrollo.</p>
+  <div class="tool" data-name="Apache JMeter" data-desc="Open-source software designed to load test functional behavior and measure performance.">
+    <h3 id="apache-jmeter">88. Apache JMeter</h3>
+    <p>Open-source software designed to load test functional behavior and measure performance.</p>
+  </div>
+
+  <div class="tool" data-name="Clang" data-desc="A compiler front end for the C, C++, and Objective-C programming languages.">
+    <h3 id="clang">89. Clang</h3>
+    <p>A compiler front end for the C, C++, and Objective-C programming languages.</p>
+  </div>
+
+  <div class="tool" data-name="Flawfinder" data-desc="Scans C/C++ source code for security vulnerabilities.">
+    <h3 id="flawfinder">90. Flawfinder</h3>
+    <p>Scans C/C++ source code for security vulnerabilities.</p>
+  </div>
+</section>
+
+<!-- CATEGORÍA: Recon & Scanning -->
+<section id="recon" class="card">
+  <h2>Reconnaissance &amp; Scanning</h2>
+  <p class="lead" style="margin-bottom:12px;color:var(--muted)">
+Herramientas dedicadas al reconocimiento activo y pasivo mediante escaneo de puertos, servicios, subdominios, rutas y recopilación de información abierta (OSINT).
+</p>
+
+  <div class="tool" data-name="OWASP ZAP" data-desc="Open-source web application security scanner.">
+    <h3 id="owasp-zap">91. OWASP ZAP</h3>
+    <p>Open-source web application security scanner.</p>
+  </div>
+
+  <div class="tool" data-name="Sublist3r" data-desc="Fast subdomains enumeration tool for penetration testers.">
+    <h3 id="sublist3r">92. Sublist3r</h3>
+    <p>Fast subdomains enumeration tool for penetration testers.</p>
+  </div>
+
+  <div class="tool" data-name="Dirbuster" data-desc="Multi-threaded application designed to brute-force directories and file names on web servers.">
+    <h3 id="dirbuster">93. Dirbuster</h3>
+    <p>Multi-threaded application designed to brute-force directories and file names on web servers.</p>
+  </div>
+
+  <div class="tool" data-name="Medusa" data-desc="Speedy, massively parallel, modular, login brute-forcer.">
+    <h3 id="medusa">94. Medusa</h3>
+    <p>Speedy, massively parallel, modular, login brute-forcer.</p>
+  </div>
+
+  <div class="tool" data-name="Gobuster" data-desc="Tool used to brute-force URIs (directories and files) and DNS subdomains.">
+    <h3 id="gobuster">95. Gobuster</h3>
+    <p>Tool used to brute-force URIs (directories and files) and DNS subdomains.</p>
+  </div>
+
+  <div class="tool" data-name="DMitry" data-desc="Deepmagic Information Gathering Tool, a UNIX/(GNU)Linux CLI program coded in C.">
+    <h3 id="dmitry">96. DMitry</h3>
+    <p>Deepmagic Information Gathering Tool, a UNIX/(GNU)Linux CLI program coded in C.</p>
+  </div>
+
+  <div class="tool" data-name="WhatWeb" data-desc="Next generation web scanner.">
+    <h3 id="whatweb">97. WhatWeb</h3>
+    <p>Next generation web scanner.</p>
+  </div>
+
+  <div class="tool" data-name="theHarvester" data-desc="E-mail, subdomain, and people names harvester.">
+    <h3 id="theharvester">98. theHarvester</h3>
+    <p>E-mail, subdomain, and people names harvester.</p>
+  </div>
+
+  <div class="tool" data-name="Amass" data-desc="In-depth DNS enumeration and network mapping.">
+    <h3 id="amass">99. Amass</h3>
+    <p>In-depth DNS enumeration and network mapping.</p>
+  </div>
+
+  <div class="tool" data-name="Masscan" data-desc="TCP port scanner, potentially faster than Nmap.">
+    <h3 id="masscan">100. Masscan</h3>
+    <p>TCP port scanner, potentially faster than Nmap.</p>
+  </div>
+</section>
+
+<!-- CATEGORÍA: Exploitation -->
+<section id="exploitation" class="card">
+  <h2>Exploitation &amp; Vulnerability Tools</h2>
+
+  <div class="tool" data-name="ExploitDB" data-desc="Database of exploits and vulnerable software.">
+    <h3 id="exploitdb">101. ExploitDB</h3>
+    <p>Database of exploits and vulnerable software.</p>
+  </div>
+
+  <div class="tool" data-name="SearchSploit" data-desc="Command line search tool for ExploitDB.">
+    <h3 id="searchsploit">102. SearchSploit</h3>
+    <p>Command line search tool for ExploitDB.</p>
+  </div>
+
+  <div class="tool" data-name="Commix" data-desc="Automated command injection and exploitation tool.">
+    <h3 id="commix">103. Commix</h3>
+    <p>Automated command injection and exploitation tool.</p>
+  </div>
+</section>
+
+<!-- CATEGORÍA: Misc & Databases -->
+<section id="misc" class="card">
+  <h2>Miscellaneous &amp; Databases</h2>
+
+  <div class="tool" data-name="Scalpel" data-desc="File carving and indexing application.">
+    <h3 id="scalpel">104. Scalpel</h3>
+    <p>File carving and indexing application.</p>
+  </div>
+</section>
+     
+
+        <footer>
+          <p>Nota:  Informacion con fines de concienciación, entrenamiento y análisis. No fomenta el uso malicioso. </p>
+        </footer>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    // Lista completa de las 100 herramientas para índice y búsqueda (nombre y ancla)
+    const tools = [
+      {name:"Metasploit",id:"metasploit"},
+      {name:"Nmap",id:"nmap"},
+      {name:"Wireshark",id:"wireshark"},
+      {name:"Aircrack-ng",id:"aircrack-ng"},
+      {name:"John the Ripper",id:"john-the-ripper"},
+      {name:"Hydra",id:"hydra"},
+      {name:"Burp Suite",id:"burp-suite"},
+      {name:"sqlmap",id:"sqlmap"},
+      {name:"Nikto",id:"nikto"},
+      {name:"OpenVAS",id:"openvas"},
+      {name:"Nessus",id:"nessus"},
+      {name:"Snort",id:"snort"},
+      {name:"Ettercap",id:"ettercap"},
+      {name:"Mimikatz",id:"mimikatz"},
+      {name:"Yersinia",id:"yersinia"},
+      {name:"Cain & Abel",id:"cain--abel"},
+      {name:"Social-Engineer Toolkit (SET)",id:"social-engineer-toolkit-set"},
+      {name:"Armitage",id:"armitage"},
+      {name:"Hashcat",id:"hashcat"},
+      {name:"Maltego",id:"maltego"},
+      {name:"BeEF",id:"beef"},
+      {name:"THC-Hydra",id:"thc-hydra"},
+      {name:"Recon-ng",id:"recon-ng"},
+      {name:"Wifite",id:"wifite"},
+      {name:"Responder",id:"responder"},
+      {name:"Sqlninja",id:"sqlninja"},
+      {name:"Reaver",id:"reaver"},
+      {name:"Slowloris",id:"slowloris"},
+      {name:"SEToolkit",id:"setoolkit"},
+      {name:"Sqlsus",id:"sqlsus"},
+      {name:"Wapiti",id:"wapiti"},
+      {name:"Fimap",id:"fimap"},
+      {name:"Arachni",id:"arachni"},
+      {name:"Skipfish",id:"skipfish"},
+      {name:"W3af",id:"w3af"},
+      {name:"Veil-Evasion",id:"veil-evasion"},
+      {name:"PowerSploit",id:"powersploit"},
+      {name:"WPScan",id:"wpscan"},
+      {name:"Immunity Debugger",id:"immunity-debugger"},
+      {name:"Volatility",id:"volatility"},
+      {name:"Binwalk",id:"binwalk"},
+      {name:"Apktool",id:"apktool"},
+      {name:"Clang",id:"clang"},
+      {name:"Flawfinder",id:"flawfinder"},
+      {name:"GDB",id:"gdb"},
+      {name:"Radare2",id:"radare2"},
+      {name:"Cuckoo Sandbox",id:"cuckoo-sandbox"},
+      {name:"OllyDbg",id:"ollydbg"},
+      {name:"ZAP Proxy",id:"zap-proxy"},
+      {name:"MobSF",id:"mobsf"},
+      {name:"RIPS",id:"rips"},
+      {name:"Lynis",id:"lynis"},
+      {name:"Tiger",id:"tiger"},
+      {name:"Bastille",id:"bastille"},
+      {name:"Lynx",id:"lynx"},
+      {name:"Xplico",id:"xplico"},
+      {name:"DFF (Digital Forensics Framework)",id:"dff-digital-forensics-framework"},
+      {name:"Foremost",id:"foremost"},
+      {name:"Scalpel",id:"scalpel"},
+      {name:"Sleuth Kit",id:"sleuth-kit"},
+      {name:"Autopsy",id:"autopsy"},
+      {name:"CAINE",id:"caine"},
+      {name:"DEFT",id:"deft"},
+      {name:"REMnux",id:"remnux"},
+      {name:"Tsurugi Linux",id:"tsurugi-linux"},
+      {name:"Paladin Forensics",id:"paladin-forensics"},
+      {name:"SIFT Workstation",id:"sift-workstation"},
+      {name:"Plaso",id:"plaso"},
+      {name:"Bulk Extractor",id:"bulk-extractor"},
+      {name:"Rekall",id:"rekall"},
+      {name:"Kismet",id:"kismet"},
+      {name:"dsniff",id:"dsniff"},
+      {name:"Tcpdump",id:"tcpdump"},
+      {name:"Yara",id:"yara"},
+      {name:"UPX",id:"upx"},
+      {name:"Valgrind",id:"valgrind"},
+      {name:"QEMU",id:"qemu"},
+      {name:"VirtualBox",id:"virtualbox"},
+      {name:"Docker",id:"docker"},
+      {name:"Vagrant",id:"vagrant"},
+      {name:"Ansible",id:"ansible"},
+      {name:"Puppet",id:"puppet"},
+      {name:"Chef",id:"chef"},
+      {name:"SaltStack",id:"saltstack"},
+      {name:"Terraform",id:"terraform"},
+      {name:"Kubernetes",id:"kubernetes"},
+      {name:"Apache JMeter",id:"apache-jmeter"},
+      {name:"OWASP ZAP",id:"owasp-zap"},
+      {name:"Sublist3r",id:"sublist3r"},
+      {name:"Dirbuster",id:"dirbuster"},
+      {name:"Medusa",id:"medusa"},
+      {name:"Gobuster",id:"gobuster"},
+      {name:"DMitry",id:"dmitry"},
+      {name:"WhatWeb",id:"whatweb"},
+      {name:"theHarvester",id:"theharvester"},
+      {name:"Amass",id:"amass"},
+      {name:"Masscan",id:"masscan"},
+      {name:"ExploitDB",id:"exploitdb"},
+      {name:"SearchSploit",id:"searchsploit"},
+      {name:"Commix",id:"commix"}
+    ];
+
+    // populate left index list
+    const idx = document.getElementById('indexList');
+    tools.sort((a,b)=>a.name.localeCompare(b.name,'es')).forEach(t=>{
+      const li=document.createElement('li');
+      li.innerHTML = `<a href="#${t.id}">${t.name}</a>`;
+      idx.appendChild(li);
+    });
+
+    // search functionality
+    const searchbox = document.getElementById('searchbox');
+    const clearBtn = document.getElementById('clearBtn');
+    searchbox.addEventListener('input', filterTools);
+    clearBtn.addEventListener('click', ()=>{searchbox.value=''; filterTools();});
+
+    function filterTools(){
+      const q = searchbox.value.trim().toLowerCase();
+      const toolsEls = document.querySelectorAll('.tool');
+      if(!q){
+        toolsEls.forEach(el=>el.style.display='block');
+        return;
+      }
+      toolsEls.forEach(el=>{
+        const name = (el.dataset.name || '').toLowerCase();
+        const desc = (el.dataset.desc || '').toLowerCase();
+        if(name.includes(q) || desc.includes(q) || el.textContent.toLowerCase().includes(q)) el.style.display='block';
+        else el.style.display='none';
+      });
+    }
+
+    // keyboard shortcut: "/" focuses search
+    window.addEventListener('keydown', (e)=>{
+      if(e.key==='/' && document.activeElement !== searchbox){
+        e.preventDefault();
+        searchbox.focus();
+      }
+    });
+  </script>
+</body>
+</html>
