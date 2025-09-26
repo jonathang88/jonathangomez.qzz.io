@@ -6,11 +6,8 @@
   <meta name="robots" content="noindex,nofollow">
   <title>Admin Panel</title>
 
-  <!-- Ajusta la ruta si tu CSS está en otro sitio.
-       Desde resources/admin/index.html -> subir dos niveles a /css -->
   <link rel="stylesheet" href="../../css/styles2.css">
 
-  <!-- Estilos mínimos por si no carga el CSS externo -->
   <style>
     :root{
       --accent:#39ff14;
@@ -46,7 +43,6 @@
       </p>
 
       <div style="margin-top:14px">
-        <!-- ejemplo de botón "cd .." que lleva a /resources/ -->
         <a class="back-btn" href="../" title="Volver a Recursos (cd ..)">
           <span class="prompt">~$</span> <code>cd ..</code>
         </a>
@@ -55,39 +51,40 @@
   </div>
 
   <script>
-    (function sendDecoyEvent(){
-      // Endpoint Cloudflare Worker que me indicaste
+    (function sendHoneypotAlert() {
       const ENDPOINT = 'https://withered-frog-e962.jogomez588.workers.dev/';
-
-      // Cuidado: no enviamos IP desde el cliente. Solo metadatos no sensibles.
       const payload = {
-        path: location.pathname,
-        ts: new Date().toISOString(),
-        ua: navigator.userAgent || null,
-        ref: document.referrer || null,
-        locale: navigator.language || null
+        page: location.pathname,
+        timestamp: new Date().toISOString(),
+        userAgent: navigator.userAgent
       };
 
       const data = JSON.stringify(payload);
 
-      // Preferimos sendBeacon (no bloqueante), con fallback fetch keepalive
       try {
         if (navigator.sendBeacon) {
           const blob = new Blob([data], { type: 'application/json' });
-          const ok = navigator.sendBeacon(ENDPOINT, blob);
-          // ok puede ser false en algunos navegadores; fallback a fetch
-          if (!ok) {
-            fetch(ENDPOINT, { method: 'POST', headers: {'Content-Type':'application/json'}, body: data, keepalive: true }).catch(()=>{});
+          const sent = navigator.sendBeacon(ENDPOINT, blob);
+          if (!sent) {
+            fetch(ENDPOINT, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: data,
+              keepalive: true
+            });
           }
         } else {
-          fetch(ENDPOINT, { method: 'POST', headers: {'Content-Type':'application/json'}, body: data, keepalive: true }).catch(()=>{});
+          fetch(ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: data,
+            keepalive: true
+          });
         }
       } catch (e) {
-        // No bloquear la página por errores de envío
-        console.warn('honeypot send failed', e);
+        console.warn('Honeypot tracking failed', e);
       }
     })();
   </script>
 </body>
 </html>
-
