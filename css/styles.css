@@ -86,7 +86,7 @@ p.lead {
 }
 .ascii-heading {
   text-align: center;
-  margin-bottom: 12px; /* ya tiene margin en el <pre>, pero se puede reforzar */
+  margin-bottom: 1rem; 
 }
 
 .ascii-heading pre {
@@ -98,6 +98,8 @@ p.lead {
   white-space: pre-wrap;
   margin-bottom:12px;
   text-align: center;
+  margin: 0 auto 12px auto;
+  max-width: 100%;
 }
 
 .ascii-link {
@@ -120,6 +122,7 @@ p.lead {
   margin-bottom:12px;
   padding-bottom:10px;
   text-align: center;
+  white-space: nowrap;
 }
 
 .cta{
