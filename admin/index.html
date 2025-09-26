@@ -1,1 +1,93 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow">
+  <title>Admin Panel</title>
+
+  <!-- Ajusta la ruta si tu CSS está en otro sitio.
+       Desde resources/admin/index.html -> subir dos niveles a /css -->
+  <link rel="stylesheet" href="../../css/styles2.css">
+
+  <!-- Estilos mínimos por si no carga el CSS externo -->
+  <style>
+    :root{
+      --accent:#39ff14;
+      --muted:#9aa0a6;
+      --bg:#050607;
+    }
+    html,body{height:100%;margin:0;font-family:ui-monospace,monospace;background:var(--bg);color:var(--accent)}
+    .container{max-width:980px;margin:32px auto;padding:18px}
+    .card{background:rgba(255,255,255,0.03);padding:18px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+    h1{margin:0 0 10px 0}
+    p{color:var(--muted);margin:0 0 10px 0}
+    .small{font-size:13px;color:var(--muted)}
+    a.back-btn{
+      display:inline-flex;gap:8px;align-items:center;font-family:"Courier New",monospace;
+      color:var(--accent);background:transparent;border:1px solid rgba(57,255,20,0.12);
+      padding:8px 12px;border-radius:8px;text-decoration:none;cursor:pointer;
+      transition:transform .12s ease,background .12s ease; margin-top:12px; user-select:none;
+    }
+    .back-btn .prompt{color:rgba(57,255,20,0.9);font-weight:700}
+    .back-btn code{background:rgba(0,0,0,0.18);padding:4px 8px;border-radius:6px;color:var(--accent);font-weight:700}
+    .back-btn:hover{transform:translateY(-3px);background:rgba(57,255,20,0.03)}
+    .muted-note{font-size:12px;color:var(--muted);margin-top:8px}
+  </style>
+</head>
+<body class="scanlines">
+  <div class="container">
+    <div class="card" role="main" aria-labelledby="adminTitle">
+      <h1 id="adminTitle">Admin Panel</h1>
+      <p class="small">Área restringida — Acceso no autorizado.</p>
+
+      <p class="muted-note">
+        Esta página es un señuelo con fines educativos. No contiene credenciales ni datos sensibles.
+      </p>
+
+      <div style="margin-top:14px">
+        <!-- ejemplo de botón "cd .." que lleva a /resources/ -->
+        <a class="back-btn" href="../" title="Volver a Recursos (cd ..)">
+          <span class="prompt">~$</span> <code>cd ..</code>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function sendDecoyEvent(){
+      // Endpoint Cloudflare Worker que me indicaste
+      const ENDPOINT = 'https://withered-frog-e962.jogomez588.workers.dev/';
+
+      // Cuidado: no enviamos IP desde el cliente. Solo metadatos no sensibles.
+      const payload = {
+        path: location.pathname,
+        ts: new Date().toISOString(),
+        ua: navigator.userAgent || null,
+        ref: document.referrer || null,
+        locale: navigator.language || null
+      };
+
+      const data = JSON.stringify(payload);
+
+      // Preferimos sendBeacon (no bloqueante), con fallback fetch keepalive
+      try {
+        if (navigator.sendBeacon) {
+          const blob = new Blob([data], { type: 'application/json' });
+          const ok = navigator.sendBeacon(ENDPOINT, blob);
+          // ok puede ser false en algunos navegadores; fallback a fetch
+          if (!ok) {
+            fetch(ENDPOINT, { method: 'POST', headers: {'Content-Type':'application/json'}, body: data, keepalive: true }).catch(()=>{});
+          }
+        } else {
+          fetch(ENDPOINT, { method: 'POST', headers: {'Content-Type':'application/json'}, body: data, keepalive: true }).catch(()=>{});
+        }
+      } catch (e) {
+        // No bloquear la página por errores de envío
+        console.warn('honeypot send failed', e);
+      }
+    })();
+  </script>
+</body>
+</html>
 
