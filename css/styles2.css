@@ -288,7 +288,6 @@ a:focus {
 }
 
 .cv-item ul {
-  list-style: "✔ ";
   padding-left: 16px;
   text-align: left;
   color: #fff;
