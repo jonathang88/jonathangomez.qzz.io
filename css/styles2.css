@@ -288,7 +288,7 @@ a:focus {
 }
 
 .cv-item ul {
-  padding-left: 16px;
+  padding: 30px;
   text-align: left;
   color: #fff;
   line-height: 1.5;
