@@ -242,6 +242,14 @@
   box-shadow: inset 0 -2px 0 rgba(0,0,0,0.35);
 }
 
+a,
+a:visited,
+a:hover,
+a:active,
+a:focus {
+  color: #ffffff !important;
+  text-decoration: none; /* opcional: elimina el subrayado */
+}
 
   @media(max-width:900px){
     .grid {
