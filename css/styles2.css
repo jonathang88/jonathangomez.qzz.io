@@ -250,6 +250,58 @@ a:focus {
   color: #ffffff !important;
   text-decoration: none; /* opcional: elimina el subrayado */
 }
+/* --- Sección mini CV --- */
+.mini-cv {
+  text-align: center;
+}
+
+.cv-box {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 18px;
+  flex-wrap: wrap; /* se apilan si es móvil */
+  margin-top: 10px;
+}
+
+.cv-item {
+  background: var(--card);
+  border: 1px solid rgba(57,255,20,0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,255,0,0.08);
+  width: 300px;
+  padding: 12px;
+}
+
+.cv-item h3 {
+  font-size: 16px;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.cv-item iframe {
+  width: 100%;
+  height: 200px;
+  border-radius: 6px;
+  border: none;
+  background: #000;
+}
+
+.cv-item ul {
+  list-style: "✔ ";
+  padding-left: 16px;
+  text-align: left;
+  color: #fff;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Responsive para pantallas pequeñas */
+@media(max-width:700px) {
+  .cv-item {
+    width: 100%;
+  }
+}
 
   @media(max-width:900px){
     .grid {
