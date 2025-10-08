@@ -38,9 +38,23 @@
       <h1 id="adminTitle">Admin Panel</h1>
       <p class="small">Área restringida — Acceso no autorizado.</p>
 
-      <p class="muted-note">
-        Esta página es un señuelo con fines educativos. No contiene credenciales ni datos sensibles.
-      </p>
+<form id="honeypotForm" class="card" style="margin-top:14px;max-width:420px;">
+  <h2 style="margin:0 0 8px 0;font-size:18px">Admin Login</h2>
+  <p class="small" style="margin-bottom:12px">Introduce tus credenciales para acceder al panel de administración.</p>
+
+  <label class="small" for="hp_user">Usuario</label>
+  <input id="hp_user" name="username" autocomplete="username" required
+         style="display:block;width:100%;padding:8px;margin:6px 0 12px;border-radius:6px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:var(--accent);font-family:monospace">
+
+  <label class="small" for="hp_pass">Contraseña</label>
+  <input id="hp_pass" name="password" type="password" autocomplete="current-password" required
+         style="display:block;width:100%;padding:8px;margin:6px 0 12px;border-radius:6px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:var(--accent);font-family:monospace">
+
+  <div style="display:flex;gap:8px;align-items:center;">
+    <button type="submit" class="back-btn" style="padding:8px 14px;border-radius:8px">Login</button>
+    <span class="small muted-note" id="hp_status" style="margin-left:8px"></span>
+  </div>
+</form>
 
       <div style="margin-top:14px">
         <a class="back-btn" href="../" title="Volver a Recursos (cd ..)">
