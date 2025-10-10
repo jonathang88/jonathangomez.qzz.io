@@ -241,7 +241,7 @@
 
     /* responsive adjustments */
     @media (max-width:720px){
-      .ascii-heading pre{ font-size:14px; }
+      .ascii-heading pre{ font-size:11px; }
       nav.main-nav{ gap:8px; }
       .cta{ padding:10px 20px; font-size:15px }
       .meta{font-size:11px}
@@ -249,7 +249,7 @@
     }
 
     @media (max-width:420px){
-      .ascii-heading pre{ font-size:13px; display:block; text-align:center; }
+      .ascii-heading pre{ font-size:11px; display:block; text-align:center; }
       nav.main-nav{ justify-content:center; }
       .cta{ width:100%; justify-content:center }
     }
