@@ -1,16 +1,14 @@
-
 :root {
   --accent: #39ff14;
-  --accent-dim: #22b30e;
-  --muted: #9aa0a6;
-  --card: rgba(255,255,255,0.03);
-  --bg: #050607;
+  --accent-dim: #26b80f;
+  --bg: #000;
+  --card: rgba(0, 255, 140, 0.05);
+  --muted: #8eff9f;
 }
 
+/* Fondo tipo matrix */
 body {
-  background:
-    radial-gradient(1200px 600px at 10% 10%, rgba(57,255,20,0.03), transparent 6%),
-    radial-gradient(900px 400px at 90% 90%, rgba(57,255,20,0.02), transparent 6%),
-    var(--bg);
-  color: var(--accent);
+  background: linear-gradient(180deg, #000 0%, #020202 100%);
+  background-image: radial-gradient(rgba(57, 255, 20, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
