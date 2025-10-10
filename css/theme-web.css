@@ -1,20 +1,128 @@
 :root {
-  --accent: #ffb400;       
-  --accent-dim: #cc9000;   
-  --bg: #050607;         
+  --accent: #ffb400;        /* Dorado principal */
+  --accent-dim: #cc9000;    /* Dorado atenuado */
+  --muted: #ffdf91;         /* Dorado claro / texto */
   --card: rgba(255, 180, 0, 0.05);
-  --muted: #ffdf91;       
+  --bg: #050607; 
   --maxw: 1100px;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
 }
 
+/* ===== Fondo general ===== */
 body {
- 
   background:
-    radial-gradient(800px 400px at 10% 10%, rgba(255, 180, 0, 0.03), transparent 60%),
-    radial-gradient(800px 400px at 90% 90%, rgba(255, 180, 0, 0.02), transparent 60%),
-    linear-gradient(180deg, #050607 0%, #0a0a0a 100%);
+    radial-gradient(1200px 600px at 10% 10%, rgba(255, 180, 0, 0.03), transparent 6%),
+    radial-gradient(900px 400px at 90% 90%, rgba(255, 180, 0, 0.02), transparent 6%),
+    var(--bg);
   color: var(--accent);
   margin: 0;
   padding: 24px;
   line-height: 1.5;
+}
+
+/* ===== Grid de cards ===== */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+  padding: 10px 0;
+}
+
+/* ===== Tarjetas ===== */
+.card {
+  background: rgba(255, 180, 0, 0.05);
+  border: 1px solid rgba(255, 180, 0, 0.25);
+  border-radius: 14px;
+  padding: 22px 24px;
+  transition: all 0.3s ease;
+  color: var(--muted);
+  box-shadow: 0 0 8px rgba(255, 180, 0, 0.08);
+  backdrop-filter: blur(6px);
+}
+
+.card h4 {
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 0.92em;
+  line-height: 1.45;
+  margin-bottom: 14px;
+}
+
+/* ===== Enlaces ===== */
+.card a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.card a:hover {
+  color: var(--accent-dim);
+  text-decoration: underline;
+}
+
+/* ===== Hover de la card ===== */
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: 0 0 15px rgba(255, 180, 0, 0.3);
+  background: rgba(255, 180, 0, 0.08);
+}
+
+/* ===== Botones secundarios dentro de la card ===== */
+.btn.secondary {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--muted);
+}
+
+.card-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ===== Botón de volver ===== */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 180, 0, 0.1);
+  border: 1px solid rgba(255, 180, 0, 0.4);
+  color: var(--accent);
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-family: "Fira Code", monospace;
+  font-size: 0.95em;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(255, 180, 0, 0.15);
+}
+
+.back-btn:hover {
+  background: rgba(255, 180, 0, 0.2);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(255, 180, 0, 0.3);
+  text-decoration: none;
+}
+
+/* Icono tipo terminal */
+.back-btn .prompt {
+  color: var(--accent);
+  font-weight: 600;
+}
