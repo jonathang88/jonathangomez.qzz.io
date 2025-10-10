@@ -1,1 +1,16 @@
 
+:root {
+  --accent: #39ff14;
+  --accent-dim: #22b30e;
+  --muted: #9aa0a6;
+  --card: rgba(255,255,255,0.03);
+  --bg: #050607;
+}
+
+body {
+  background:
+    radial-gradient(1200px 600px at 10% 10%, rgba(57,255,20,0.03), transparent 6%),
+    radial-gradient(900px 400px at 90% 90%, rgba(57,255,20,0.02), transparent 6%),
+    var(--bg);
+  color: var(--accent);
+}
