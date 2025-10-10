@@ -15,3 +15,45 @@ body {
     var(--bg);
   color: var(--accent);
 }
+.card {
+  background: rgba(0, 188, 212, 0.04);
+  border: 1px solid rgba(0, 188, 212, 0.2);
+  border-radius: 12px;
+  padding: 16px 20px;
+  transition: all 0.3s ease;
+  color: var(--muted);
+  box-shadow: 0 0 0 rgba(0, 188, 212, 0);
+}
+
+.card h4 {
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 0.9em;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 0 12px rgba(0, 188, 212, 0.25);
+  background: rgba(0, 188, 212, 0.07);
+}
+
+
+.card a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.card a:hover {
+  color: var(--accent-dim);
+  text-decoration: underline;
+}
