@@ -68,6 +68,22 @@ body {
   box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
   background: rgba(0, 188, 212, 0.08);
 }
+.btn.secondary {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--muted);
+}
+.card-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--accent);
+  color: var(--accent);
+}
 .back-btn {
   display: inline-flex;
   align-items: center;
