@@ -4,6 +4,7 @@
   --bg: #000;
   --card: rgba(0, 255, 140, 0.05);
   --muted: #8eff9f;
+    --maxw: 1100px;
 }
 
 /* Fondo tipo matrix */
