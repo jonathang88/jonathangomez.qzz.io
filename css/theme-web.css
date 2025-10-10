@@ -1,15 +1,20 @@
 :root {
-  --accent: #ffb400;
-  --accent-dim: #cc9000;
-  --bg: #050607; 
+  --accent: #ffb400;       
+  --accent-dim: #cc9000;   
+  --bg: #050607;         
   --card: rgba(255, 180, 0, 0.05);
-  --muted: #ffdf91;
-  --maxw: 1100px;  
+  --muted: #ffdf91;        /* Texto secundario claro */
+  --maxw: 1100px;
   font-family: 'Inter', sans-serif;
 }
 
 body {
-  background: linear-gradient(180deg, #0a0a0a 0%, #111111 100%);
-  background-image: radial-gradient(rgba(255, 180, 0, 0.04) 1px, transparent 1px);
-  background-size: 45px 45px;
-}
+ 
+  background:
+    radial-gradient(800px 400px at 10% 10%, rgba(255, 180, 0, 0.03), transparent 60%),
+    radial-gradient(800px 400px at 90% 90%, rgba(255, 180, 0, 0.02), transparent 60%),
+    linear-gradient(180deg, #050607 0%, #0a0a0a 100%);
+  color: var(--accent);
+  margin: 0;
+  padding: 24px;
+  line-height: 1.5;
