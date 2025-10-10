@@ -68,3 +68,31 @@ body {
   box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
   background: rgba(0, 188, 212, 0.08);
 }
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0, 255, 80, 0.1); /* leve fondo verde translúcido */
+  border: 1px solid rgba(0, 255, 80, 0.4);
+  color: var(--accent);
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-family: "Fira Code", monospace;
+  font-size: 0.95em;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(0, 255, 80, 0.15);
+}
+
+.back-btn:hover {
+  background: rgba(0, 255, 80, 0.2);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(0, 255, 80, 0.3);
+  text-decoration: none;
+}
+
+.back-btn .prompt {
+  color: #39ff14; /* verde hacker */
+  font-weight: 600;
+}
