@@ -1,16 +1,13 @@
 :root {
-  --accent: #ffb347;  /* naranja creativo */
-  --accent-dim: #e39b35;
-  --muted: #b0a9a0;
-  --card: rgba(255,255,255,0.04);
-  --bg: #080707;
+  --accent: #ffb400;
+  --accent-dim: #cc9000;
+  --bg: #0a0a0a;
+  --card: rgba(255, 180, 0, 0.05);
+  --muted: #ffdf91;
 }
 
 body {
-  background:
-    radial-gradient(1200px 600px at 10% 10%, rgba(255,179,71,0.05), transparent 8%),
-    radial-gradient(900px 400px at 90% 90%, rgba(255,179,71,0.03), transparent 8%),
-    var(--bg);
-  color: var(--accent);
+  background: linear-gradient(180deg, #0a0a0a 0%, #111111 100%);
+  background-image: radial-gradient(rgba(255, 180, 0, 0.04) 1px, transparent 1px);
+  background-size: 45px 45px;
 }
-
