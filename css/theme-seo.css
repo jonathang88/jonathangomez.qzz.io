@@ -1,14 +1,17 @@
 :root {
-  --accent: #00aaff;
-  --accent-dim: #0080cc;
-  --bg: #030712;
-  --card: rgba(0, 170, 255, 0.05);
-  --muted: #9ecae1;
+  --accent: #00bcd4; 
+  --accent-dim: #0097a7;
+  --muted: #9aa0a6;
+  --card: rgba(255,255,255,0.03);
+  --bg: #050607; 
   --maxw: 1100px;
+  font-family: 'Inter', sans-serif;
 }
 
 body {
-  background: linear-gradient(180deg, #030712 0%, #060b12 100%);
-  background-image: radial-gradient(rgba(0, 170, 255, 0.03) 1px, transparent 1px);
-  background-size: 50px 50px;
+  background:
+    radial-gradient(1200px 600px at 10% 10%, rgba(0,188,212,0.03), transparent 6%),
+    radial-gradient(900px 400px at 90% 90%, rgba(0,188,212,0.02), transparent 6%),
+    var(--bg);
+  color: var(--accent);
 }
