@@ -79,7 +79,7 @@
 
     .subtitle{
       font-size:clamp(12px, 2.2vw, 16px);
-      color:var(--muted);
+      color:#fff;
       margin-top:4px;
       margin-bottom:12px;
       padding-bottom:10px;
