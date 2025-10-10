@@ -4,6 +4,7 @@
   --bg: #030712;
   --card: rgba(0, 170, 255, 0.05);
   --muted: #9ecae1;
+  --maxw: 1100px;
 }
 
 body {
