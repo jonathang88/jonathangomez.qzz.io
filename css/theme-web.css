@@ -3,9 +3,9 @@
   --accent-dim: #cc9000;   
   --bg: #050607;         
   --card: rgba(255, 180, 0, 0.05);
-  --muted: #ffdf91;        /* Texto secundario claro */
+  --muted: #ffdf91;       
   --maxw: 1100px;
-  font-family: 'Inter', sans-serif;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
 }
 
 body {
