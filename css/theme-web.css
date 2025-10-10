@@ -1,1 +1,16 @@
+:root {
+  --accent: #ffb347;  /* naranja creativo */
+  --accent-dim: #e39b35;
+  --muted: #b0a9a0;
+  --card: rgba(255,255,255,0.04);
+  --bg: #080707;
+}
+
+body {
+  background:
+    radial-gradient(1200px 600px at 10% 10%, rgba(255,179,71,0.05), transparent 8%),
+    radial-gradient(900px 400px at 90% 90%, rgba(255,179,71,0.03), transparent 8%),
+    var(--bg);
+  color: var(--accent);
+}
 
