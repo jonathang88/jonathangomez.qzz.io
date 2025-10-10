@@ -5,7 +5,7 @@
   --card: rgba(255,255,255,0.03);
   --bg: #050607; 
   --maxw: 1100px;
-  font-family: 'Inter', sans-serif;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
 }
 
 body {
