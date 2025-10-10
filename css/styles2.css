@@ -1,28 +1,4 @@
 
-
-  :root {
-    --accent: #39ff14;       /* verde hacker */
-    --accent-dim: #22b30e;   /* verde menos brillante */
-    --muted: #9aa0a6;        /* gris sutil */
-    --card: rgba(255,255,255,0.03); /* fondo tipo glass oscuro */
-    --bg: #050607;           /* fondo base oscuro */
-    --maxw: 1100px;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
-  }
-
-  body {
-    background:
-      radial-gradient(1200px 600px at 10% 10%, rgba(57,255,20,0.03), transparent 6%),
-      radial-gradient(900px 400px at 90% 90%, rgba(57,255,20,0.02), transparent 6%),
-      var(--bg);
-    color: var(--accent);
-    margin: 0;
-    padding: 24px;
-    line-height: 1.45;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
   .container {
     max-width: var(--maxw);
     margin: 0 auto;
