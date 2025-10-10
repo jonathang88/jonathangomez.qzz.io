@@ -5,6 +5,7 @@
   --card: rgba(255, 180, 0, 0.05);
   --muted: #ffdf91;
   --maxw: 1100px;  
+  font-family: 'Inter', sans-serif;
 }
 
 body {
