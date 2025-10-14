@@ -70,14 +70,50 @@
           </div>
         </div>
 
-        <div class="card">
-          <h4>Network Scanner</h4>
-          <p>Custom Python-based network scanner with port mapping and banner grabbing.</p>
-          <div class="card-actions">
-            <a href="#" target="_blank" class="btn">💻 View code</a>
-            <a href="#" target="_blank" class="btn secondary">📄 Documentation</a>
-          </div>
-        </div>
+<div class="card project-card" id="network-scanner">
+  <div class="card-head">
+    <h4>Network Scanner</h4>
+    <div class="meta-row" aria-hidden="true">
+      <div class="tags" role="list">
+        <span class="tag" role="listitem">WordPress</span>
+        <span class="tag" role="listitem">wpDiscuz</span>
+        <span class="tag" role="listitem">Python</span>
+      </div>
+      <span class="vuln-badge" title="Vulnerability exploited">Exploited: wpDiscuz RCE</span>
+    </div>
+  </div>
+
+  <p class="project-desc">
+    Custom Python-based network scanner adapted to discover and enumerate WordPress instances and vulnerable plugins.
+    Includes automated port mapping, banner grabbing and a companion exploitation lab for wpDiscuz vulnerability.
+  </p>
+
+  <div class="card-actions">
+    <a href="https://github.com/tuusuario/network-scanner" target="_blank" class="btn">💻 View code</a>
+    <a href="/cybersecurity/resources/NetworkScanner_Lab.pdf" target="_blank" class="btn secondary">📄 Lab PDF</a>
+    <a href="/cybersecurity/resources/wpdiscuz-exploit.md" target="_blank" class="btn secondary">🧩 Vulnerability writeup</a>
+  </div>
+
+  <!-- Lab notes (ocultas por defecto, expandible) -->
+  <details class="lab-notes" aria-labelledby="lab-notes-summary">
+    <summary id="lab-notes-summary">📝 Lab notes — key steps (click to expand)</summary>
+    <ol>
+      <li>Recon & discovery — enumeration of hosts and WordPress instances.</li>
+      <li>Detection of vulnerable plugin — fingerprinting wpDiscuz versions.</li>
+      <li>Use of the exploit & webshell — upload / trigger RCE payload.</li>
+      <li>Reverse shell — obtain interactive session on target.</li>
+      <li>Privilege verification & sudo — identify user and sudo rights.</li>
+      <li>Escalation with Nokogiri — exploit path for local privilege escalation.</li>
+      <li>Reading sensitive files — extraction of config and credentials.</li>
+      <li>Using pspy64 — process monitoring to catch cron tasks and secrets.</li>
+      <li>Exploitation via Wildcard Injection — secondary vector discovery.</li>
+      <li>Keys and root access — retrieving keys and achieving root.</li>
+      <li>Evidence (flags) — captured artefacts and PoC evidence.</li>
+      <li>Mitigations & recommendations — patching, least privilege, input validation, WAF rules.</li>
+    </ol>
+  </details>
+</div>
+
 
         <div class="card">
           <h4>DVWA Pentesting Lab</h4>
