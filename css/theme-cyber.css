@@ -155,7 +155,7 @@ body {
   font-size: 0.85em;
   margin-top: 2px;
 }
-/* Botón de idioma */
+
 .lang-btn {
   position: absolute;
   top: 20px;
@@ -169,6 +169,7 @@ body {
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
+  z-index: 10;
 }
 
 .lang-btn:hover {
@@ -177,23 +178,26 @@ body {
   transform: translateY(-2px);
 }
 
-/* Textos por idioma */
-.es {
+/* 🔹 Textos por idioma */
+.text-es,
+.title-es {
   display: none;
   color: var(--muted);
 }
 
-.en {
-  display: block;
-  color: #ddd;
+.text-en,
+.title-en {
+  display: inline;
+  color: #fff;
 }
 
-/* Cuando se active el modo español */
-body.es-mode .en {
+/* 🔹 Cuando se activa el modo español */
+body.es-mode .text-en,
+body.es-mode .title-en {
   display: none;
 }
 
-body.es-mode .es {
-  display: block;
+body.es-mode .text-es,
+body.es-mode .title-es {
+  display: inline;
 }
-
