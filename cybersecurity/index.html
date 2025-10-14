@@ -97,3 +97,10 @@
   </div>
 </body>
 </html>
+<script>
+  const langBtn = document.getElementById("lang-toggle");
+  langBtn.addEventListener("click", () => {
+    document.body.classList.toggle("es-mode");
+    langBtn.textContent = document.body.classList.contains("es-mode") ? "EN" : "ES";
+  });
+</script>
