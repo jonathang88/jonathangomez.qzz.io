@@ -314,3 +314,91 @@ a:focus {
   border-right: 1px solid rgba(0, 255, 144, 0.3);
   padding-right: 2rem;
 }
+
+/* Project card enhancements */
+.project-card .card-head {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: rgba(57,255,20,0.06);
+  border: 1px solid rgba(57,255,20,0.15);
+  color: var(--muted);
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 0.78em;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+.vuln-badge {
+  background: rgba(255, 40, 40, 0.06);
+  border: 1px solid rgba(255, 40, 40, 0.12);
+  color: #ff9b9b;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 0.82em;
+  font-weight: 700;
+}
+
+/* Project description */
+.project-desc {
+  color: var(--muted);
+  font-size: 0.95em;
+  line-height: 1.45;
+  margin-top: 12px;
+}
+
+/* Lab notes */
+.lab-notes {
+  margin-top: 14px;
+  border-top: 1px dashed rgba(57,255,20,0.08);
+  padding-top: 12px;
+  color: var(--muted);
+}
+
+.lab-notes summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--accent);
+  list-style: none;
+  outline: none;
+}
+
+.lab-notes ol {
+  margin: 10px 0 0 18px;
+  padding: 0;
+}
+
+.lab-notes li {
+  margin: 6px 0;
+  font-size: 0.92em;
+}
+
+/* Ajustes de botones dentro de la card (evitar que sobresalgan) */
+.project-card .card-actions {
+  margin-top: 12px;
+}
+
+/* Pequeñas mejoras responsive */
+@media (max-width: 720px) {
+  .meta-row { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .vuln-badge { align-self: flex-start; }
+}
+
