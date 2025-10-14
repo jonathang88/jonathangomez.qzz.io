@@ -143,3 +143,16 @@ body {
   margin-top: -2px;
   letter-spacing: 0.5px;
 }
+.text-en {
+  display: block;
+  color: #ddd;
+  font-size: 0.9em;
+}
+
+.text-es {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85em;
+  margin-top: 2px;
+}
+
