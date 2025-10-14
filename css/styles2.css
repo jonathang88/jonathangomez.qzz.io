@@ -261,18 +261,6 @@ a:focus {
   gap: 2rem;
 }
 
-/* Columna Izquierda */
-.cv-left {
-  flex: 0 0 45%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  color: var(--accent);
-  border-right: 1px solid rgba(0, 255, 144, 0.3);
-  padding-right: 2rem;
-}
-
 .cv-title {
   font-size: 1.8rem;
   color: #fff;
@@ -284,18 +272,6 @@ a:focus {
   font-size: 1rem;
   margin-bottom: 1.5rem;
 }
-
-/* Columna Derecha */
-.cv-right {
-  flex: 0 0 55%;
-  background: rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(0, 255, 144, 0.3);
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 0 15px rgba(0, 255, 144, 0.2);
-  overflow-y: auto;
-}
-
 .cv-section h3 {
   color: var(--accent);
   margin-bottom: 8px;
@@ -313,15 +289,6 @@ a:focus {
   line-height: 1.5;
 }
 
-/* ==== Scroll minimal ==== */
-.cv-right::-webkit-scrollbar {
-  width: 6px;
-}
-.cv-right::-webkit-scrollbar-thumb {
-  background-color: var(--accent-dim);
-  border-radius: 6px;
-}
-
 /* ==== Responsive ==== */
 @media (max-width: 900px) {
   .cv-container {
@@ -335,8 +302,5 @@ a:focus {
     text-align: center;
     padding-right: 0;
     padding-bottom: 1.5rem;
-  }
-  .cv-right {
-    margin-top: 1rem;
   }
 }
