@@ -39,6 +39,21 @@
             color: blue;
             text-decoration: underline;
         }
+        
+        .quiz-button {
+            padding: 8px 16px;
+            background-color: #007cba;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .quiz-input {
+            padding: 8px;
+            width: 200px;
+            margin: 5px;
+        }
     </style>
 </head>
 <body>
@@ -63,8 +78,8 @@
 
     <div class="footer">
         <p><strong>What's the name of the song?</strong></p>
-        <input type="text" id="songInput" placeholder="Escribe: los solidarios">
-        <button onclick="mostrarLink()">Verificar</button>
+        <input type="text" id="songInput" class="quiz-input" placeholder="Escribe: los solidarios">
+        <button id="verificarBtn" class="quiz-button">Verificar</button>
         
         <div id="linkFormulario" class="link-oculto">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSe48E6i-ndt2vTvB3gMGM17r82BpzoVDjUz7mA_RFkHxgMQAg/viewform" target="_blank">
@@ -74,23 +89,32 @@
     </div>
 
     <script>
-        function mostrarLink() {
-            var input = document.getElementById('songInput').value.toLowerCase();
-            var linkDiv = document.getElementById('linkFormulario');
+        document.addEventListener('DOMContentLoaded', function() {
+            const verificarBtn = document.getElementById('verificarBtn');
+            const songInput = document.getElementById('songInput');
             
-            if (input === "los solidarios" || input === "los solidarios") {
-                linkDiv.className = 'link-visible';
-            } else {
-                alert("Incorrecto. La respuesta es: los solidarios");
-                document.getElementById('songInput').value = '';
+            function mostrarLink() {
+                var input = songInput.value.toLowerCase().trim();
+                var linkDiv = document.getElementById('linkFormulario');
+                
+                if (input === "los solidarios" || input === "los solidarios") {
+                    linkDiv.className = 'link-visible';
+                } else {
+                    alert("Incorrecto. La respuesta es: los solidarios");
+                    songInput.value = '';
+                    songInput.focus();
+                }
             }
-        }
-        
-        // Enter key support
-        document.getElementById('songInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                mostrarLink();
-            }
+            
+            // Event listener para el botón
+            verificarBtn.addEventListener('click', mostrarLink);
+            
+            // Event listener para Enter
+            songInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    mostrarLink();
+                }
+            });
         });
     </script>
 </body>
