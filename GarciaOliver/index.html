@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="../css/styles.css">
     <title>Garcia Oliver</title>
     <style>
         body {
@@ -23,66 +22,22 @@
             flex: 1;
         }
         
-        audio {
-            width: 100%;
-            margin: 20px 0;
-        }
-        
-        .download-btn {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            display: inline-block;
-            margin: 10px 0;
-        }
-        
-        .hash {
-            font-family: monospace;
-            font-size: 12px;
-            color: #666;
-            margin: 15px 0;
-            word-break: break-all;
-        }
-        
         .footer {
-            background-color: #000;
+            background-color: #f5f5f5;
             padding: 20px;
             text-align: center;
             border-top: 1px solid #ddd;
-            margin-top: auto;
         }
         
-        .quiz-container {
-            max-width: 400px;
-            margin: 0 auto;
+        .link-oculto {
+            display: none;
         }
         
-        .quiz-input {
-            padding: 10px;
-            width: 200px;
-            margin: 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        
-        .quiz-button {
-            padding: 10px 20px;
-            background-color: #007cba;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        
-        .quiz-button:hover {
-            background-color: #005a87;
-        }
-        
-        .question {
-            margin-bottom: 15px;
-            font-weight: bold;
+        .link-visible {
+            display: block;
+            margin-top: 10px;
+            color: blue;
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -97,49 +52,44 @@
         
         <br>
         
-        <a href="Chicho Sanchez Ferlosio.mp3" download="Chicho_Sanchez_Ferlosio.mp3" class="download-btn">
+        <a href="Chicho Sanchez Ferlosio.mp3" download="Chicho_Sanchez_Ferlosio.mp3" style="background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">
             Descargar MP3
         </a>
         
-        <div class="hash">
+        <div style="font-family: monospace; font-size: 12px; color: #666; margin: 15px 0;">
             Hash Virus total: 45e5d191b5b3ae8104f5bdf49f75745672560663eddcc09bcecd35b7b62ce52a
         </div>
     </div>
 
-    <!-- Footer con la pregunta -->
     <div class="footer">
-        <div class="quiz-container">
-            <div class="question">What's the name of the song?</div>
-            <input type="text" id="respuesta" class="quiz-input" placeholder="Answer here...">
-            <button onclick="verificarRespuesta()" class="quiz-button">Enviar Respuesta / Send Answer</button>
+        <p><strong>What's the name of the song?</strong></p>
+        <input type="text" id="songInput" placeholder="Escribe: los solidarios">
+        <button onclick="mostrarLink()">Verificar</button>
+        
+        <div id="linkFormulario" class="link-oculto">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSe48E6i-ndt2vTvB3gMGM17r82BpzoVDjUz7mA_RFkHxgMQAg/viewform" target="_blank">
+                ✅ ¡Correcto! Haz clic aquí para ir al formulario
+            </a>
         </div>
     </div>
 
     <script>
-        function verificarRespuesta() {
-            const respuesta = document.getElementById('respuesta').value.toLowerCase().trim();
-            const respuestasCorrectas = [
-                "los solidarios",
-                "los solidarios", 
-                "solidarios",
-                "garcia oliver",
-                "garcía oliver"
-            ];
-
-            if (respuestasCorrectas.includes(respuesta)) {
-                // Redirigir al Google Form
-                window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSe48E6i-ndt2vTvB3gMGM17r82BpzoVDjUz7mA_RFkHxgMQAg/viewform?usp=dialog";
+        function mostrarLink() {
+            var input = document.getElementById('songInput').value.toLowerCase();
+            var linkDiv = document.getElementById('linkFormulario');
+            
+            if (input === "los solidarios" || input === "los solidarios") {
+                linkDiv.className = 'link-visible';
             } else {
-                alert("Respuesta incorrecta. ¡Intenta de nuevo!");
-                document.getElementById('respuesta').value = '';
-                document.getElementById('respuesta').focus();
+                alert("Incorrecto. La respuesta es: los solidarios");
+                document.getElementById('songInput').value = '';
             }
         }
-
-        // Permitir enviar con Enter
-        document.getElementById('respuesta').addEventListener('keypress', function(e) {
+        
+        // Enter key support
+        document.getElementById('songInput').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
-                verificarRespuesta();
+                mostrarLink();
             }
         });
     </script>
