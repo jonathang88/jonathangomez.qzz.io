@@ -42,4 +42,37 @@
         </a>
          Hash Virus total: 45e5d191b5b3ae8104f5bdf49f75745672560663eddcc09bcecd35b7b62ce52a
     </div>
+
+     <h1>¿Cuál es el nombre de la canción?</h1>
+    <p>Pista: Es una canción de Chicho Sanchez Ferlosio</p>
+    
+    <input type="text" id="respuesta" placeholder="Escribe tu respuesta aquí...">
+    <button onclick="verificarRespuesta()">Enviar respuesta</button>
+
+    <script>
+        function verificarRespuesta() {
+            const respuesta = document.getElementById('respuesta').value.toLowerCase().trim();
+            const respuestasCorrectas = [
+                "los solidarios",
+                "los solidarios",
+                "solidarios"
+            ];
+
+            if (respuestasCorrectas.includes(respuesta)) {
+                // Redirigir al Google Form
+                window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSe48E6i-ndt2vTvB3gMGM17r82BpzoVDjUz7mA_RFkHxgMQAg/viewform?usp=dialog";
+            } else {
+                alert("Respuesta incorrecta. ¡Intenta de nuevo!");
+                document.getElementById('respuesta').value = '';
+                document.getElementById('respuesta').focus();
+            }
+        }
+
+        // Permitir enviar con Enter
+        document.getElementById('respuesta').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                verificarRespuesta();
+            }
+        });
+    </script>
 </body>
