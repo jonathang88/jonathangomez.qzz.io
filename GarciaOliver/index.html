@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Garcia Oliver</title>
+    <link rel="stylesheet" href="../css/styles.css">
     <style>
         body {
             margin: 0;
@@ -29,30 +30,20 @@
             border-top: 1px solid #ddd;
         }
         
-        .link-oculto {
-            display: none;
-        }
-        
-        .link-visible {
-            display: block;
-            margin-top: 10px;
-            color: blue;
-            text-decoration: underline;
-        }
-        
-        .quiz-button {
-            padding: 8px 16px;
-            background-color: #007cba;
+        .form-link {
+            display: inline-block;
+            background: #4285f4;
             color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
         }
         
-        .quiz-input {
-            padding: 8px;
-            width: 200px;
-            margin: 5px;
+        .hint {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
         }
     </style>
 </head>
@@ -77,45 +68,11 @@
     </div>
 
     <div class="footer">
-        <p><strong>What's the name of the song?</strong></p>
-        <input type="text" id="songInput" class="quiz-input" placeholder="Escribe: los solidarios">
-        <button id="verificarBtn" class="quiz-button">Verificar</button>
-        
-        <div id="linkFormulario" class="link-oculto">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSe48E6i-ndt2vTvB3gMGM17r82BpzoVDjUz7mA_RFkHxgMQAg/viewform" target="_blank">
-                ✅ ¡Correcto! Haz clic aquí para ir al formulario
-            </a>
-        </div>
+        <p><strong>¿Reconoces esta canción?</strong></p>
+        <p class="hint">Si sabes que se llama <em>"Los Solidarios"</em> contesta en el formulario:</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe48E6i-ndt2vTvB3gMGM17r82BpzoVDjUz7mA_RFkHxgMQAg/viewform" class="form-link" target="_blank">
+            🎵 Ir al Formulario de Google 🎵
+        </a>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const verificarBtn = document.getElementById('verificarBtn');
-            const songInput = document.getElementById('songInput');
-            
-            function mostrarLink() {
-                var input = songInput.value.toLowerCase().trim();
-                var linkDiv = document.getElementById('linkFormulario');
-                
-                if (input === "los solidarios" || input === "los solidarios") {
-                    linkDiv.className = 'link-visible';
-                } else {
-                    alert("Incorrecto. La respuesta es: los solidarios");
-                    songInput.value = '';
-                    songInput.focus();
-                }
-            }
-            
-            // Event listener para el botón
-            verificarBtn.addEventListener('click', mostrarLink);
-            
-            // Event listener para Enter
-            songInput.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    mostrarLink();
-                }
-            });
-        });
-    </script>
 </body>
 </html>
