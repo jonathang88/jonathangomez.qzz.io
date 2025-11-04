@@ -238,7 +238,50 @@
     <a href="https://github.com/jonathang88/Hardening-Defensivo/blob/main/NOTES.md" target="_blank" class="btn secondary">📝 Documentación (sanitizada)</a>
   </div></div>
 
-        
+   <div class="card project-card" id="auto-ip-blocking-lab">
+  <div class="card-head">
+    <h4>Sistema Automático de Bloqueo de IPs Maliciosas</h4>
+    <div class="meta-row" aria-hidden="true">
+      <div class="tags" role="list">
+        <span class="tag" role="listitem">Seguridad</span>
+        <span class="tag" role="listitem">Firewall</span>
+        <span class="tag" role="listitem">Automation</span>
+        <span class="tag" role="listitem">API Integration</span>
+        <span class="tag" role="listitem">Rocky Linux</span>
+        <span class="tag" role="listitem">Bash Scripting</span>
+        <span class="tag" role="listitem">AbuseIPDB</span>
+      </div>
+
+      <span class="vuln-badge" title="Type of lab">Focus: Automated Threat Prevention</span>
+
+      <!-- Etiqueta defensiva -->
+      <span class="defensive-badge defensive-advanced" title="Nivel defensivo">Defensivo · Nivel: Avanzado</span>
+    </div>
+  </div>
+
+  <p class="project-desc">
+    Sistema de protección automatizado que detecta y bloquea IPs maliciosas en tiempo real usando 
+    AbuseIPDB API. Implementado en Rocky Linux con ipset + firewalld, incluye scripts Bash para 
+    análisis automático de logs Apache, bloqueo dinámico basado en reputación de IPs, y programación 
+    con cron para operación continua. Protege contra scanners, bots maliciosos y ataques automatizados.
+  </p>
+
+  <div class="tech-features">
+    <h5>🛡️ Características Técnicas:</h5>
+    <ul>
+      <li>Detección automática en logs de Apache</li>
+      <li>Integración con API de AbuseIPDB</li>
+      <li>Bloqueo con ipset + firewalld/iptables</li>
+      <li>Umbral configurable de reputación (score ≥2)</li>
+      <li>Persistencia post-reinicio</li>
+      <li>Ejecución programada cada hora</li>
+    </ul>
+  </div>
+
+  <div class="card-actions">
+       <a href="/cybersecurity/projects/pdf/auto_ip_blocking_lab.pdf" target="_blank" class="btn secondary">📄 Manual Completo</a>
+  </div>
+</div>     
         <div class="card">
           <h4>Login Honeypot</h4>
           <p>Fake admin login built with HTML + Cloudflare Worker for capturing brute-force attempts.</p>
