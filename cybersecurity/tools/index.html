@@ -87,6 +87,17 @@
             <h3 id="nmap">1. Nmap</h3>
             <p>Network scanning tool used to discover hosts and services on a computer network.</p>
           </div>
+          <ul>
+            <li>nmap 192.168.1.10 (escaneo basico)</li>
+            <li>nmap 192.168.1.0/24 (escaneo todos)</li>
+            <li>nmap -sP 192.168.1.0/24 (sondeo de ping)</li>
+            <li>nmap -sV -sC 192.168.1.10 (sondeo de puertos)</li>
+            <li>nmap -sS -sV -sC 192.168.1.10 (Escaneo Sigiloso)</li>
+            <li>nmap --spoof-mac 00:11:22:33:44 -sS -sV -sC 192.168.1.10 (Mac Suplantada)</li>
+            <li>nmap -p- --open -sV -sC --min-rate=5000 -n -vvv 192.168.1.10 (escaneo muy rapido/ruidoso)</li>
+             <li>nmap --script=ftp-brute --script-args userdb=user.txt ,passdb=rockyou.txt -p 21 192.168.1.10 (ataque fuerza bruta)</li>
+             <li>sudo nmap --script "vuln" -p445 192.168.1.10</li>               
+          </ul>
 
           <div class="tool" data-name="Masscan" data-desc="TCP port scanner, potentially faster than Nmap.">
             <h3 id="masscan">2. Masscan</h3>
