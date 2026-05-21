@@ -489,14 +489,14 @@
           <div class="field-group">
             <label class="field-label" for="edad-min">Rango de edad — Mínimo</label>
             <div class="range-row">
-              <input type="range" id="edad-min" name="edad_min" min="13" max="80" value="25" oninput="document.getElementById('vEdadMin').textContent=this.value" />
+              <input type="range" id="edad-min" name="edad_min" min="13" max="80" value="25" />
               <span class="range-val" id="vEdadMin">25</span>
             </div>
           </div>
           <div class="field-group">
             <label class="field-label" for="edad-max">Rango de edad — Máximo</label>
             <div class="range-row">
-              <input type="range" id="edad-max" name="edad_max" min="13" max="80" value="45" oninput="document.getElementById('vEdadMax').textContent=this.value" />
+              <input type="range" id="edad-max" name="edad_max" min="13" max="80" value="45" />
               <span class="range-val" id="vEdadMax">45</span>
             </div>
           </div>
@@ -797,6 +797,18 @@
     });
   }, { threshold: 0.08 });
   sections.forEach(s => observer.observe(s));
+
+  // ── RANGE SLIDERS ──
+  const edadMin = document.getElementById('edad-min');
+  const edadMax = document.getElementById('edad-max');
+  edadMin.addEventListener('input', () => {
+    document.getElementById('vEdadMin').textContent = edadMin.value;
+    updateProgress();
+  });
+  edadMax.addEventListener('input', () => {
+    document.getElementById('vEdadMax').textContent = edadMax.value;
+    updateProgress();
+  });
 
   // ── PILL TOGGLE ──
   // Listen to the checkbox change event (not click on label, which double-fires)
