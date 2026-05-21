@@ -414,15 +414,6 @@
     Hubo un problema al enviar el formulario. Por favor intenta nuevamente.
   </div>
 
-  <!--
-    ╔══════════════════════════════════════════════════════════╗
-    ║  INSTRUCCIONES PARA CONFIGURAR:                         ║
-    ║  1. Crea una cuenta en https://formspree.io             ║
-    ║  2. Crea un nuevo formulario y copia tu endpoint        ║
-    ║  3. Reemplaza "YOUR_FORM_ID" en la línea de abajo       ║
-    ║     con tu ID real (ej: xrgvdpqk)                       ║
-    ╚══════════════════════════════════════════════════════════╝
-  -->
   <form id="briefingForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
 
     <!-- DATOS DE CONTACTO -->
@@ -498,14 +489,14 @@
             <label class="field-label" for="edad-min">Rango de edad — Mínimo</label>
             <div class="range-row">
               <input type="text" id="edad-min" name="edad_min" min="13" max="80" value="25"/>
-              <span class="range-val" id="vEdadMin">25</span>
+              <span class="range-val" id="vEdadMin"></span>
             </div>
           </div>
           <div class="field-group">
             <label class="field-label" for="edad-max">Rango de edad — Máximo</label>
             <div class="range-row">
               <input type="text" id="edad-max" name="edad_max" min="13" max="80" value="45" />
-              <span class="range-val" id="vEdadMax">45</span>
+              <span class="range-val" id="vEdadMax"></span>
             </div>
           </div>
         </div>
