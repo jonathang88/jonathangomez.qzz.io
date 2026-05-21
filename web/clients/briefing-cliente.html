@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Briefing de Proyecto — Tu Agencia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #0e0e0e;
+      --paper: #f5f2ec;
+      --cream: #ede9e0;
+      --accent: #c9773b;
+      --accent-light: #f0dcc8;
+      --muted: #7a7066;
+      --border: #d6d0c4;
+      --white: #ffffff;
+      --radius: 4px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    .site-header {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 56px 40px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .site-header::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 40px,
+        rgba(255,255,255,0.02) 40px,
+        rgba(255,255,255,0.02) 41px
+      );
+    }
+    .agency-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .site-header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--paper);
+      max-width: 700px;
+      margin: 0 auto 16px;
+    }
+    .site-header h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .site-header p {
+      color: #b0a99e;
+      font-size: 15px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* ── PROGRESS BAR ── */
+    .progress-wrap {
+      background: var(--cream);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 40px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .progress-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .progress-bar-track {
+      flex: 1;
+      height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 2px;
+      width: 0%;
+      transition: width 0.4s ease;
+    }
+    .progress-pct {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--accent);
+      min-width: 32px;
+      text-align: right;
+    }
+
+    /* ── LAYOUT ── */
+    .form-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      margin-bottom: 48px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.5s ease forwards;
+    }
+    .section:nth-child(1) { animation-delay: 0.05s; }
+    .section:nth-child(2) { animation-delay: 0.10s; }
+    .section:nth-child(3) { animation-delay: 0.15s; }
+    .section:nth-child(4) { animation-delay: 0.20s; }
+    .section:nth-child(5) { animation-delay: 0.25s; }
+    .section:nth-child(6) { animation-delay: 0.30s; }
+    .section:nth-child(7) { animation-delay: 0.35s; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: none; }
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-num {
+      width: 32px; height: 32px;
+      background: var(--ink);
+      color: var(--paper);
+      font-family: 'DM Serif Display', serif;
+      font-size: 14px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--ink);
+    }
+
+    /* ── FIELD GROUPS ── */
+    .field-group {
+      margin-bottom: 24px;
+    }
+    .field-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 10px;
+      letter-spacing: 0.01em;
+    }
+    .field-label span {
+      color: var(--accent);
+      margin-left: 2px;
+    }
+    .field-hint {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    /* ── CHECKBOX GRID ── */
+    .check-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .check-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      cursor: pointer;
+      font-size: 13px;
+      color: var(--ink);
+      transition: all 0.15s ease;
+      user-select: none;
+    }
+    .check-pill input { display: none; }
+    .check-pill:hover { border-color: var(--accent); color: var(--accent); }
+    .check-pill.selected {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: var(--paper);
+    }
+    .check-pill.selected .pill-dot { background: var(--accent); }
+    .pill-dot {
+      width: 6px; height: 6px;
+      background: var(--border);
+      border-radius: 50%;
+      transition: background 0.15s;
+    }
+
+    /* ── TEXT INPUTS ── */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 11px 14px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      color: var(--ink);
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--ink);
+    }
+    textarea { resize: vertical; min-height: 90px; }
+
+    /* ── INPUT ROW ── */
+    .input-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 560px) {
+      .input-row { grid-template-columns: 1fr; }
+      .progress-wrap { padding: 14px 20px; }
+      .site-header { padding: 40px 24px 36px; }
+      .form-wrap { padding: 32px 16px 64px; }
+    }
+
+    /* ── RANGE SLIDER ── */
+    .range-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    input[type="range"] {
+      flex: 1;
+      -webkit-appearance: none;
+      height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      border: none;
+      padding: 0;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px; height: 18px;
+      background: var(--ink);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .range-val {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      color: var(--accent);
+      min-width: 28px;
+      text-align: center;
+    }
+
+    /* ── DIVIDER ── */
+    .sub-section {
+      margin-bottom: 32px;
+      padding: 20px;
+      background: var(--cream);
+      border-radius: 6px;
+      border-left: 3px solid var(--accent);
+    }
+    .sub-section-title {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    /* ── SUBMIT BUTTON ── */
+    .submit-area {
+      text-align: center;
+      padding-top: 16px;
+    }
+    .btn-submit {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 48px;
+      background: var(--ink);
+      color: var(--paper);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn-submit:hover {
+      background: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(201,119,59,0.3);
+    }
+    .btn-submit:active { transform: none; }
+    .btn-submit svg { width: 18px; height: 18px; }
+
+    /* ── SUCCESS STATE ── */
+    .success-overlay {
+      display: none;
+      text-align: center;
+      padding: 64px 24px;
+    }
+    .success-overlay.visible { display: block; }
+    .success-icon {
+      width: 64px; height: 64px;
+      background: var(--ink);
+      color: var(--paper);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 24px;
+      font-size: 28px;
+    }
+    .success-overlay h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+    .success-overlay p { color: var(--muted); max-width: 420px; margin: 0 auto; }
+
+    /* ── ERROR ── */
+    .error-msg {
+      display: none;
+      color: #c0392b;
+      font-size: 13px;
+      margin-top: 8px;
+      padding: 10px 14px;
+      background: #fdf2f0;
+      border: 1px solid #f5c6c0;
+      border-radius: var(--radius);
+    }
+    .error-msg.visible { display: block; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <p class="agency-label">Formulario de briefing</p>
+  <h1>Cuéntanos sobre tu <em>proyecto</em></h1>
+  <p>Responde las preguntas con la mayor honestidad posible. Entre más sepamos, mejor será el resultado.</p>
+</header>
+
+<!-- PROGRESS -->
+<div class="progress-wrap">
+  <span class="progress-label">Completado</span>
+  <div class="progress-bar-track">
+    <div class="progress-bar-fill" id="progressFill"></div>
+  </div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<!-- FORM -->
+<div class="form-wrap">
+
+  <!-- SUCCESS -->
+  <div class="success-overlay" id="successMsg">
+    <div class="success-icon">✓</div>
+    <h2>¡Briefing recibido!</h2>
+    <p>Hemos recibido tu información. Nos pondremos en contacto en menos de 24 horas para continuar con el proyecto.</p>
+  </div>
+
+  <div id="errorMsg" class="error-msg">
+    Hubo un problema al enviar el formulario. Por favor intenta nuevamente.
+  </div>
+
+  <!--
+    ╔══════════════════════════════════════════════════════════╗
+    ║  INSTRUCCIONES PARA CONFIGURAR:                         ║
+    ║  1. Crea una cuenta en https://formspree.io             ║
+    ║  2. Crea un nuevo formulario y copia tu endpoint        ║
+    ║  3. Reemplaza "YOUR_FORM_ID" en la línea de abajo       ║
+    ║     con tu ID real (ej: xrgvdpqk)                       ║
+    ╚══════════════════════════════════════════════════════════╝
+  -->
+  <form id="briefingForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+
+    <!-- DATOS DE CONTACTO -->
+    <section class="section">
+      <div class="section-header">
+        <div class="section-num">0</div>
+        <h2 class="section-title">Datos de contacto</h2>
+      </div>
+
+      <div class="input-row">
+        <div class="field-group">
+          <label class="field-label" for="nombre">Nombre completo <span>*</span></label>
+          <input type="text" id="nombre" name="nombre" required placeholder="María García" />
+        </div>
+        <div class="field-group">
+          <label class="field-label" for="empresa">Empresa o marca</label>
+          <input type="text" id="empresa" name="empresa" placeholder="Fragancias XYZ" />
+        </div>
+      </div>
+      <div class="input-row">
+        <div class="field-group">
+          <label class="field-label" for="email">Correo electrónico <span>*</span></label>
+          <input type="email" id="email" name="email" required placeholder="hola@miempresa.com" />
+        </div>
+        <div class="field-group">
+          <label class="field-label" for="telefono">WhatsApp / Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="+57 300 000 0000" />
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 1 -->
+    <section class="section">
+      <div class="section-header">
+        <div class="section-num">1</div>
+        <h2 class="section-title">Estrategia del sitio web</h2>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">¿Cuál es el objetivo principal del sitio?</label>
+        <div class="check-grid" id="objetivo-grid">
+          <label class="check-pill"><input type="checkbox" name="objetivo[]" value="Venta directa"><span class="pill-dot"></span>Venta directa</label>
+          <label class="check-pill"><input type="checkbox" name="objetivo[]" value="Mostrar catálogo"><span class="pill-dot"></span>Mostrar catálogo</label>
+          <label class="check-pill"><input type="checkbox" name="objetivo[]" value="Captar clientes potenciales"><span class="pill-dot"></span>Captar clientes potenciales</label>
+          <label class="check-pill"><input type="checkbox" name="objetivo[]" value="Posicionar la marca"><span class="pill-dot"></span>Posicionar la marca</label>
+          <label class="check-pill"><input type="checkbox" name="objetivo[]" value="Reservas o asesoría"><span class="pill-dot"></span>Reservas o asesoría</label>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">¿Cómo miden el éxito del proyecto?</label>
+        <div class="check-grid">
+          <label class="check-pill"><input type="checkbox" name="exito[]" value="Número de ventas"><span class="pill-dot"></span>Número de ventas</label>
+          <label class="check-pill"><input type="checkbox" name="exito[]" value="Formularios enviados"><span class="pill-dot"></span>Formularios enviados</label>
+          <label class="check-pill"><input type="checkbox" name="exito[]" value="Llamadas"><span class="pill-dot"></span>Llamadas</label>
+          <label class="check-pill"><input type="checkbox" name="exito[]" value="WhatsApp"><span class="pill-dot"></span>WhatsApp</label>
+          <label class="check-pill"><input type="checkbox" name="exito[]" value="Tráfico web"><span class="pill-dot"></span>Tráfico web</label>
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <p class="sub-section-title">Público objetivo</p>
+        <div class="field-group">
+          <label class="field-label">Género</label>
+          <div class="check-grid">
+            <label class="check-pill"><input type="checkbox" name="genero[]" value="Hombres"><span class="pill-dot"></span>Hombres</label>
+            <label class="check-pill"><input type="checkbox" name="genero[]" value="Mujeres"><span class="pill-dot"></span>Mujeres</label>
+            <label class="check-pill"><input type="checkbox" name="genero[]" value="Ambos"><span class="pill-dot"></span>Ambos</label>
+          </div>
+        </div>
+        <div class="input-row">
+          <div class="field-group">
+            <label class="field-label" for="edad-min">Rango de edad — Mínimo</label>
+            <div class="range-row">
+              <input type="range" id="edad-min" name="edad_min" min="13" max="80" value="25" oninput="document.getElementById('vEdadMin').textContent=this.value" />
+              <span class="range-val" id="vEdadMin">25</span>
+            </div>
+          </div>
+          <div class="field-group">
+            <label class="field-label" for="edad-max">Rango de edad — Máximo</label>
+            <div class="range-row">
+              <input type="range" id="edad-max" name="edad_max" min="13" max="80" value="45" oninput="document.getElementById('vEdadMax').textContent=this.value" />
+              <span class="range-val" id="vEdadMax">45</span>
+            </div>
+          </div>
+        </div>
+        <div class="field-group">
+          <label class="field-label" for="nse">Perfil socioeconómico</label>
+          <select id="nse" name="nse">
+            <option value="">Seleccionar…</option>
+            <option>Estrato 1–2 (popular)</option>
+            <option>Estrato 3–4 (medio)</option>
+            <option>Estrato 5–6 (alto)</option>
+            <option>Mixto</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">¿Qué experiencia desean transmitir al cliente?</label>
+        <div class="check-grid">
+          <label class="check-pill"><input type="checkbox" name="experiencia[]" value="Exclusividad"><span class="pill-dot"></span>Exclusividad</label>
+          <label class="check-pill"><input type="checkbox" name="experiencia[]" value="Lujo"><span class="pill-dot"></span>Lujo</label>
+          <label class="check-pill"><input type="checkbox" name="experiencia[]" value="Elegancia"><span class="pill-dot"></span>Elegancia</label>
+          <label class="check-pill"><input type="checkbox" name="experiencia[]" value="Modernidad"><span class="pill-dot"></span>Modernidad</label>
+          <label class="check-pill"><input type="checkbox" name="experiencia[]" value="Cercanía"><span class="pill-dot"></span>Cercanía</label>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2 -->
+    <section class="section">
+      <div class="section-header">
+        <div class="section-num">2</div>
+        <h2 class="section-title">Productos y catálogo</h2>
+      </div>
+
+      <div class="input-row">
+        <div class="field-group">
+          <label class="field-label" for="num-productos">¿Cuántos productos inicialmente?</label>
+          <input type="number" id="num-productos" name="num_productos" min="1" placeholder="ej: 50" />
+        </div>
+        <div class="field-group">
+          <label class="field-label">¿Manejan productos exclusivos o importados?</label>
+          <div class="check-grid" style="margin-top:4px">
+            <label class="check-pill"><input type="checkbox" name="exclusivos" value="Sí, exclusivos"><span class="pill-dot"></span>Exclusivos</label>
+            <label class="check-pill"><input type="checkbox" name="exclusivos" value="Sí, importados"><span class="pill-dot"></span>Importados</label>
+            <label class="check-pill"><input type="checkbox" name="exclusivos" value="No"><span class="pill-dot"></span>No</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">¿Los productos estarán organizados por?</label>
+        <div class="check-grid">
+          <label class="check-pill"><input type="checkbox" name="organizacion[]" value="Marca"><span class="pill-dot"></span>Marca</label>
+          <label class="check-pill"><input type="checkbox" name="organizacion[]" value="Género"><span class="pill-dot"></span>Género</label>
+          <label class="check-pill"><input type="checkbox" name="organizacion[]" value="Tipo de fragancia"><span class="pill-dot"></span>Tipo de fragancia</label>
+          <label class="check-pill"><input type="checkbox" name="organizacion[]" value="Precio"><span class="pill-dot"></span>Precio</label>
+          <label class="check-pill"><input type="checkbox" name="organizacion[]" value="Colecciones"><span class="pill-dot"></span>Colecciones</label>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">¿Qué información tendrá cada producto?</label>
+        <div class="check-grid">
+          <label class="check-pill"><input type="checkbox" name="info_producto[]" value="Fotos"><span class="pill-dot"></span>Fotos</label>
+          <label class="check-pill"><input type="checkbox" name="info_producto[]" value="Descripción"><span class="pill-dot"></span>Descripción</label>
+          <label class="check-pill"><input type="checkbox" name="info_producto[]" value="Notas olfativas"><span class="pill-dot"></span>Notas olfativas</label>
+          <label class="check-pill"><input type="checkbox" name="info_producto[]" value="Tamaños disponibles"><span class="pill-dot"></span>Tamaños</label>
+          <label class="check-pill"><input type="checkbox" name="info_producto[]" value="Precio"><span class="pill-dot"></span>Precio</label>
+          <label class="check-pill"><input type="checkbox" name="info_producto[]" value="Disponibilidad"><span class="pill-dot"></span>Disponibilidad</label>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="fotos">¿Quién suministrará fotos y descripciones?</label>
+        <input type="text" id="fotos" name="suministro_fotos" placeholder="El cliente, fotógrafo propio, necesitan producción…" />
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">¿Habrá promociones o productos destacados?</label>
+        <div class="check-grid">
+          <label class="check-pill"><input type="checkbox" name="promociones" value="Sí"><span class="pill-dot"></span>Sí</label>
+          <label class="check-pill"><input type="checkbox" name="promociones" value="No"><span class="pill-dot"></span>No</label>
+          <label class="check-pill"><input type="checkbox" name="promociones" value="Por definir"><span class="pill-dot"></span>Por definir</label>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3 -->
+    <section class="section">
+      <div class="section-header">
+        <div class="section-num">3</div>
+        <h2 class="section-title">Diseño y marca</h2>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">¿Con qué cuentan actualmente?</label>
+        <div class="check-grid">
+          <label class="check-pill"><input type="checkbox" name="marca[]" value="Logo"><span class="pill-dot"></span>Logo</label>
+          <label class="check-pill"><input type="checkbox" name="marca[]" value="Manual de marca"><span class="pill-dot"></span>Manual de marca</label>
+          <label class="check-pill"><input type="checkbox" name="marca[]" value="Colores corporativos"><span class="pill-dot"></span>Colores corporativos</label>
+          <label class="check-pill"><input type="checkbox" name="marca[]" value="Tipografía"><span class="pill-dot"></span>Tipografía</label>
+          <label class="check-pill"><input type="checkbox" name="marca[]" value="Ninguno"><span class="pill-dot"></span>Ninguno</label>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="referencias">3 sitios web de referencia que les gusten</label>
+        <textarea id="referencias" name="referencias" placeholder="ej: https://www.byredo.com — me gusta la elegancia y el minimalismo…"></textarea>
+        <p class="field-hint">Incluye una breve nota de qué te gusta de cada uno.</p>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">¿Qué apariencia desean?</label>
+        <div class="check-grid">
+          <label class="check-pill"><input type="checkbox" name="apariencia[]" value="Minimalista"><span class="pill-dot"></span>Minimalista</label>
+          <label class="check-pill"><input type="checkbox" name="apariencia[]" value="Premium"><span class="pill-dot"></span>Premium</label>
+          <label class="check-pill"><input type="checkbox" name="apariencia[]" value="Moderna"><span class="pill-dot"></span>Moderna</label>
+          <label class="check-pill"><input type="checkbox" name="apariencia[]" value="Oscura"><span class="pill-dot"></span>Oscura</label>
+          <label class="check-pill"><input type="checkbox" name="apariencia[]" value="Elegante"><span class="pill-dot"></span>Elegante</label>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">¿Tienen imágenes profesionales del local o productos?</label>
+        <div class="check-grid">
+          <label class="check-pill"><input type="checkbox" name="imagenes_prof" value="Sí"><span class="pill-dot"></span>Sí</label>
+          <label class="check-pill"><input type="checkbox" name="imagenes_prof" value="No"><span class="pill-dot"></span>No</label>
+          <label class="check-pill"><input type="checkbox" name="imagenes_prof" value="Parcialmente"><span class="pill-dot"></span>Parcialmente</label>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 4 -->
+    <section class="section">
+      <div class="section-header">
+        <div class="section-num">4</div>
+        <h2 class="section-title">Ventas y logística</h2>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">¿Cómo desean recibir los pedidos?</label>
+        <div class="check-grid">
+          <label class="check-pill"><input type="checkbox" name="pedidos[]" value="Carrito de compras"><span class="pill-dot"></span>Carrito de compras</label>
+          <label class="check-pill"><input type="checkbox" name="pedidos[]" value="WhatsApp"><span class="pill-dot"></span>WhatsApp</label>
+          <label class="check-pill"><input type="checkbox" name="pedidos[]" value="Formulario"><span class="pill-dot"></span>Formulario</label>
+          <label class="check-pill"><input type="checkbox" name="pedidos[]" value="Pago directo en línea"><span class="pill-dot"></span>Pago directo en línea</label>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">¿Qué métodos de pago manejarán?</label>
+        <div class="check-grid">
+          <label class="check-pill"><input type="checkbox" name="pagos[]" value="Tarjeta crédito/débito"><span class="pill-dot"></span>Tarjeta</label>
+          <label class="check-pill"><input type="checkbox" name="pagos[]" value="Transferencia bancaria"><span class="pill-dot"></span>Transferencia</label>
+          <label class="check-pill"><input type="checkbox" name="pagos[]" value="PSE"><span class="pill-dot"></span>PSE</label>
+          <label class="check-pill"><input type="checkbox" name="pagos[]" value="Contra entrega"><span class="pill-dot"></span>Contra entrega</label>
+          <label class="check-pill"><input type="checkbox" name="pagos[]" value="Nequi/Daviplata"><span class="pill-dot"></span>Nequi / Daviplata</label>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">¿Tendrán envíos?</label>
+        <div class="check-grid">
+          <label class="check-pill"><input type="checkbox" name="envios[]" value="Locales"><span class="pill-dot"></span>Locales</label>
+          <label class="check-pill"><input type="checkbox" name="envios[]" value="Nacionales"><span class="pill-dot"></span>Nacionales</label>
+          <label class="check-pill"><input type="checkbox" name="envios[]" value="Internacionales"><span class="pill-dot"></span>Internacionales</label>
+          <label class="check-pill"><input type="checkbox" name="envios[]" value="No, solo local/recogida"><span class="pill-dot"></span>No / Recogida</label>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="costo-envio">¿Cómo calculan los costos de envío?</label>
+        <input type="text" id="costo-envio" name="calculo_envio" placeholder="Tarifa fija, por ciudad, según peso, transportadora…" />
+      </div>
+    </section>
+
+    <!-- SECCIÓN 5 -->
+    <section class="section">
+      <div class="section-header">
+        <div class="section-num">5</div>
+        <h2 class="section-title">Funcionalidades adicionales</h2>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">¿Qué funcionalidades desean integrar?</label>
+        <div class="check-grid">
+          <label class="check-pill"><input type="checkbox" name="funciones[]" value="WhatsApp"><span class="pill-dot"></span>WhatsApp</label>
+          <label class="check-pill"><input type="checkbox" name="funciones[]" value="Chat en línea"><span class="pill-dot"></span>Chat en línea</label>
+          <label class="check-pill"><input type="checkbox" name="funciones[]" value="Reseñas de clientes"><span class="pill-dot"></span>Reseñas de clientes</label>
+          <label class="check-pill"><input type="checkbox" name="funciones[]" value="Programa de fidelización"><span class="pill-dot"></span>Fidelización</label>
+          <label class="check-pill"><input type="checkbox" name="funciones[]" value="Registro de usuarios"><span class="pill-dot"></span>Registro de usuarios</label>
+          <label class="check-pill"><input type="checkbox" name="funciones[]" value="Lista de deseos"><span class="pill-dot"></span>Lista de deseos</label>
+          <label class="check-pill"><input type="checkbox" name="funciones[]" value="Redes sociales"><span class="pill-dot"></span>Redes sociales</label>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 6 -->
+    <section class="section">
+      <div class="section-header">
+        <div class="section-num">6</div>
+        <h2 class="section-title">Administración del sitio</h2>
+      </div>
+
+      <div class="input-row">
+        <div class="field-group">
+          <label class="field-label" for="admin">¿Quién administrará el sitio?</label>
+          <input type="text" id="admin" name="administrador" placeholder="Nombre o cargo" />
+        </div>
+        <div class="field-group">
+          <label class="field-label" for="actualizador">¿Quién actualizará productos y precios?</label>
+          <input type="text" id="actualizador" name="actualizador" placeholder="Nombre o cargo" />
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">¿Necesitan capacitación para administrar el sitio?</label>
+        <div class="check-grid">
+          <label class="check-pill"><input type="checkbox" name="capacitacion" value="Sí"><span class="pill-dot"></span>Sí</label>
+          <label class="check-pill"><input type="checkbox" name="capacitacion" value="No"><span class="pill-dot"></span>No</label>
+          <label class="check-pill"><input type="checkbox" name="capacitacion" value="Tal vez"><span class="pill-dot"></span>Tal vez</label>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 7 -->
+    <section class="section">
+      <div class="section-header">
+        <div class="section-num">7</div>
+        <h2 class="section-title">SEO y marketing digital</h2>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="palabras">¿Qué marcas o palabras clave desean posicionar en Google?</label>
+        <input type="text" id="palabras" name="palabras_clave" placeholder="ej: perfumes importados Medellín, lociones de lujo Colombia…" />
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">¿Actualmente manejan campañas en?</label>
+        <div class="check-grid">
+          <label class="check-pill"><input type="checkbox" name="campanas[]" value="Instagram"><span class="pill-dot"></span>Instagram</label>
+          <label class="check-pill"><input type="checkbox" name="campanas[]" value="Facebook"><span class="pill-dot"></span>Facebook</label>
+          <label class="check-pill"><input type="checkbox" name="campanas[]" value="Google Ads"><span class="pill-dot"></span>Google Ads</label>
+          <label class="check-pill"><input type="checkbox" name="campanas[]" value="TikTok"><span class="pill-dot"></span>TikTok</label>
+          <label class="check-pill"><input type="checkbox" name="campanas[]" value="Ninguna por ahora"><span class="pill-dot"></span>Ninguna</label>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">¿Tienen redes sociales activas?</label>
+        <div class="check-grid">
+          <label class="check-pill"><input type="checkbox" name="rrss[]" value="Instagram activo"><span class="pill-dot"></span>Instagram</label>
+          <label class="check-pill"><input type="checkbox" name="rrss[]" value="Facebook activo"><span class="pill-dot"></span>Facebook</label>
+          <label class="check-pill"><input type="checkbox" name="rrss[]" value="TikTok activo"><span class="pill-dot"></span>TikTok</label>
+          <label class="check-pill"><input type="checkbox" name="rrss[]" value="No tenemos"><span class="pill-dot"></span>No tenemos</label>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">¿Desean herramientas de análisis?</label>
+        <div class="check-grid">
+          <label class="check-pill"><input type="checkbox" name="analytics[]" value="Google Analytics"><span class="pill-dot"></span>Google Analytics</label>
+          <label class="check-pill"><input type="checkbox" name="analytics[]" value="Google Search Console"><span class="pill-dot"></span>Search Console</label>
+          <label class="check-pill"><input type="checkbox" name="analytics[]" value="Meta Pixel"><span class="pill-dot"></span>Meta Pixel</label>
+          <label class="check-pill"><input type="checkbox" name="analytics[]" value="No sé cuáles necesito"><span class="pill-dot"></span>No sé cuáles necesito</label>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="notas">¿Algo más que quieras contarnos?</label>
+        <textarea id="notas" name="notas_adicionales" placeholder="Plazos de entrega, presupuesto aproximado, expectativas, preguntas…"></textarea>
+      </div>
+    </section>
+
+    <!-- SUBMIT -->
+    <div class="submit-area">
+      <button type="submit" class="btn-submit" id="submitBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 2L11 13M22 2L15 22 11 13 2 9l20-7z"/>
+        </svg>
+        Enviar briefing
+      </button>
+    </div>
+
+  </form>
+</div>
+
+<script>
+  // ── PILL TOGGLE ──
+  document.querySelectorAll('.check-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      pill.classList.toggle('selected');
+    });
+  });
+
+  // ── PROGRESS ──
+  function updateProgress() {
+    const allInputs = document.querySelectorAll('input[required], input[type="checkbox"]:checked, input[type="text"], input[type="email"], input[type="tel"], textarea, select');
+    const required = document.querySelectorAll('input[required]');
+    const filled = Array.from(required).filter(i => i.value.trim() !== '').length;
+    const totalChecked = document.querySelectorAll('input[type="checkbox"]:checked').length;
+    const textFilled = Array.from(document.querySelectorAll('input[type="text"], input[type="email"], textarea')).filter(i => i.value.trim() !== '').length;
+
+    const total = required.length + 10; // weight extras
+    const done = filled + Math.min(totalChecked, 6) + Math.min(textFilled, 4);
+    const pct = Math.min(Math.round((done / total) * 100), 100);
+
+    document.getElementById('progressFill').style.width = pct + '%';
+    document.getElementById('progressPct').textContent = pct + '%';
+  }
+
+  document.querySelectorAll('input, textarea, select').forEach(el => {
+    el.addEventListener('change', updateProgress);
+    el.addEventListener('input', updateProgress);
+  });
+
+  // ── SUBMIT ──
+  const form = document.getElementById('briefingForm');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const btn = document.getElementById('submitBtn');
+    const errDiv = document.getElementById('errorMsg');
+    errDiv.classList.remove('visible');
+
+    // Validate required
+    const nombre = document.getElementById('nombre').value.trim();
+    const email = document.getElementById('email').value.trim();
+    if (!nombre || !email) {
+      errDiv.textContent = 'Por favor ingresa tu nombre y correo electrónico.';
+      errDiv.classList.add('visible');
+      document.getElementById('nombre').focus();
+      return;
+    }
+
+    btn.textContent = 'Enviando…';
+    btn.disabled = true;
+
+    try {
+      const data = new FormData(form);
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('successMsg').classList.add('visible');
+        document.getElementById('progressFill').style.width = '100%';
+        document.getElementById('progressPct').textContent = '100%';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        throw new Error('Server error');
+      }
+    } catch (err) {
+      errDiv.textContent = 'Hubo un problema al enviar. Por favor intenta de nuevo o contáctanos directamente.';
+      errDiv.classList.add('visible');
+      btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M22 2L11 13M22 2L15 22 11 13 2 9l20-7z"/></svg> Enviar briefing`;
+      btn.disabled = false;
+    }
+  });
+</script>
+</body>
+</html>
