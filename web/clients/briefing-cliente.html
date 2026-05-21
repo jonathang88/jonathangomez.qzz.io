@@ -132,19 +132,12 @@
     .section {
       margin-bottom: 48px;
       opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 0.5s ease forwards;
+      transform: translateY(24px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
     }
-    .section:nth-child(1) { animation-delay: 0.05s; }
-    .section:nth-child(2) { animation-delay: 0.10s; }
-    .section:nth-child(3) { animation-delay: 0.15s; }
-    .section:nth-child(4) { animation-delay: 0.20s; }
-    .section:nth-child(5) { animation-delay: 0.25s; }
-    .section:nth-child(6) { animation-delay: 0.30s; }
-    .section:nth-child(7) { animation-delay: 0.35s; }
-
-    @keyframes fadeUp {
-      to { opacity: 1; transform: none; }
+    .section.visible {
+      opacity: 1;
+      transform: none;
     }
 
     .section-header {
@@ -785,32 +778,51 @@
 </div>
 
 <script>
+  // ── SECTION ANIMATIONS via IntersectionObserver ──
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  sections.forEach(s => observer.observe(s));
+
   // ── PILL TOGGLE ──
-  document.querySelectorAll('.check-pill').forEach(pill => {
-    pill.addEventListener('click', () => {
-      pill.classList.toggle('selected');
+  // Listen to the checkbox change event (not click on label, which double-fires)
+  document.querySelectorAll('.check-pill input[type="checkbox"]').forEach(checkbox => {
+    checkbox.addEventListener('change', () => {
+      const pill = checkbox.closest('.check-pill');
+      if (checkbox.checked) {
+        pill.classList.add('selected');
+      } else {
+        pill.classList.remove('selected');
+      }
+      updateProgress();
     });
   });
 
   // ── PROGRESS ──
   function updateProgress() {
-    const allInputs = document.querySelectorAll('input[required], input[type="checkbox"]:checked, input[type="text"], input[type="email"], input[type="tel"], textarea, select');
     const required = document.querySelectorAll('input[required]');
     const filled = Array.from(required).filter(i => i.value.trim() !== '').length;
     const totalChecked = document.querySelectorAll('input[type="checkbox"]:checked').length;
-    const textFilled = Array.from(document.querySelectorAll('input[type="text"], input[type="email"], textarea')).filter(i => i.value.trim() !== '').length;
+    const textFilled = Array.from(document.querySelectorAll('input[type="text"]:not([required]), input[type="email"]:not([required]), input[type="number"], textarea, select'))
+      .filter(i => i.value.trim() !== '').length;
 
-    const total = required.length + 10; // weight extras
-    const done = filled + Math.min(totalChecked, 6) + Math.min(textFilled, 4);
+    const total = required.length + 12;
+    const done = filled + Math.min(totalChecked, 7) + Math.min(textFilled, 5);
     const pct = Math.min(Math.round((done / total) * 100), 100);
 
     document.getElementById('progressFill').style.width = pct + '%';
     document.getElementById('progressPct').textContent = pct + '%';
   }
 
-  document.querySelectorAll('input, textarea, select').forEach(el => {
-    el.addEventListener('change', updateProgress);
+  document.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], input[type="number"], textarea, select').forEach(el => {
     el.addEventListener('input', updateProgress);
+    el.addEventListener('change', updateProgress);
   });
 
   // ── SUBMIT ──
