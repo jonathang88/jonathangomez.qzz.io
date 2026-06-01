@@ -75,7 +75,7 @@ function startQuiz(){
 function showQuestion(){
     const q = selectedQuestions[currentQuestion];
 
-    document.getElementById("progress").textContent =
+    document.getElementById("progressText").textContent =
         `Pregunta ${currentQuestion + 1} de ${selectedQuestions.length}`;
     document.getElementById("question").textContent = q.question;
 
