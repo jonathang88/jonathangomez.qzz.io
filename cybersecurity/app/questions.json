@@ -383,5 +383,68 @@
     ],
     "answer": 1,
     "explanation": "OSI es un modelo conceptual de referencia (normativo) desarrollado por ISO. TCP/IP es la arquitectura práctica y real utilizada en Internet, desarrollada antes que OSI se popularizara."
+  },  {
+    "id": 31,
+    "category": "OSI",
+    "difficulty": "easy",
+    "question": "¿Qué significa PDU en el contexto de redes?",
+    "options": [
+      "Protocol Data Unit",
+      "Packet Distribution Unit",
+      "Physical Data Upload",
+      "Protocol Delivery Utility"
+    ],
+    "answer": 0,
+    "explanation": "PDU significa Protocol Data Unit (Unidad de Datos de Protocolo). Es el nombre que reciben los datos en cada capa del modelo OSI durante su transmisión."
+  },
+  {
+    "id": 32,
+    "category": "OSI",
+    "difficulty": "easy",
+    "question": "¿Cuál es la PDU correcta de la capa de Enlace de Datos (Capa 2)?",
+    "options": ["Paquete", "Segmento", "Trama (Frame)", "Bit"],
+    "answer": 2,
+    "explanation": "En la Capa de Enlace de Datos (capa 2), la PDU se llama Trama (Frame). El Paquete es de Capa 3, el Segmento de Capa 4 y el Bit de Capa 1."
+  },
+  {
+    "id": 33,
+    "category": "OSI",
+    "difficulty": "medium",
+    "question": "Ordena correctamente las PDUs de la Capa 1 a la Capa 4 del modelo OSI (de abajo hacia arriba):",
+    "options": [
+      "Bit → Paquete → Trama → Segmento",
+      "Bit → Trama → Paquete → Segmento",
+      "Trama → Bit → Segmento → Paquete",
+      "Segmento → Paquete → Trama → Bit"
+    ],
+    "answer": 1,
+    "explanation": "De abajo hacia arriba (capa 1 a capa 4): Capa 1 (Física) → Bit; Capa 2 (Enlace) → Trama; Capa 3 (Red) → Paquete; Capa 4 (Transporte) → Segmento (TCP)."
+  },
+  {
+    "id": 34,
+    "category": "OSI / TCP/IP",
+    "difficulty": "easy",
+    "question": "Cuando TCP divide los datos en unidades para transmitirlos, ¿cómo se llama esa unidad?",
+    "options": ["Paquete", "Trama", "Datagrama", "Segmento"],
+    "answer": 3,
+    "explanation": "TCP (protocolo confiable de capa de transporte) divide los datos en Segmentos. El término Datagrama se asocia más con UDP."
+  },
+  {
+    "id": 35,
+    "category": "OSI / TCP/IP",
+    "difficulty": "easy",
+    "question": "El protocolo UDP también opera en la capa de Transporte, pero su PDU recibe un nombre diferente al de TCP. ¿Cómo se llama?",
+    "options": ["Segmento", "Datagrama", "Trama", "Paquete"],
+    "answer": 1,
+    "explanation": "UDP (protocolo no orientado a conexión) llama a su unidad de datos Datagrama, mientras que TCP la llama Segmento."
+  },
+  {
+    "id": 36,
+    "category": "OSI",
+    "difficulty": "easy",
+    "question": "Un router recibe datos y toma decisiones de enrutamiento. ¿Con qué PDU trabaja principalmente?",
+    "options": ["Trama", "Bit", "Segmento", "Paquete"],
+    "answer": 3,
+    "explanation": "Un router opera en la Capa de Red (capa 3) y trabaja principalmente con Paquetes, los cuales contienen direcciones IP para tomar decisiones de enrutamiento."
   }
 ]
