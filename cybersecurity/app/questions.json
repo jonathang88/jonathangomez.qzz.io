@@ -422,7 +422,7 @@
   },
   {
     "id": 34,
-    "category": "OSI / TCP/IP",
+    "category": "Protocolos",
     "difficulty": "easy",
     "question": "Cuando TCP divide los datos en unidades para transmitirlos, ¿cómo se llama esa unidad?",
     "options": ["Paquete", "Trama", "Datagrama", "Segmento"],
@@ -431,7 +431,7 @@
   },
   {
     "id": 35,
-    "category": "OSI / TCP/IP",
+    "category": "Protocolos",
     "difficulty": "easy",
     "question": "El protocolo UDP también opera en la capa de Transporte, pero su PDU recibe un nombre diferente al de TCP. ¿Cómo se llama?",
     "options": ["Segmento", "Datagrama", "Trama", "Paquete"],
