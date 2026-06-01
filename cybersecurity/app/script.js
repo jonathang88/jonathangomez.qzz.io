@@ -3,10 +3,17 @@ let selectedQuestions = [];
 let currentQuestion = 0;
 let score = 0;
 let mode = "study";
-let userAnswers = []; 
+let userAnswers = [];
 
-const setup = document.getElementById("setup");
-const quiz = document.getElementById("quiz");
+// ── CRONÓMETRO ─────────────────────────────────────────────
+let questionTimer = null;      // intervalo por pregunta
+let examTimer = null;          // intervalo total del examen
+let questionSeconds = 0;       // segundos transcurridos en pregunta actual
+let examSeconds = 0;           // segundos transcurridos en el examen total
+const WARN_SECONDS = 120;      // alerta a los 2 minutos
+
+const setup  = document.getElementById("setup");
+const quiz   = document.getElementById("quiz");
 const result = document.getElementById("result");
 
 fetch("questions.json")
@@ -32,40 +39,48 @@ document.getElementById("startBtn").addEventListener("click", startQuiz);
 
 function startQuiz(){
     mode = document.getElementById("mode").value;
-    const category = document.getElementById("category").value;
-    const order = document.getElementById("order").value;
-    const count = parseInt(document.getElementById("questionCount").value);
+    const category  = document.getElementById("category").value;
+    const order     = document.getElementById("order").value;
+    const count     = parseInt(document.getElementById("questionCount").value);
 
     selectedQuestions = [...questions];
     if(category !== "all"){
         selectedQuestions = selectedQuestions.filter(q => q.category === category);
     }
- if(order === "random"){
-    for(let i = selectedQuestions.length - 1; i > 0; i--){
-        const j = Math.floor(Math.random() * (i + 1));
-        [selectedQuestions[i], selectedQuestions[j]] = [selectedQuestions[j], selectedQuestions[i]];
+    if(order === "random"){
+        for(let i = selectedQuestions.length - 1; i > 0; i--){
+            const j = Math.floor(Math.random() * (i + 1));
+            [selectedQuestions[i], selectedQuestions[j]] = [selectedQuestions[j], selectedQuestions[i]];
+        }
     }
-}
     selectedQuestions = selectedQuestions.slice(0, count);
 
     currentQuestion = 0;
-    score = 0;
-    userAnswers = new Array(selectedQuestions.length).fill(null); // NUEVO: inicializar array
+    score           = 0;
+    examSeconds     = 0;
+    userAnswers     = new Array(selectedQuestions.length).fill(null);
 
     setup.classList.add("hidden");
     quiz.classList.remove("hidden");
+
+    // Iniciar cronómetro total solo en modo examen
+    if(mode === "exam"){
+        startExamTimer();
+    }
+
     showQuestion();
 }
 
+// ── MOSTRAR PREGUNTA ───────────────────────────────────────
 function showQuestion(){
     const q = selectedQuestions[currentQuestion];
+
     document.getElementById("progress").textContent =
         `Pregunta ${currentQuestion + 1} de ${selectedQuestions.length}`;
     document.getElementById("question").textContent = q.question;
 
     const optionsContainer = document.getElementById("options");
     optionsContainer.innerHTML = "";
-
     q.options.forEach((option, index) => {
         const div = document.createElement("div");
         div.className = "option";
@@ -80,8 +95,87 @@ function showQuestion(){
     } else {
         document.getElementById("studyArea").classList.add("hidden");
     }
+
+    // Reiniciar cronómetro por pregunta (solo examen)
+    if(mode === "exam"){
+        startQuestionTimer();
+    }
 }
 
+// ── CRONÓMETRO POR PREGUNTA ────────────────────────────────
+function startQuestionTimer(){
+    clearInterval(questionTimer);
+    questionSeconds = 0;
+    updateQuestionTimerUI();
+
+    questionTimer = setInterval(() => {
+        questionSeconds++;
+        updateQuestionTimerUI();
+
+        if(questionSeconds === WARN_SECONDS){
+            flashTimerWarning();
+        }
+    }, 1000);
+}
+
+function updateQuestionTimerUI(){
+    const el = document.getElementById("questionTimerDisplay");
+    if(!el) return;
+
+    const mins = String(Math.floor(questionSeconds / 60)).padStart(2, "0");
+    const secs = String(questionSeconds % 60).padStart(2, "0");
+    el.textContent = `⏱ ${mins}:${secs}`;
+
+    // Color según tiempo
+    if(questionSeconds < 90){
+        el.style.color = "#27ae60";   // verde
+    } else if(questionSeconds < 120){
+        el.style.color = "#e67e22";   // naranja
+    } else {
+        el.style.color = "#c0392b";   // rojo
+    }
+}
+
+function flashTimerWarning(){
+    const el = document.getElementById("questionTimerDisplay");
+    if(!el) return;
+    let flashes = 0;
+    const interval = setInterval(() => {
+        el.style.visibility = el.style.visibility === "hidden" ? "visible" : "hidden";
+        flashes++;
+        if(flashes >= 6) {
+            clearInterval(interval);
+            el.style.visibility = "visible";
+        }
+    }, 250);
+}
+
+// ── CRONÓMETRO TOTAL DEL EXAMEN ────────────────────────────
+function startExamTimer(){
+    clearInterval(examTimer);
+    examSeconds = 0;
+
+    examTimer = setInterval(() => {
+        examSeconds++;
+        updateExamTimerUI();
+    }, 1000);
+}
+
+function updateExamTimerUI(){
+    const el = document.getElementById("examTimerDisplay");
+    if(!el) return;
+    const h    = Math.floor(examSeconds / 3600);
+    const mins = String(Math.floor((examSeconds % 3600) / 60)).padStart(2, "0");
+    const secs = String(examSeconds % 60).padStart(2, "0");
+    el.textContent = h > 0 ? `🕐 ${h}:${mins}:${secs}` : `🕐 ${mins}:${secs}`;
+}
+
+function stopAllTimers(){
+    clearInterval(questionTimer);
+    clearInterval(examTimer);
+}
+
+// ── SELECCIÓN DE RESPUESTA ─────────────────────────────────
 let selectedAnswer = null;
 
 function selectOption(element, index){
@@ -105,7 +199,7 @@ document.getElementById("nextBtn").addEventListener("click", nextQuestion);
 
 function nextQuestion(){
     if(mode === "exam"){
-        userAnswers[currentQuestion] = selectedAnswer; // NUEVO: guardar respuesta
+        userAnswers[currentQuestion] = selectedAnswer;
         if(selectedAnswer === selectedQuestions[currentQuestion].answer){
             score++;
         }
@@ -127,7 +221,9 @@ function previousQuestion(){
     showQuestion();
 }
 
+// ── FINALIZAR QUIZ ─────────────────────────────────────────
 function finishQuiz(){
+    stopAllTimers();
     quiz.classList.add("hidden");
     result.classList.remove("hidden");
 
@@ -136,28 +232,43 @@ function finishQuiz(){
         document.getElementById("scoreText").textContent =
             `${score}/${selectedQuestions.length} (${percent}%)`;
 
-        // NUEVO: construir detalle de preguntas incorrectas
+        // Mostrar tiempo total usado
+        renderExamTime();
         renderReview();
         saveStats(percent);
     } else {
         document.getElementById("scoreText").textContent = "Modo estudio finalizado";
-        // Limpiar review si viene de modo estudio
         const reviewContainer = document.getElementById("reviewContainer");
         if(reviewContainer) reviewContainer.innerHTML = "";
     }
 }
 
-// NUEVO: función que renderiza el detalle de incorrectas
+function renderExamTime(){
+    let timeEl = document.getElementById("examTimeResult");
+    if(!timeEl){
+        timeEl = document.createElement("p");
+        timeEl.id = "examTimeResult";
+        timeEl.style.cssText = "color:#555;font-size:0.9rem;margin-top:6px;";
+        document.getElementById("scoreText").after(timeEl);
+    }
+    const h    = Math.floor(examSeconds / 3600);
+    const mins = String(Math.floor((examSeconds % 3600) / 60)).padStart(2, "0");
+    const secs = String(examSeconds % 60).padStart(2, "0");
+    const timeStr = h > 0 ? `${h}:${mins}:${secs}` : `${mins}:${secs}`;
+    const avgSec  = Math.round(examSeconds / selectedQuestions.length);
+    const avgMins = String(Math.floor(avgSec / 60)).padStart(2, "0");
+    const avgSecs = String(avgSec % 60).padStart(2, "0");
+    timeEl.innerHTML = `🕐 Tiempo total: <strong>${timeStr}</strong> &nbsp;·&nbsp; Promedio por pregunta: <strong>${avgMins}:${avgSecs}</strong>`;
+}
+
+// ── REVISIÓN DE INCORRECTAS ────────────────────────────────
 function renderReview(){
     let reviewContainer = document.getElementById("reviewContainer");
-
-    // Crear el contenedor si no existe en el HTML
     if(!reviewContainer){
         reviewContainer = document.createElement("div");
         reviewContainer.id = "reviewContainer";
         result.appendChild(reviewContainer);
     }
-
     reviewContainer.innerHTML = "";
 
     const incorrectas = selectedQuestions.filter((q, i) => userAnswers[i] !== q.answer);
@@ -173,7 +284,7 @@ function renderReview(){
     reviewContainer.appendChild(titulo);
 
     selectedQuestions.forEach((q, i) => {
-        if(userAnswers[i] === q.answer) return; // saltar correctas
+        if(userAnswers[i] === q.answer) return;
 
         const card = document.createElement("div");
         card.style.cssText = `
@@ -206,7 +317,6 @@ function renderReview(){
         card.appendChild(tuRespuesta);
         card.appendChild(correcta);
 
-        // Agregar explicación si existe
         if(q.explanation){
             const explicacion = document.createElement("p");
             explicacion.style.cssText = "font-size:0.85rem;color:#555;border-top:1px solid #eee;padding-top:8px;margin:0;";
@@ -218,23 +328,11 @@ function renderReview(){
     });
 }
 
+// ── ESTADÍSTICAS ───────────────────────────────────────────
 function saveStats(score){
     let stats = JSON.parse(localStorage.getItem("quizStats")) || [];
     stats.push(score);
     localStorage.setItem("quizStats", JSON.stringify(stats));
-}
-
-document.getElementById("exitBtn").addEventListener("click", exitQuiz);
-
-function exitQuiz(){
-    if(confirm("¿Deseas salir del cuestionario?")){
-        quiz.classList.add("hidden");
-        result.classList.add("hidden");
-        setup.classList.remove("hidden");
-        currentQuestion = 0;
-        selectedAnswer = null;
-        userAnswers = [];
-    }
 }
 
 function loadStats(){
@@ -244,4 +342,21 @@ function loadStats(){
     const avg = Math.round(stats.reduce((a, b) => a + b, 0) / stats.length);
     document.getElementById("averageScore").textContent = avg + "%";
     document.getElementById("bestScore").textContent = Math.max(...stats) + "%";
+}
+
+// ── SALIR ──────────────────────────────────────────────────
+document.getElementById("exitBtn").addEventListener("click", exitQuiz);
+
+function exitQuiz(){
+    if(confirm("¿Deseas salir del cuestionario?")){
+        stopAllTimers();
+        quiz.classList.add("hidden");
+        result.classList.add("hidden");
+        setup.classList.remove("hidden");
+        currentQuestion  = 0;
+        selectedAnswer   = null;
+        userAnswers      = [];
+        examSeconds      = 0;
+        questionSeconds  = 0;
+    }
 }
