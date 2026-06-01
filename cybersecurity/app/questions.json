@@ -268,5 +268,120 @@
     ],
     "answer": 1,
     "explanation": "El orden correcto desde la capa 7 hasta la capa 1 es: Aplicación (7) → Presentación (6) → Sesión (5) → Transporte (4) → Red (3) → Enlace de Datos (2) → Física (1)."
+  },
+  {
+    "id": 21,
+    "category": "OSI",
+    "difficulty": "easy",
+    "question": "¿Cuántas capas tiene el modelo OSI?",
+    "options": ["4", "5", "7", "8"],
+    "answer": 2,
+    "explanation": "El modelo OSI (Open Systems Interconnection) tiene 7 capas: Física, Enlace de Datos, Red, Transporte, Sesión, Presentación y Aplicación."
+  },
+  {
+    "id": 22,
+    "category": "OSI",
+    "difficulty": "easy",
+    "question": "¿Qué capa del modelo OSI es responsable del enrutamiento de paquetes entre redes diferentes?",
+    "options": [
+      "Capa de Enlace de Datos",
+      "Capa de Red",
+      "Capa de Transporte",
+      "Capa de Sesión"
+    ],
+    "answer": 1,
+    "explanation": "La Capa de Red (capa 3) se encarga del direccionamiento lógico (IP) y del enrutamiento de paquetes entre redes diferentes."
+  },
+  {
+    "id": 23,
+    "category": "OSI / TCP/IP",
+    "difficulty": "medium",
+    "question": "El protocolo TCP pertenece a la capa de Transporte en el modelo OSI. ¿Cuál es su característica principal frente a UDP?",
+    "options": [
+      "Es más rápido y no verifica errores",
+      "No establece conexión previa",
+      "Garantiza la entrega ordenada y confiable de datos",
+      "Solo funciona en redes locales"
+    ],
+    "answer": 2,
+    "explanation": "TCP es orientado a conexión y confiable: garantiza la entrega ordenada de los datos, con recuperación de errores y control de flujo. UDP no ofrece estas garantías."
+  },
+  {
+    "id": 24,
+    "category": "TCP/IP",
+    "difficulty": "easy",
+    "question": "¿Cuántas capas tiene el modelo TCP/IP?",
+    "options": ["3", "4", "5", "7"],
+    "answer": 1,
+    "explanation": "El modelo TCP/IP original tiene 4 capas: Acceso a Red (Enlace), Internet (Red), Transporte y Aplicación. Algunas variantes lo dividen en 5 capas separando Física y Enlace."
+  },
+  {
+    "id": 25,
+    "category": "TCP/IP",
+    "difficulty": "medium",
+    "question": "¿Cuál de las siguientes capas del modelo TCP/IP equivale aproximadamente a las capas de Sesión, Presentación y Aplicación del modelo OSI?",
+    "options": [
+      "Capa de Acceso a Red",
+      "Capa de Internet",
+      "Capa de Transporte",
+      "Capa de Aplicación"
+    ],
+    "answer": 3,
+    "explanation": "La Capa de Aplicación del modelo TCP/IP agrupa funcionalmente las capas de Aplicación, Presentación y Sesión del modelo OSI."
+  },
+  {
+    "id": 26,
+    "category": "OSI",
+    "difficulty": "easy",
+    "question": "¿Qué dispositivo opera principalmente en la Capa 2 (Enlace de Datos) del modelo OSI?",
+    "options": ["Router", "Hub", "Switch", "Repetidor"],
+    "answer": 2,
+    "explanation": "El switch opera en la Capa 2 (Enlace de Datos), ya que utiliza direcciones MAC para reenviar tramas dentro de la misma red. El router opera en Capa 3, y el hub/repetidor en Capa 1."
+  },
+  {
+    "id": 27,
+    "category": "OSI",
+    "difficulty": "easy",
+    "question": "¿Cuál es la unidad de datos (PDU) en la capa de Red del modelo OSI?",
+    "options": ["Bit", "Trama (Frame)", "Segmento", "Paquete"],
+    "answer": 3,
+    "explanation": "En la Capa de Red (capa 3), la unidad de datos se llama Paquete. La Trama es de Capa 2, el Segmento de Capa 4 y el Bit de Capa 1."
+  },
+  {
+    "id": 28,
+    "category": "OSI",
+    "difficulty": "easy",
+    "question": "¿Qué protocolo de la capa de Aplicación se usa para la transferencia segura de páginas web?",
+    "options": ["FTP", "HTTP", "HTTPS", "SMTP"],
+    "answer": 2,
+    "explanation": "HTTPS (HTTP sobre SSL/TLS) es la versión segura de HTTP, utilizada para transferir páginas web con cifrado. HTTP no es seguro, FTP es para archivos y SMTP para correo."
+  },
+  {
+    "id": 29,
+    "category": "OSI",
+    "difficulty": "medium",
+    "question": "En el modelo OSI, ¿qué capa se encarga de la conversión, cifrado y compresión de datos?",
+    "options": [
+      "Capa de Aplicación",
+      "Capa de Presentación",
+      "Capa de Sesión",
+      "Capa de Transporte"
+    ],
+    "answer": 1,
+    "explanation": "La Capa de Presentación (capa 6) es responsable del formato de los datos, incluyendo conversión, cifrado y compresión."
+  },
+  {
+    "id": 30,
+    "category": "OSI / TCP/IP",
+    "difficulty": "medium",
+    "question": "¿Cuál de las siguientes afirmaciones describe mejor la diferencia entre el modelo OSI y el modelo TCP/IP?",
+    "options": [
+      "TCP/IP tiene más capas que OSI",
+      "OSI es un modelo teórico de referencia; TCP/IP es el modelo práctico usado en Internet",
+      "OSI fue creado después de TCP/IP y lo reemplazó",
+      "Ambos modelos son idénticos pero con nombres distintos"
+    ],
+    "answer": 1,
+    "explanation": "OSI es un modelo conceptual de referencia (normativo) desarrollado por ISO. TCP/IP es la arquitectura práctica y real utilizada en Internet, desarrollada antes que OSI se popularizara."
   }
 ]
