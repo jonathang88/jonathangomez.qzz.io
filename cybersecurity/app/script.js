@@ -3,7 +3,7 @@ let selectedQuestions = [];
 let currentQuestion = 0;
 let score = 0;
 let mode = "study";
-let userAnswers = []; // NUEVO: guarda la respuesta del usuario por pregunta
+let userAnswers = []; 
 
 const setup = document.getElementById("setup");
 const quiz = document.getElementById("quiz");
@@ -40,9 +40,12 @@ function startQuiz(){
     if(category !== "all"){
         selectedQuestions = selectedQuestions.filter(q => q.category === category);
     }
-    if(order === "random"){
-        selectedQuestions.sort(() => Math.random() - 0.5);
+ if(order === "random"){
+    for(let i = selectedQuestions.length - 1; i > 0; i--){
+        const j = Math.floor(Math.random() * (i + 1));
+        [selectedQuestions[i], selectedQuestions[j]] = [selectedQuestions[j], selectedQuestions[i]];
     }
+}
     selectedQuestions = selectedQuestions.slice(0, count);
 
     currentQuestion = 0;
