@@ -246,3 +246,38 @@ function loadStats(){
     .textContent = Math.max(...stats) + "%";
 
 }
+document
+.getElementById("prevBtn")
+.addEventListener("click", previousQuestion);
+
+function previousQuestion(){
+
+    if(currentQuestion === 0){
+        return;
+    }
+
+    currentQuestion--;
+
+    showQuestion();
+
+}
+document
+.getElementById("exitBtn")
+.addEventListener("click", exitQuiz);
+
+function exitQuiz(){
+
+    if(confirm("¿Deseas salir del cuestionario?")){
+
+        quiz.classList.add("hidden");
+
+        result.classList.add("hidden");
+
+        setup.classList.remove("hidden");
+
+        currentQuestion = 0;
+        selectedAnswer = null;
+
+    }
+
+}
