@@ -235,6 +235,26 @@ function saveStats(score){
     );
 
 }
+document
+.getElementById("exitBtn")
+.addEventListener("click", exitQuiz);
+
+function exitQuiz(){
+
+    if(confirm("¿Deseas salir del cuestionario?")){
+
+        quiz.classList.add("hidden");
+
+        result.classList.add("hidden");
+
+        setup.classList.remove("hidden");
+
+        currentQuestion = 0;
+        selectedAnswer = null;
+
+    }
+
+}
 
 function loadStats(){
 
