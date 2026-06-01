@@ -1,1 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Redes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<div class="container">
+
+    <h1>Quiz de Redes</h1>
+
+    <div id="setup">
+
+        <div class="card">
+            <h2>Configuración</h2>
+
+            <label>Modo</label>
+            <select id="mode">
+                <option value="study">Estudio</option>
+                <option value="exam">Examen</option>
+            </select>
+
+            <label>Categoría</label>
+            <select id="category">
+                <option value="all">Todas</option>
+            </select>
+
+            <label>Orden</label>
+            <select id="order">
+                <option value="normal">Secuencial</option>
+                <option value="random">Aleatorio</option>
+            </select>
+
+            <label>Cantidad de preguntas</label>
+            <input type="number" id="questionCount" value="10" min="1">
+
+            <button id="startBtn">Iniciar</button>
+        </div>
+
+        <div class="card">
+            <h2>Estadísticas</h2>
+
+            <p>Exámenes realizados: <span id="totalExams">0</span></p>
+            <p>Promedio: <span id="averageScore">0%</span></p>
+            <p>Mejor resultado: <span id="bestScore">0%</span></p>
+        </div>
+
+    </div>
+
+    <div id="quiz" class="hidden">
+
+        <div class="progress">
+            <span id="progress"></span>
+        </div>
+
+        <h2 id="question"></h2>
+
+        <div id="options"></div>
+
+        <div id="studyArea" class="hidden">
+            <button id="showAnswerBtn">Mostrar Respuesta</button>
+
+            <div id="answerBox" class="hidden"></div>
+        </div>
+
+        <div class="buttons">
+            <button id="nextBtn">Siguiente</button>
+        </div>
+
+    </div>
+
+    <div id="result" class="hidden">
+
+        <h2>Resultado Final</h2>
+
+        <p id="scoreText"></p>
+
+        <button onclick="location.reload()">Volver a empezar</button>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
