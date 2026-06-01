@@ -128,5 +128,145 @@
     ],
     "answer": 1,
     "explanation": "OSI es un modelo conceptual de referencia mientras que TCP/IP es la arquitectura práctica utilizada en Internet."
+  },
+    {
+    "id": 11,
+    "category": "OSI",
+    "difficulty": "easy",
+    "question": "¿En qué capa del modelo OSI actúa un router?",
+    "options": [
+      "Capa de Enlace de Datos",
+      "Capa de Red",
+      "Capa de Transporte",
+      "Capa Física"
+    ],
+    "answer": 1,
+    "explanation": "Un router opera en la Capa de Red (capa 3) del modelo OSI, ya que toma decisiones de enrutamiento basadas en direcciones lógicas IP."
+  },
+  {
+    "id": 12,
+    "category": "OSI",
+    "difficulty": "medium",
+    "question": "¿Qué capa del modelo OSI se encarga de la compresión, cifrado y sincronización de diálogos entre aplicaciones?",
+    "options": [
+      "Capa de Presentación",
+      "Capa de Sesión",
+      "Capa de Aplicación",
+      "Capa de Transporte"
+    ],
+    "answer": 0,
+    "explanation": "La Capa de Presentación (capa 6) se encarga del cifrado, compresión y formato de datos. Aunque la sincronización pertenece a Sesión, en los exámenes básicos se suele agrupar con Presentación."
+  },
+  {
+    "id": 13,
+    "category": "TCP/IP",
+    "difficulty": "easy",
+    "question": "En el modelo TCP/IP, ¿qué capa equivale funcionalmente a la combinación de las capas de Aplicación, Presentación y Sesión del modelo OSI?",
+    "options": [
+      "Capa de Red",
+      "Capa de Transporte",
+      "Capa de Aplicación",
+      "Capa de Acceso a Red"
+    ],
+    "answer": 2,
+    "explanation": "La Capa de Aplicación del modelo TCP/IP agrupa las funciones de las capas de Aplicación, Presentación y Sesión del modelo OSI."
+  },
+  {
+    "id": 14,
+    "category": "OSI / TCP/IP",
+    "difficulty": "easy",
+    "question": "¿Qué protocolo opera en la Capa de Transporte tanto del modelo OSI como del modelo TCP/IP?",
+    "options": [
+      "IP",
+      "ARP",
+      "TCP",
+      "Ethernet"
+    ],
+    "answer": 2,
+    "explanation": "TCP (Protocolo de Control de Transmisión) opera en la Capa de Transporte (capa 4) tanto en OSI como en TCP/IP."
+  },
+  {
+    "id": 15,
+    "category": "OSI",
+    "difficulty": "easy",
+    "question": "¿Cuál de las siguientes afirmaciones es correcta sobre el modelo OSI?",
+    "options": [
+      "Tiene 4 capas",
+      "Fue desarrollado después del modelo TCP/IP",
+      "Es un modelo teórico y normativo",
+      "No incluye capa de sesión"
+    ],
+    "answer": 2,
+    "explanation": "El modelo OSI es un modelo teórico y normativo desarrollado por ISO. Tiene 7 capas y fue creado antes que TCP/IP, aunque se popularizó después."
+  },
+  {
+    "id": 16,
+    "category": "TCP/IP",
+    "difficulty": "easy",
+    "question": "¿Qué capa del modelo TCP/IP se encarga del direccionamiento físico y el acceso al medio?",
+    "options": [
+      "Capa de Aplicación",
+      "Capa de Transporte",
+      "Capa de Internet",
+      "Capa de Acceso a Red"
+    ],
+    "answer": 3,
+    "explanation": "La Capa de Acceso a Red (también llamada Host a Red o Enlace) del modelo TCP/IP maneja direcciones MAC (físicas) y el acceso al medio como Ethernet o Wi-Fi."
+  },
+  {
+    "id": 17,
+    "category": "OSI",
+    "difficulty": "medium",
+    "question": "¿Cuál de las siguientes PDU (Unidades de Datos de Protocolo) corresponde a la Capa de Transporte del modelo OSI?",
+    "options": [
+      "Trama",
+      "Paquete",
+      "Segmento",
+      "Bit"
+    ],
+    "answer": 2,
+    "explanation": "En la Capa de Transporte (capa 4), la PDU se llama Segmento (cuando se usa TCP) o Datagrama (cuando se usa UDP). 'Segmento' es la respuesta estándar en exámenes."
+  },
+  {
+    "id": 18,
+    "category": "OSI",
+    "difficulty": "medium",
+    "question": "En el modelo OSI, ¿qué capa proporciona servicios como la recuperación de errores y el control de flujo extremo a extremo?",
+    "options": [
+      "Capa de Red",
+      "Capa de Sesión",
+      "Capa de Transporte",
+      "Capa de Enlace de Datos"
+    ],
+    "answer": 2,
+    "explanation": "La Capa de Transporte (capa 4) garantiza la entrega confiable, recupera errores extremo a extremo (con TCP) y controla el flujo para no saturar al receptor."
+  },
+  {
+    "id": 19,
+    "category": "TCP/IP",
+    "difficulty": "easy",
+    "question": "¿Qué capa del modelo TCP/IP utiliza los protocolos IP y ARP?",
+    "options": [
+      "Capa de Aplicación",
+      "Capa de Transporte",
+      "Capa de Internet",
+      "Capa de Acceso a Red"
+    ],
+    "answer": 2,
+    "explanation": "La Capa de Internet (equivalente a la Capa de Red de OSI) utiliza IP para direccionamiento lógico y enrutamiento, y ARP para resolver direcciones IP a MAC."
+  },
+  {
+    "id": 20,
+    "category": "OSI",
+    "difficulty": "easy",
+    "question": "¿Cuál es el orden correcto de las capas del modelo OSI de arriba hacia abajo?",
+    "options": [
+      "Aplicación – Sesión – Presentación – Transporte – Red – Enlace – Física",
+      "Aplicación – Presentación – Sesión – Transporte – Red – Enlace – Física",
+      "Aplicación – Presentación – Sesión – Transporte – Enlace – Red – Física",
+      "Sesión – Aplicación – Presentación – Transporte – Red – Enlace – Física"
+    ],
+    "answer": 1,
+    "explanation": "El orden correcto desde la capa 7 hasta la capa 1 es: Aplicación (7) → Presentación (6) → Sesión (5) → Transporte (4) → Red (3) → Enlace de Datos (2) → Física (1)."
   }
 ]
