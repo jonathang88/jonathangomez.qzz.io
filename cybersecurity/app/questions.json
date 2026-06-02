@@ -581,5 +581,130 @@
     "options": ["1433", "27017", "5432", "3306"],
     "answer": 3,
     "explanation": "MySQL utiliza por defecto el puerto 3306 (TCP). SQL Server usa 1433, PostgreSQL el 5432 y MongoDB el 27017."
+  },
+  {
+    "id": 47,
+    "category": "Protocolos",
+    "difficulty": "easy",
+    "question": "¿Qué afirmación sobre el puerto 123 (UDP) es correcta?",
+    "options": [
+      "Es usado por el protocolo NTP para sincronizar los relojes de los dispositivos en una red.",
+      "Es un puerto peligroso usado por troyanos como Blaster.",
+      "Es el puerto estándar para el escritorio remoto de Windows.",
+      "Se usa para transferir archivos de forma trivial (TFTP)."
+    ],
+    "answer": 0,
+    "explanation": "El puerto 123 (UDP) es el corazón de NTP (Network Time Protocol). Es vital para mantener la hora exacta en logs, autenticación y coordinación entre sistemas."
+  },
+  {
+    "id": 48,
+    "category": "Protocolos",
+    "difficulty": "easy",
+    "question": "¿Qué servicio suele asociarse a los puertos UDP 67 y 68?",
+    "options": [
+      "DNS, para resolver nombres de dominio.",
+      "DHCP, para asignar direcciones IP automáticamente.",
+      "SNMP, para monitorizar dispositivos de red.",
+      "FTP, para transferir archivos."
+    ],
+    "answer": 1,
+    "explanation": "DHCP usa el puerto 67 para el servidor (escucha peticiones) y el puerto 68 para el cliente (envía solicitudes)."
+  },
+  {
+    "id": 49,
+    "category": "TCP/IP",
+    "difficulty": "medium",
+    "question": "¿Qué es el NAT (Network Address Translation) y por qué es necesario?",
+    "options": [
+      "Un protocolo para navegar web de forma segura.",
+      "Un mecanismo que permite que múltiples dispositivos en una red privada compartan una única dirección IP pública para acceder a Internet.",
+      "Un tipo de firewall que filtra puertos específicos.",
+      "El proceso de abrir puertos manualmente en el router."
+    ],
+    "answer": 1,
+    "explanation": "El NAT es la razón por la que tenemos routers en casa. Traduce las IPs privadas (192.168.x.x) a tu IP pública única, permitiendo que todos tus dispositivos salgan a Internet."
+  },
+  {
+    "id": 50,
+    "category": "TCP/IP",
+    "difficulty": "easy",
+    "question": "Quieres montar un servidor web casero. ¿Qué debes configurar en tu router para que sea accesible desde Internet?",
+    "options": [
+      "Un servidor DHCP.",
+      "Una regla de Port Forwarding que redirija el puerto 80 (o 443) a la IP privada de tu servidor.",
+      "Un cliente VPN.",
+      "Desactivar completamente el firewall del router."
+    ],
+    "answer": 1,
+    "explanation": "El Port Forwarding (o reenvío de puertos) es la configuración que le dice a tu router: 'Los paquetes que lleguen a mi IP pública en el puerto X, envíalos al dispositivo con IP privada Y en el mismo puerto'."
+  },
+  {
+    "id": 51,
+    "category": "Protocolos",
+    "difficulty": "medium",
+    "question": "¿Cuál de las siguientes afirmaciones sobre el UPnP es correcta?",
+    "options": [
+      "Es un protocolo recomendado activar siempre, ya que mejora la seguridad.",
+      "Permite que las aplicaciones (como juegos o mensajería) abran puertos automáticamente sin intervención del usuario.",
+      "Es el mecanismo que usa NAT para traducir direcciones IP.",
+      "Es un puerto efímero usado por el navegador web."
+    ],
+    "answer": 1,
+    "explanation": "UPnP (Universal Plug and Play) es cómodo pero peligroso. Cualquier programa malicioso en tu red podría abrir puertos sin que lo sepas. Por seguridad, es mejor desactivarlo y abrir puertos manualmente."
+  },
+  {
+    "id": 52,
+    "category": "Seguridad",
+    "difficulty": "medium",
+    "question": "¿Cuál es una práctica de seguridad RECOMENDABLE al administrar un servidor SSH (puerto 22)?",
+    "options": [
+      "Dejarlo con la contraseña por defecto 'admin'.",
+      "Cambiar el puerto 22 por uno no estándar (ej: 22222) para evitar escaneos automáticos.",
+      "Abrirlo a toda la red 0.0.0.0/0.",
+      "Desactivar cualquier tipo de autenticación."
+    ],
+    "answer": 1,
+    "explanation": "Cambiar el puerto no es seguridad absoluta, pero evita el 99% de los ataques automáticos que escanean sólo el puerto 22. Combinado con claves SSH y deshabilitando la contraseña, es mucho más seguro."
+  },
+  {
+    "id": 53,
+    "category": "Seguridad",
+    "difficulty": "easy",
+    "question": "Un hacker está escaneando tu red. ¿Qué puerto es MUY PROBABLE que intente atacar primero, sabiendo que es el de administración remota insegura y antigua?",
+    "options": ["22 (SSH)", "80 (HTTP)", "23 (Telnet)", "443 (HTTPS)"],
+    "answer": 2,
+    "explanation": "Telnet (puerto 23) es un protocolo muy inseguro que envía todo (incluyendo contraseñas) en texto plano. Cualquier hacker lo escanea buscando equipos antiguos o mal configurados."
+  },
+  {
+    "id": 54,
+    "category": "Seguridad",
+    "difficulty": "easy",
+    "question": "¿Cuál de estos puertos NO deberías abrir nunca a Internet a menos que sea absolutamente necesario y esté bien protegido, por ser históricamente inseguro?",
+    "options": ["443 (HTTPS)", "21 (FTP)", "53 (DNS)", "123 (NTP)"],
+    "answer": 1,
+    "explanation": "FTP (puerto 21) transmite credenciales y datos en texto plano. Hoy en día deberías usar alternativas seguras como SFTP (puerto 22) o FTPS."
+  },
+  {
+    "id": 55,
+    "category": "TCP/IP",
+    "difficulty": "medium",
+    "question": "Cuando tu navegador web (cliente) se conecta a https://www.google.com, ¿qué puerto de origen utiliza típicamente tu equipo?",
+    "options": [
+      "Puerto 443 (un puerto conocido).",
+      "Puerto 80 (un puerto conocido).",
+      "Un puerto efímero en el rango 49152-65535.",
+      "Siempre usa el puerto 8080."
+    ],
+    "answer": 2,
+    "explanation": "El puerto de origen (source port) es un puerto efímero (temporal, alto) asignado por el sistema operativo. El puerto de destino (destination port) es el conocido (443 para HTTPS). Así el servidor sabe dónde enviar la respuesta."
+  },
+  {
+    "id": 56,
+    "category": "Protocolos",
+    "difficulty": "medium",
+    "question": "¿Qué protocolo y puerto se usan para el juego online de Xbox Live (tráfico de juego en tiempo real)?",
+    "options": ["TCP 80", "UDP 88", "TCP 443", "UDP 53"],
+    "answer": 1,
+    "explanation": "Xbox Live utiliza el puerto UDP 88 para el tráfico de juego y la voz, además de otros como UDP 3074. Los juegos online priorizan UDP por su baja latencia."
   }
 ]
