@@ -846,5 +846,145 @@
     ],
     "answer": 1,
     "explanation": "Cada servicio expuesto representa una posible vulnerabilidad. Reducir servicios disminuye la superficie de ataque."
+  },
+    {
+    "id": 67,
+    "category": "Troubleshooting",
+    "difficulty": "medium",
+    "question": "Un usuario reporta que puede acceder a recursos dentro de su red local, pero no puede navegar por Internet. Al revisar la configuración observas que tiene IP y máscara correctas, pero no tiene configurada una puerta de enlace predeterminada (Default Gateway). ¿Cuál es la causa más probable del problema?",
+    "options": [
+      "El DNS está fallando.",
+      "No existe una ruta para llegar a redes externas.",
+      "El switch está apagado.",
+      "El servidor DHCP está funcionando incorrectamente."
+    ],
+    "answer": 1,
+    "explanation": "Sin gateway, el equipo solo puede comunicarse con dispositivos de su misma red local."
+  },
+  {
+    "id": 68,
+    "category": "DNS",
+    "difficulty": "medium",
+    "question": "Un usuario puede hacer ping a 8.8.8.8 pero no puede acceder a www.google.com. ¿Qué componente deberías revisar primero?",
+    "options": [
+      "DHCP",
+      "Firewall",
+      "DNS",
+      "Switch"
+    ],
+    "answer": 2,
+    "explanation": "Si la IP responde pero el nombre no, el problema suele estar relacionado con DNS."
+  },
+  {
+    "id": 69,
+    "category": "VLAN",
+    "difficulty": "hard",
+    "question": "Dos equipos conectados al mismo switch no pueden comunicarse entre sí. Ambos tienen direcciones IP válidas de la misma subred. Al revisar la configuración descubres que pertenecen a VLAN diferentes. ¿Cuál es la explicación más probable?",
+    "options": [
+      "La máscara de red es incorrecta.",
+      "Las VLAN aíslan el tráfico de capa 2.",
+      "El DNS está mal configurado.",
+      "Los puertos están usando TCP en lugar de UDP."
+    ],
+    "answer": 1,
+    "explanation": "Las VLAN separan dominios de broadcast y aíslan dispositivos aunque estén conectados al mismo switch."
+  },
+  {
+    "id": 70,
+    "category": "Seguridad",
+    "difficulty": "medium",
+    "question": "Una empresa decide aplicar el principio de mínimo privilegio a todos sus usuarios. ¿Qué significa esto?",
+    "options": [
+      "Todos los usuarios tendrán permisos de administrador.",
+      "Los usuarios solo tendrán los permisos estrictamente necesarios para realizar su trabajo.",
+      "Nadie podrá acceder a Internet.",
+      "Todos los equipos utilizarán la misma contraseña."
+    ],
+    "answer": 1,
+    "explanation": "El principio de mínimo privilegio reduce riesgos limitando permisos innecesarios."
+  },
+  {
+    "id": 71,
+    "category": "Firewall",
+    "difficulty": "medium",
+    "question": "Un administrador crea una regla en el firewall para bloquear todo el tráfico entrante hacia el puerto 23. ¿Qué servicio está protegiendo principalmente?",
+    "options": [
+      "SSH",
+      "HTTPS",
+      "Telnet",
+      "DNS"
+    ],
+    "answer": 2,
+    "explanation": "Telnet utiliza el puerto 23 y transmite información sin cifrado."
+  },
+  {
+    "id": 72,
+    "category": "Protocolos",
+    "difficulty": "medium",
+    "question": "Una aplicación necesita garantizar que todos los datos lleguen completos y en el orden correcto, incluso si esto aumenta ligeramente el tiempo de transmisión. ¿Qué protocolo debería utilizar?",
+    "options": [
+      "UDP",
+      "ICMP",
+      "TCP",
+      "ARP"
+    ],
+    "answer": 2,
+    "explanation": "TCP proporciona control de errores, confirmaciones y retransmisiones."
+  },
+  {
+    "id": 73,
+    "category": "Seguridad",
+    "difficulty": "hard",
+    "question": "Durante una auditoría se descubre que varios empleados utilizan la misma contraseña para diferentes sistemas corporativos. ¿Cuál es el principal riesgo de esta práctica?",
+    "options": [
+      "Aumenta el consumo de ancho de banda.",
+      "Facilita movimientos laterales si una cuenta es comprometida.",
+      "Reduce el rendimiento del servidor.",
+      "Impide el funcionamiento del DNS."
+    ],
+    "answer": 1,
+    "explanation": "Si una contraseña es comprometida, el atacante puede reutilizarla en otros sistemas."
+  },
+  {
+    "id": 74,
+    "category": "Subnetting",
+    "difficulty": "hard",
+    "question": "Una red utiliza la máscara 255.255.255.0. ¿Cuántos hosts utilizables pueden existir en una sola subred?",
+    "options": [
+      "254",
+      "255",
+      "256",
+      "510"
+    ],
+    "answer": 0,
+    "explanation": "Una máscara /24 proporciona 256 direcciones totales, de las cuales 254 son utilizables."
+  },
+  {
+    "id": 75,
+    "category": "OSI",
+    "difficulty": "medium",
+    "question": "Un técnico está analizando una captura de tráfico y necesita identificar direcciones MAC origen y destino. ¿En qué capa del modelo OSI se encuentra trabajando principalmente?",
+    "options": [
+      "Física",
+      "Enlace de Datos",
+      "Red",
+      "Transporte"
+    ],
+    "answer": 1,
+    "explanation": "Las direcciones MAC pertenecen a la capa de Enlace de Datos (Layer 2)."
+  },
+  {
+    "id": 76,
+    "category": "Seguridad",
+    "difficulty": "hard",
+    "question": "Un atacante envía miles de solicitudes simultáneas a un servidor web con el objetivo de agotar sus recursos y dejarlo fuera de servicio. ¿Qué tipo de ataque describe mejor esta situación?",
+    "options": [
+      "Phishing",
+      "Ransomware",
+      "DDoS",
+      "ARP Spoofing"
+    ],
+    "answer": 2,
+    "explanation": "Un ataque DDoS busca saturar los recursos de un servicio mediante múltiples solicitudes."
   }
 ]
