@@ -446,8 +446,7 @@
     "options": ["Trama", "Bit", "Segmento", "Paquete"],
     "answer": 3,
     "explanation": "Un router opera en la Capa de Red (capa 3) y trabaja principalmente con Paquetes, los cuales contienen direcciones IP para tomar decisiones de enrutamiento."
-  },
-  [
+  },  
   {
     "id": 37,
     "category": "TCP/IP",
@@ -583,5 +582,4 @@
     "answer": 3,
     "explanation": "MySQL utiliza por defecto el puerto 3306 (TCP). SQL Server usa 1433, PostgreSQL el 5432 y MongoDB el 27017."
   }
-]
 ]
