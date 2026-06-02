@@ -706,5 +706,145 @@
     "options": ["TCP 80", "UDP 88", "TCP 443", "UDP 53"],
     "answer": 1,
     "explanation": "Xbox Live utiliza el puerto UDP 88 para el tráfico de juego y la voz, además de otros como UDP 3074. Los juegos online priorizan UDP por su baja latencia."
+  },
+    {
+    "id": 57,
+    "category": "TCP/IP",
+    "difficulty": "medium",
+    "question": "Un usuario puede acceder a sitios web mediante direcciones IP como 142.250.190.78, pero no puede acceder utilizando nombres como www.google.com. El resto de la conectividad funciona correctamente. ¿Cuál es la causa más probable?",
+    "options": [
+      "El servicio DHCP está caído.",
+      "Existe un problema con la resolución DNS.",
+      "El firewall está bloqueando HTTPS.",
+      "El servidor web remoto está apagado."
+    ],
+    "answer": 1,
+    "explanation": "Si el acceso por IP funciona pero por nombre no, el problema suele estar relacionado con DNS."
+  },
+  {
+    "id": 58,
+    "category": "Protocolos",
+    "difficulty": "medium",
+    "question": "Durante una captura de tráfico con Wireshark observas una secuencia SYN → SYN-ACK → ACK antes de que comience el intercambio de datos. ¿Qué conclusión puedes obtener?",
+    "options": [
+      "Se está estableciendo una conexión TCP.",
+      "Se está estableciendo una conexión UDP.",
+      "Se produjo una consulta DNS.",
+      "Se está realizando una traducción NAT."
+    ],
+    "answer": 0,
+    "explanation": "La secuencia SYN, SYN-ACK y ACK corresponde al Three-Way Handshake de TCP."
+  },
+  {
+    "id": 59,
+    "category": "Seguridad",
+    "difficulty": "hard",
+    "question": "Una empresa desea permitir acceso remoto a sus servidores. El administrador propone habilitar Telnet porque es fácil de configurar. ¿Cuál es el principal riesgo de esta decisión?",
+    "options": [
+      "Telnet consume demasiado ancho de banda.",
+      "Telnet no funciona a través de Internet.",
+      "Telnet transmite credenciales y datos en texto plano.",
+      "Telnet utiliza puertos dinámicos."
+    ],
+    "answer": 2,
+    "explanation": "Telnet no cifra la información, permitiendo que credenciales y datos puedan ser interceptados."
+  },
+  {
+    "id": 60,
+    "category": "TCP/IP",
+    "difficulty": "medium",
+    "question": "Una organización tiene 200 equipos utilizando direcciones privadas 192.168.1.x y todos navegan por Internet usando una única dirección IP pública. ¿Qué tecnología hace posible este comportamiento?",
+    "options": [
+      "DNS",
+      "DHCP",
+      "NAT",
+      "ARP"
+    ],
+    "answer": 2,
+    "explanation": "NAT permite que múltiples equipos compartan una única IP pública."
+  },
+  {
+    "id": 61,
+    "category": "Seguridad",
+    "difficulty": "hard",
+    "question": "Un analista detecta que varios usuarios recibieron correos electrónicos falsos que imitan el portal corporativo y solicitan credenciales. ¿Qué tipo de ataque representa este escenario?",
+    "options": [
+      "DDoS",
+      "Man-in-the-Middle",
+      "Phishing",
+      "Port Scanning"
+    ],
+    "answer": 2,
+    "explanation": "El phishing busca engañar a los usuarios para obtener credenciales o información sensible."
+  },
+  {
+    "id": 62,
+    "category": "TCP/IP",
+    "difficulty": "medium",
+    "question": "Un equipo acaba de conectarse a una red y todavía no posee una dirección IP. ¿Qué protocolo le permitirá obtener una configuración IP automáticamente?",
+    "options": [
+      "DNS",
+      "DHCP",
+      "SNMP",
+      "SMTP"
+    ],
+    "answer": 1,
+    "explanation": "DHCP asigna automáticamente IP, máscara, gateway y DNS."
+  },
+  {
+    "id": 63,
+    "category": "Seguridad",
+    "difficulty": "hard",
+    "question": "Un administrador decide abrir el puerto 3389 hacia Internet para permitir acceso remoto mediante RDP. ¿Cuál debería ser una medida adicional recomendada?",
+    "options": [
+      "Deshabilitar el firewall.",
+      "Permitir acceso desde cualquier IP sin restricciones.",
+      "Implementar VPN y autenticación multifactor.",
+      "Cambiar la dirección IP del servidor diariamente."
+    ],
+    "answer": 2,
+    "explanation": "RDP expuesto a Internet es un objetivo frecuente. VPN y MFA reducen significativamente el riesgo."
+  },
+  {
+    "id": 64,
+    "category": "OSI",
+    "difficulty": "medium",
+    "question": "Un switch recibe una trama Ethernet y debe decidir por cuál puerto reenviarla. ¿Qué información utiliza principalmente para tomar esta decisión?",
+    "options": [
+      "Dirección IP destino.",
+      "Puerto TCP destino.",
+      "Dirección MAC destino.",
+      "Nombre DNS destino."
+    ],
+    "answer": 2,
+    "explanation": "Los switches trabajan en Capa 2 utilizando direcciones MAC."
+  },
+  {
+    "id": 65,
+    "category": "Protocolos",
+    "difficulty": "hard",
+    "question": "Una aplicación de videoconferencia debe priorizar baja latencia y continuidad de la transmisión incluso si se pierden algunos paquetes. ¿Qué protocolo de transporte resulta más adecuado?",
+    "options": [
+      "TCP",
+      "UDP",
+      "ICMP",
+      "ARP"
+    ],
+    "answer": 1,
+    "explanation": "UDP minimiza la latencia al no requerir retransmisiones ni confirmaciones."
+  },
+  {
+    "id": 66,
+    "category": "Seguridad",
+    "difficulty": "hard",
+    "question": "Durante una auditoría se descubre que varios servicios innecesarios están escuchando en puertos abiertos de un servidor. ¿Cuál es el principal beneficio de deshabilitar estos servicios?",
+    "options": [
+      "Aumentar la velocidad del DNS.",
+      "Reducir la superficie de ataque.",
+      "Incrementar el número de conexiones simultáneas.",
+      "Eliminar la necesidad de un firewall."
+    ],
+    "answer": 1,
+    "explanation": "Cada servicio expuesto representa una posible vulnerabilidad. Reducir servicios disminuye la superficie de ataque."
   }
 ]
