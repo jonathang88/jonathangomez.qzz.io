@@ -446,5 +446,142 @@
     "options": ["Trama", "Bit", "Segmento", "Paquete"],
     "answer": 3,
     "explanation": "Un router opera en la Capa de Red (capa 3) y trabaja principalmente con Paquetes, los cuales contienen direcciones IP para tomar decisiones de enrutamiento."
+  },
+  [
+  {
+    "id": 37,
+    "category": "TCP/IP",
+    "difficulty": "easy",
+    "question": "Qué son los \"puertos\" en el contexto de las redes TCP/IP?",
+    "options": [
+      "Conectores físicos en la parte trasera del router donde se enchufan los cables de red.",
+      "Números virtuales que permiten a los dispositivos diferenciar entre múltiples servicios o aplicaciones.",
+      "La velocidad de transmisión de datos medida en megabits por segundo.",
+      "El nombre técnico de los firewalls que protegen una red doméstica."
+    ],
+    "answer": 1,
+    "explanation": "Un puerto es un identificador numérico virtual (0-65535) que permite que un dispositivo con una sola IP pueda ejecutar múltiples servicios simultáneamente (ej: servidor web en puerto 80 y correo en puerto 25)."
+  },
+  {
+    "id": 38,
+    "category": "Protocolos",
+    "difficulty": "medium",
+    "question": "Un puerto se encuentra en estado \"Filtrado\". ¿Qué significa esto?",
+    "options": [
+      "Que no hay ningún servicio escuchando en ese puerto.",
+      "Que el puerto está abierto y aceptando conexiones de cualquier origen.",
+      "Que un firewall (cortafuegos) está bloqueando o descartando el tráfico hacia ese puerto, sin responder si está abierto o cerrado.",
+      "Que el puerto está siendo utilizado por un programa de descargas P2P."
+    ],
+    "answer": 2,
+    "explanation": "El estado 'filtrado' es típico cuando un firewall está activo. El firewall no permite saber si hay un servicio, simplemente ignora o rechaza los intentos de conexión."
+  },
+  {
+    "id": 39,
+    "category": "TCP/IP",
+    "difficulty": "easy",
+    "question": "¿En qué rango de puertos se encuentran los servicios \"bien conocidos\" (well-known ports) como HTTP (80) o SSH (22)?",
+    "options": [
+      "Del 49152 al 65535",
+      "Del 1024 al 49151",
+      "Del 0 al 1023",
+      "Del 1 al 100"
+    ],
+    "answer": 2,
+    "explanation": "Los puertos del 0 al 1023 están reservados para los servicios estándar y ampliamente conocidos del sistema."
+  },
+  {
+    "id": 40,
+    "category": "Protocolos",
+    "difficulty": "easy",
+    "question": "¿Cuál de las siguientes afirmaciones sobre el protocolo UDP es CORRECTA?",
+    "options": [
+      "Garantiza la entrega de todos los paquetes en el orden correcto.",
+      "Utiliza un proceso de 'saludo de tres vías' antes de enviar datos.",
+      "Es ideal para aplicaciones como videollamadas o streaming donde la velocidad es más importante que la fiabilidad total.",
+      "Es más lento que TCP debido a su alto control de errores."
+    ],
+    "answer": 2,
+    "explanation": "UDP es 'dispara y olvida'. Es rápido, pero no confiable. Por eso es perfecto para streaming, juegos y VoIP, donde perder un paquete no es fatal, pero la latencia sí lo es."
+  },
+  {
+    "id": 41,
+    "category": "Protocolos",
+    "difficulty": "medium",
+    "question": "¿Cuál es el propósito del mensaje \"SYN-ACK\" durante el Three-Way Handshake de TCP?",
+    "options": [
+      "El cliente le pide al servidor que cierre la conexión.",
+      "El servidor le indica al cliente que recibió su solicitud y está listo para establecer la conexión.",
+      "El cliente envía los primeros datos de la aplicación.",
+      "El servidor le dice al cliente que el puerto está filtrado."
+    ],
+    "answer": 1,
+    "explanation": "El Three-Way Handshake es: 1) Cliente envía SYN. 2) Servidor responde con SYN-ACK (recibí tu SYN y yo también quiero conectar). 3) Cliente envía ACK (confirmo, hablemos)."
+  },
+  {
+    "id": 42,
+    "category": "Protocolos",
+    "difficulty": "easy",
+    "question": "¿Qué protocolo de capa de transporte usarías para desarrollar una aplicación de transferencia de archivos donde NO se puede perder ni un solo byte?",
+    "options": [
+      "UDP, porque es más rápido.",
+      "IP, porque es el protocolo de Internet.",
+      "TCP, porque es fiable y orientado a conexión.",
+      "HTTP, porque es el estándar web."
+    ],
+    "answer": 2,
+    "explanation": "Para transferencia de archivos, necesitas que el archivo llegue COMPLETO y sin errores. TCP garantiza eso mediante confirmaciones (ACKs) y retransmisiones. UDP podría perder partes del archivo."
+  },
+  {
+    "id": 43,
+    "category": "Protocolos",
+    "difficulty": "easy",
+    "question": "Un amigo quiere exponer un sitio web seguro a Internet desde su casa. ¿Qué puerto debe abrir en su router mediante Port Forwarding?",
+    "options": [
+      "Puerto 80 (TCP)",
+      "Puerto 443 (TCP)",
+      "Puerto 22 (TCP)",
+      "Puerto 53 (UDP)"
+    ],
+    "answer": 1,
+    "explanation": "El puerto 443 es el estándar para HTTPS (HTTP Seguro). El puerto 80 es para HTTP no seguro, pero hoy en día se usa casi exclusivamente HTTPS."
+  },
+  {
+    "id": 44,
+    "category": "Protocolos",
+    "difficulty": "easy",
+    "question": "Para administrar de forma SEGURA un servidor remoto por línea de comandos, se debe usar el protocolo SSH. ¿Qué puerto utiliza por defecto?",
+    "options": [
+      "Puerto 23 (TCP)",
+      "Puerto 21 (TCP)",
+      "Puerto 22 (TCP)",
+      "Puerto 3389 (TCP)"
+    ],
+    "answer": 2,
+    "explanation": "SSH (Secure Shell) usa el puerto 22. El puerto 23 es Telnet (inseguro), el 21 es FTP y el 3389 es RDP (escritorio remoto de Windows)."
+  },
+  {
+    "id": 45,
+    "category": "Protocolos",
+    "difficulty": "easy",
+    "question": "¿Qué servicio utiliza el puerto 25 (TCP) de forma estándar?",
+    "options": [
+      "Recibir correos electrónicos (POP3).",
+      "Enviar correos electrónicos entre servidores o desde un cliente (SMTP).",
+      "Navegación web segura (HTTPS).",
+      "Resolución de nombres de dominio (DNS)."
+    ],
+    "answer": 1,
+    "explanation": "El puerto 25 es el estándar para SMTP (Simple Mail Transfer Protocol), el protocolo usado para ENVIAR correos. Para RECIBIR se usan POP3 (110) o IMAP (143)."
+  },
+  {
+    "id": 46,
+    "category": "Protocolos",
+    "difficulty": "medium",
+    "question": "Necesitas conectarte a una base de datos MySQL que está en un servidor remoto. ¿Qué puerto deberás especificar en tu cliente?",
+    "options": ["1433", "27017", "5432", "3306"],
+    "answer": 3,
+    "explanation": "MySQL utiliza por defecto el puerto 3306 (TCP). SQL Server usa 1433, PostgreSQL el 5432 y MongoDB el 27017."
   }
+]
 ]
