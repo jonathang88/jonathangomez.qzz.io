@@ -986,5 +986,285 @@
     ],
     "answer": 2,
     "explanation": "Un ataque DDoS busca saturar los recursos de un servicio mediante múltiples solicitudes."
-  }
+  },
+  {
+  "id": 77,
+  "category": "Redes",
+  "difficulty": "medium",
+  "question": "Un administrador configura la dirección IP 192.168.10.130/26 en un servidor. ¿Cuál es la dirección de red correspondiente?",
+  "options": [
+    "192.168.10.0",
+    "192.168.10.64",
+    "192.168.10.128",
+    "192.168.10.192"
+  ],
+  "answer": 2,
+  "explanation": "Una máscara /26 genera bloques de 64 direcciones (0, 64, 128, 192). La IP 192.168.10.130 pertenece al bloque que inicia en 192.168.10.128."
+},
+  {
+  "id": 78,
+  "category": "Redes",
+  "difficulty": "medium",
+  "question": "¿Cuál es la dirección broadcast de la red 192.168.10.128/26?",
+  "options": [
+    "192.168.10.191",
+    "192.168.10.255",
+    "192.168.10.190",
+    "192.168.10.129"
+  ],
+  "answer": 0,
+  "explanation": "La subred /26 tiene bloques de 64 direcciones. La red comienza en 192.168.10.128 y termina en 192.168.10.191, siendo esta última la dirección broadcast."
+},
+  {
+  "id": 79,
+  "category": "Redes",
+  "difficulty": "medium",
+  "question": "Una empresa necesita una subred que soporte al menos 50 hosts. ¿Cuál de los siguientes prefijos CIDR es el más adecuado?",
+  "options": [
+    "/27",
+    "/28",
+    "/26",
+    "/30"
+  ],
+  "answer": 2,
+  "explanation": "Una red /26 proporciona 62 hosts utilizables, suficiente para 50 dispositivos. Una /27 solo proporciona 30 hosts."
+},
+  {
+  "id": 80,
+  "category": "Redes",
+  "difficulty": "hard",
+  "question": "La dirección IP 143.169.79.100/20 pertenece a una red cuyo tamaño de bloque es de 16 en el tercer octeto. ¿Cuál es la dirección de red correspondiente?",
+  "options": [
+    "143.169.64.0",
+    "143.169.80.0",
+    "143.169.79.0",
+    "143.169.48.0"
+  ],
+  "answer": 0,
+  "explanation": "Una máscara /20 equivale a 255.255.240.0. Los bloques avanzan de 16 en 16 en el tercer octeto. El valor 79 pertenece al rango 64-79, por lo que la red es 143.169.64.0."
+},
+  {
+  "id": 81,
+  "category": "Redes",
+  "difficulty": "hard",
+  "question": "¿Cuál es el número máximo de hosts utilizables en una red IPv4 con prefijo /27?",
+  "options": [
+    "14",
+    "30",
+    "62",
+    "126"
+  ],
+  "answer": 1,
+  "explanation": "Una red /27 deja 5 bits para hosts. 2^5 = 32 direcciones totales. Restando red y broadcast quedan 30 hosts utilizables."
+},
+  {
+  "id": 82,
+  "category": "Redes",
+  "difficulty": "easy",
+  "question": "¿Cuál es la función principal de una dirección broadcast en IPv4?",
+  "options": [
+    "Identificar un router",
+    "Enviar tráfico a todos los dispositivos de la subred",
+    "Asignar una dirección dinámica",
+    "Traducir nombres DNS"
+  ],
+  "answer": 1,
+  "explanation": "La dirección broadcast permite enviar un paquete a todos los hosts dentro de una misma subred."
+},
+ {
+  "id": 83,
+  "category": "Redes",
+  "difficulty": "easy",
+  "question": "¿Cuál es una ventaja importante de IPv6 frente a IPv4?",
+  "options": [
+    "Utiliza direcciones de 32 bits",
+    "Elimina completamente TCP",
+    "Ofrece un espacio de direcciones mucho mayor",
+    "Requiere NAT obligatoriamente"
+  ],
+  "answer": 2,
+  "explanation": "IPv6 utiliza direcciones de 128 bits, proporcionando un espacio de direccionamiento enormemente superior al de IPv4."
+},
+  {
+  "id": 84,
+  "category": "Redes",
+  "difficulty": "medium",
+  "question": "¿Cuál de las siguientes máscaras corresponde al prefijo CIDR /26?",
+  "options": [
+    "255.255.255.0",
+    "255.255.255.128",
+    "255.255.255.192",
+    "255.255.255.224"
+  ],
+  "answer": 2,
+  "explanation": "El prefijo /26 corresponde a la máscara decimal 255.255.255.192."
+},
+  {
+  "id": 85,
+  "category": "Redes",
+  "difficulty": "medium",
+  "question": "Dos equipos tienen las direcciones 192.168.1.10/24 y 192.168.2.10/24. ¿Por qué no pueden comunicarse directamente sin un router?",
+  "options": [
+    "Porque pertenecen a diferentes VLAN",
+    "Porque están en diferentes subredes",
+    "Porque utilizan IPv6",
+    "Porque tienen la misma máscara"
+  ],
+  "answer": 1,
+  "explanation": "Las direcciones pertenecen a las redes 192.168.1.0/24 y 192.168.2.0/24. Al estar en subredes distintas, requieren un dispositivo de capa 3 para comunicarse."
+},
+  {
+  "id": 86,
+  "category": "Redes",
+  "difficulty": "hard",
+  "question": "Una red IPv4 utiliza el prefijo /23. ¿Cuántos hosts utilizables proporciona esta subred?",
+  "options": [
+    "254",
+    "510",
+    "1022",
+    "126"
+  ],
+  "answer": 1,
+  "explanation": "Una red /23 deja 9 bits para hosts. 2^9 = 512 direcciones totales. Restando red y broadcast quedan 510 hosts utilizables."
+},
+  {
+  "id": 87,
+  "category": "Redes",
+  "difficulty": "medium",
+  "question": "Una entidad gubernamental decide separar la red de servidores de la red de usuarios mediante subredes diferentes. ¿Cuál es el principal beneficio de seguridad que ofrece esta segmentación?",
+  "options": [
+    "Aumentar la velocidad del Internet",
+    "Reducir el consumo eléctrico de la red",
+    "Limitar la propagación de ataques y controlar el tráfico entre segmentos",
+    "Eliminar la necesidad de firewalls"
+  ],
+  "answer": 2,
+  "explanation": "La segmentación mediante subredes permite aislar recursos críticos y aplicar controles de seguridad específicos entre redes."
+},
+  {
+  "id": 88,
+  "category": "Redes",
+  "difficulty": "medium",
+  "question": "Durante una auditoría se identifica que todos los equipos de usuarios y servidores comparten la misma red 192.168.1.0/24. ¿Cuál es la recomendación más adecuada desde el punto de vista de seguridad?",
+  "options": [
+    "Deshabilitar DHCP",
+    "Crear subredes separadas para usuarios y servidores",
+    "Cambiar todas las direcciones IP a IPv6",
+    "Eliminar las ACL del firewall"
+  ],
+  "answer": 1,
+  "explanation": "La separación de usuarios y servidores mediante subredes reduce la superficie de ataque y facilita la aplicación de controles de acceso."
+},
+  {
+  "id": 89,
+  "category": "Redes",
+  "difficulty": "hard",
+  "question": "Un firewall debe permitir únicamente tráfico proveniente de la subred 10.20.30.0/24 hacia un servidor crítico. ¿Cuál de las siguientes direcciones pertenece a dicha subred?",
+  "options": [
+    "10.20.31.10",
+    "10.20.30.150",
+    "10.20.29.200",
+    "10.20.32.5"
+  ],
+  "answer": 1,
+  "explanation": "La red 10.20.30.0/24 incluye las direcciones desde 10.20.30.1 hasta 10.20.30.254."
+},
+  {
+  "id": 90,
+  "category": "Redes",
+  "difficulty": "hard",
+  "question": "Un administrador configura una ACL para bloquear el tráfico dirigido a la dirección broadcast de una red. ¿Cuál es la razón principal para implementar esta medida?",
+  "options": [
+    "Evitar ataques de amplificación y tráfico innecesario",
+    "Aumentar la memoria RAM de los equipos",
+    "Permitir acceso remoto a usuarios externos",
+    "Reducir el uso de DNS"
+  ],
+  "answer": 0,
+  "explanation": "El tráfico broadcast puede ser utilizado en ciertos ataques y generar consumo innecesario de recursos."
+},
+  {
+  "id": 91,
+  "category": "Seguridad",
+  "difficulty": "medium",
+  "question": "Durante la investigación de un incidente se detecta que un equipo tiene la dirección IP 172.16.10.25. ¿A qué tipo de direccionamiento pertenece esta dirección?",
+  "options": [
+    "Dirección pública",
+    "Dirección privada",
+    "Dirección multicast",
+    "Dirección loopback"
+  ],
+  "answer": 1,
+  "explanation": "El rango 172.16.0.0 a 172.31.255.255 corresponde a direcciones privadas según RFC 1918."
+},
+  {
+  "id": 92,
+  "category": "Seguridad",
+  "difficulty": "medium",
+  "question": "Una entidad requiere acceso remoto seguro para funcionarios que trabajan desde casa. ¿Qué tecnología utiliza normalmente direccionamiento IP para crear un canal cifrado entre el usuario y la red institucional?",
+  "options": [
+    "FTP",
+    "VPN",
+    "ARP",
+    "SNMP"
+  ],
+  "answer": 1,
+  "explanation": "Las VPN establecen túneles cifrados que permiten acceder de forma segura a recursos internos."
+},
+  {
+  "id": 93,
+  "category": "Redes",
+  "difficulty": "hard",
+  "question": "Una subred IPv4 con máscara /27 será utilizada para alojar dispositivos de monitoreo de seguridad. ¿Cuál es el número máximo de hosts utilizables?",
+  "options": [
+    "14",
+    "30",
+    "62",
+    "126"
+  ],
+  "answer": 1,
+  "explanation": "Una red /27 dispone de 32 direcciones totales; descontando red y broadcast quedan 30 hosts utilizables."
+},
+  {
+  "id": 94,
+  "category": "Seguridad",
+  "difficulty": "medium",
+  "question": "¿Cuál es una ventaja importante de IPv6 desde la perspectiva de crecimiento y administración de infraestructura tecnológica?",
+  "options": [
+    "Utiliza menos bits que IPv4",
+    "Reduce el tamaño de las direcciones IP",
+    "Proporciona un espacio de direccionamiento significativamente mayor",
+    "Elimina la necesidad de routers"
+  ],
+  "answer": 2,
+  "explanation": "IPv6 utiliza direcciones de 128 bits, permitiendo una cantidad masiva de direcciones únicas."
+},
+  {
+  "id": 95,
+  "category": "Seguridad",
+  "difficulty": "hard",
+  "question": "Un analista de ciberseguridad identifica que una regla de firewall permite tráfico desde cualquier origen (0.0.0.0/0) hacia un servidor interno. ¿Cuál es el principal riesgo asociado?",
+  "options": [
+    "Aumento de la capacidad de almacenamiento",
+    "Exposición innecesaria del servicio a redes externas",
+    "Mejora del rendimiento del servidor",
+    "Reducción de la superficie de ataque"
+  ],
+  "answer": 1,
+  "explanation": "Permitir acceso desde cualquier origen incrementa la exposición a amenazas externas y accesos no autorizados."
+},
+  {
+  "id": 96,
+  "category": "Seguridad",
+  "difficulty": "hard",
+  "question": "Durante una revisión de arquitectura de seguridad se propone dividir una red corporativa en múltiples subredes mediante VLAN y políticas de firewall. ¿Qué principio de seguridad se fortalece principalmente con esta estrategia?",
+  "options": [
+    "Disponibilidad física",
+    "Segmentación y defensa en profundidad",
+    "Compresión de datos",
+    "Balanceo de carga"
+  ],
+  "answer": 1,
+  "explanation": "La segmentación de red es un control fundamental de defensa en profundidad que limita movimientos laterales y reduce el impacto de incidentes."
+}
 ]
