@@ -1406,5 +1406,75 @@
     ],
     "answer": 1,
     "explanation": "ISO 27001 requiere procesos documentados que permitan gestionar riesgos, evidenciar controles y facilitar auditorías."
+  },
+    {
+    "id": 107,
+    "category": "VPN",
+    "difficulty": "medium",
+    "question": "Un administrador necesita conectar dos sedes geográficamente separadas (Matriz y Sucursal) de forma que los equipos de ambas sedes puedan comunicarse como si estuvieran en la misma red local. ¿Qué tipo de VPN debe implementar?",
+    "options": [
+      "VPN de acceso remoto (SSL VPN)",
+      "VPN Site-to-Site (IPsec)",
+      "VPN de capa de aplicación (SSH tunneling)",
+      "Proxy inverso"
+    ],
+    "answer": 1,
+    "explanation": "Una VPN Site-to-Site (como IPsec) conecta redes completas entre sí, permitiendo que equipos de diferentes ubicaciones geográficas se comuniquen de forma transparente y segura."
+  },
+  {
+    "id": 108,
+    "category": "VPN",
+    "difficulty": "medium",
+    "question": "¿Cuál de los siguientes protocolos de VPN opera típicamente en la Capa 2 del modelo OSI y permite transportar tráfico Ethernet como VLAN a través de Internet?",
+    "options": [
+      "IPsec (túnel)",
+      "WireGuard",
+      "L2TP (Layer 2 Tunneling Protocol)",
+      "OpenVPN (modo TCP)"
+    ],
+    "answer": 2,
+    "explanation": "L2TP opera en la Capa 2 y puede transportar tramas Ethernet completas. A menudo se combina con IPsec (L2TP/IPsec) para agregar cifrado y autenticación."
+  },
+  {
+    "id": 109,
+    "category": "Seguridad",
+    "difficulty": "medium",
+    "question": "Una organización implementa una política de \"split tunneling\" en su VPN de acceso remoto. ¿Qué implicación tiene esta decisión desde el punto de vista de seguridad?",
+    "options": [
+      "Todo el tráfico del usuario pasa por la VPN, aumentando la seguridad",
+      "Solo el tráfico destinado a la red corporativa pasa por la VPN; el tráfico a Internet sale directamente del usuario",
+      "La VPN se desconecta automáticamente después de 5 minutos de inactividad",
+      "El usuario debe autenticarse cada 30 minutos"
+    ],
+    "answer": 1,
+    "explanation": "Split tunneling mejora el rendimiento y reduce la carga del VPN, pero introduce un riesgo: el tráfico a Internet no está protegido por la VPN corporativa, pudiendo ser interceptado o inspeccionado en la red local del usuario."
+  },
+  {
+    "id": 110,
+    "category": "VPN",
+    "difficulty": "hard",
+    "question": "Un auditor revisa la implementación de una VPN Site-to-Site IPsec y observa que se utiliza el modo transporte en lugar del modo túnel. ¿Qué debería concluir sobre esta configuración?",
+    "options": [
+      "Es correcta y más segura que el modo túnel",
+      "Solo es adecuada para conexiones cliente-servidor dentro de la misma red, no para site-to-site",
+      "El modo transporte es más rápido y debería usarse siempre",
+      "Es equivalente al modo túnel, solo cambia el nombre"
+    ],
+    "answer": 1,
+    "explanation": "En IPsec, el modo túnel encapsula todo el paquete IP (nuevo encabezado), siendo el adecuado para site-to-site. El modo transporte solo cifra la carga útil y mantiene el encabezado IP original, típicamente usado entre dos hosts finales."
+  },
+  {
+    "id": 111,
+    "category": "Seguridad",
+    "difficulty": "hard",
+    "question": "Durante una prueba de penetración, un consultor descubre que el servidor VPN permite conexiones mediante autenticación por contraseña sin MFA, y además permite el uso de protocolos obsoletos como PPTP. Desde la perspectiva de gestión de riesgos, ¿cuál es la prioridad más alta?",
+    "options": [
+      "Actualizar la versión del sistema operativo del servidor",
+      "Deshabilitar PPTP y exigir MFA o certificados digitales como segundo factor",
+      "Aumentar la longitud mínima de la contraseña a 20 caracteres",
+      "Cambiar el puerto del servidor VPN a un número no estándar"
+    ],
+    "answer": 1,
+    "explanation": "PPTP tiene vulnerabilidades conocidas que permiten descifrar el tráfico. La falta de MFA permite ataques por fuerza bruta o reutilización de credenciales. Mitigar ambos riesgos tiene prioridad sobre cambios menores."
   }
 ]
