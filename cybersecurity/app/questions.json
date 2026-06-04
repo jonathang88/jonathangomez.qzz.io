@@ -1266,5 +1266,145 @@
   ],
   "answer": 1,
   "explanation": "La segmentación de red es un control fundamental de defensa en profundidad que limita movimientos laterales y reduce el impacto de incidentes."
-}
+},
+    {
+    "id": 97,
+    "category": "VPN",
+    "difficulty": "medium",
+    "question": "Una entidad pública requiere que sus funcionarios puedan acceder de forma segura a aplicaciones internas desde sus hogares. ¿Cuál es la solución más adecuada para cumplir este requerimiento?",
+    "options": [
+      "Publicar directamente los servidores en Internet",
+      "Implementar una VPN de acceso remoto",
+      "Asignar direcciones IP públicas a todos los equipos internos",
+      "Utilizar únicamente HTTPS en los servidores"
+    ],
+    "answer": 1,
+    "explanation": "Una VPN de acceso remoto permite a los usuarios autenticados acceder de forma segura a recursos internos a través de un túnel cifrado."
+  },
+  {
+    "id": 98,
+    "category": "VPN",
+    "difficulty": "medium",
+    "question": "Durante la configuración de una VPN WireGuard, un administrador observa que existe intercambio de claves válido pero los usuarios no pueden acceder a los recursos remotos. ¿Cuál debería ser una de las primeras verificaciones?",
+    "options": [
+      "Comprobar las rutas y las AllowedIPs configuradas",
+      "Cambiar el puerto UDP por TCP",
+      "Deshabilitar el firewall del servidor",
+      "Reiniciar el sistema operativo"
+    ],
+    "answer": 0,
+    "explanation": "Un handshake exitoso no garantiza conectividad. Es necesario verificar rutas, AllowedIPs y reglas de firewall."
+  },
+  {
+    "id": 99,
+    "category": "VPN",
+    "difficulty": "hard",
+    "question": "¿Cuál es la principal diferencia entre una VPN Site-to-Site y una VPN Remote Access?",
+    "options": [
+      "Site-to-Site conecta redes completas; Remote Access conecta usuarios individuales",
+      "Remote Access es menos segura que Site-to-Site",
+      "Site-to-Site utiliza TCP y Remote Access utiliza UDP",
+      "No existe diferencia funcional entre ambas"
+    ],
+    "answer": 0,
+    "explanation": "Las VPN Site-to-Site conectan sedes o redes completas, mientras que las VPN Remote Access conectan usuarios individuales a una red corporativa."
+  },
+  {
+    "id": 100,
+    "category": "Seguridad",
+    "difficulty": "hard",
+    "question": "Una organización implementa autenticación multifactor (MFA) para el acceso VPN. ¿Qué riesgo busca mitigar principalmente?",
+    "options": [
+      "La pérdida de paquetes en la red",
+      "El uso de contraseñas comprometidas",
+      "La saturación de ancho de banda",
+      "Los ataques de denegación de servicio"
+    ],
+    "answer": 1,
+    "explanation": "MFA reduce significativamente el riesgo de acceso no autorizado cuando una contraseña es robada o filtrada."
+  },
+  {
+    "id": 101,
+    "category": "Seguridad",
+    "difficulty": "hard",
+    "question": "Un administrador detecta múltiples intentos fallidos de conexión VPN desde direcciones IP extranjeras en horarios no habituales. ¿Cuál debería ser la primera acción?",
+    "options": [
+      "Ignorar los eventos mientras no exista acceso exitoso",
+      "Documentar el evento y revisar los registros de autenticación",
+      "Apagar inmediatamente el servidor VPN",
+      "Eliminar las cuentas de usuario afectadas"
+    ],
+    "answer": 1,
+    "explanation": "La gestión de incidentes comienza con la identificación, análisis y documentación de eventos sospechosos."
+  },
+  {
+    "id": 102,
+    "category": "Firewall",
+    "difficulty": "medium",
+    "question": "Una política de firewall permite únicamente el tráfico necesario para los servicios autorizados y bloquea todo lo demás. ¿Qué principio de seguridad está aplicando?",
+    "options": [
+      "Permitir por defecto",
+      "Acceso irrestricto",
+      "Denegar por defecto o mínimo privilegio",
+      "Balanceo de carga"
+    ],
+    "answer": 2,
+    "explanation": "El principio de mínimo privilegio establece que solo debe permitirse el acceso estrictamente necesario."
+  },
+  {
+    "id": 103,
+    "category": "VPN",
+    "difficulty": "hard",
+    "question": "Durante una auditoría se solicita evidencia de que las conexiones VPN están cifradas y autenticadas. ¿Qué elemento proporciona principalmente esta garantía en WireGuard?",
+    "options": [
+      "Las direcciones IP privadas",
+      "Las claves públicas y privadas de los peers",
+      "El uso de VLAN",
+      "La configuración del DNS"
+    ],
+    "answer": 1,
+    "explanation": "WireGuard utiliza criptografía de clave pública para autenticar peers y cifrar el tráfico."
+  },
+  {
+    "id": 104,
+    "category": "Seguridad",
+    "difficulty": "hard",
+    "question": "Una entidad busca implementar una estrategia de defensa en profundidad. Además de un firewall perimetral, ¿cuál de las siguientes medidas complementa mejor este enfoque?",
+    "options": [
+      "Utilizar una única contraseña para todos los servicios",
+      "Implementar segmentación de red, IDS/IPS y MFA",
+      "Permitir acceso administrativo desde cualquier ubicación",
+      "Deshabilitar el registro de eventos"
+    ],
+    "answer": 1,
+    "explanation": "La defensa en profundidad utiliza múltiples capas de protección para reducir el impacto de fallos individuales."
+  },
+  {
+    "id": 105,
+    "category": "Seguridad",
+    "difficulty": "hard",
+    "question": "En una investigación de incidente se requiere determinar si una VPN estuvo activa durante un periodo específico. ¿Cuál sería una fuente primaria de información?",
+    "options": [
+      "El historial del navegador web",
+      "Los registros (logs) del servidor VPN",
+      "La configuración DNS del cliente",
+      "La tabla ARP del switch"
+    ],
+    "answer": 1,
+    "explanation": "Los logs del servidor VPN contienen información sobre conexiones, autenticaciones y tiempos de sesión."
+  },
+  {
+    "id": 106,
+    "category": "ISO27001",
+    "difficulty": "hard",
+    "question": "Una organización documenta procedimientos de acceso remoto seguro, gestión de incidentes y control de cambios relacionados con VPN. ¿Qué beneficio aporta principalmente esta práctica desde la perspectiva de ISO 27001?",
+    "options": [
+      "Aumentar la velocidad de la red",
+      "Facilitar la gestión, trazabilidad y cumplimiento de controles de seguridad",
+      "Reducir el número de usuarios conectados",
+      "Eliminar la necesidad de auditorías"
+    ],
+    "answer": 1,
+    "explanation": "ISO 27001 requiere procesos documentados que permitan gestionar riesgos, evidenciar controles y facilitar auditorías."
+  }
 ]
