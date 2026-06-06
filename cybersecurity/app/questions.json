@@ -1560,5 +1560,47 @@
     ],
     "answer": 2,
     "explanation": "La tunelización DNS codifica datos o comandos en consultas DNS para evadir firewalls y extraer información o mantener C2 sin ser detectado."
+  },
+  {
+    "id": 118,
+    "category": "MITRE ATT&CK",
+    "difficulty": "hard",
+    "question": "Un equipo de respuesta a incidentes está analizando una intrusión en una red corporativa. Han identificado que el atacante utilizó un script de PowerShell para descargar un payload desde un servidor externo, luego deshabilitó el antivirus mediante una modificación en el registro de Windows y finalmente utilizó credenciales extraídas de la memoria del sistema para moverse lateralmente hacia servidores de bases de datos. El equipo quiere documentar esta actividad utilizando el marco MITRE ATT&CK. ¿Cuáles son las tácticas de MITRE ATT&CK que corresponden a las fases descritas (en orden)?",
+    "options": [
+      "Execution → Defense Evasion → Lateral Movement → Credential Access",
+      "Execution → Defense Evasion → Credential Access → Lateral Movement",
+      "Defense Evasion → Execution → Credential Access → Lateral Movement",
+      "Credential Access → Lateral Movement → Execution → Defense Evasion"
+    ],
+    "answer": 1,
+    "explanation": "Execution (PowerShell descarga el payload) → Defense Evasion (deshabilita antivirus modificando registro) → Credential Access (extrae credenciales de memoria) → Lateral Movement (usa credenciales para moverse a servidores de bases de datos)."
+  },
+  {
+    "id": 119,
+    "category": "MITRE ATT&CK",
+    "difficulty": "medium",
+    "question": "¿Cuál de las siguientes opciones describe mejor el propósito principal del marco MITRE ATT&CK?",
+    "options": [
+      "Proporcionar un estándar para medir la velocidad de respuesta ante incidentes",
+      "Clasificar vulnerabilidades de software con puntajes de severidad (CVSS)",
+      "Describir el comportamiento de los atacantes mediante tácticas, técnicas y procedimientos (TTPs)",
+      "Definir controles de seguridad obligatorios para ISO 27001"
+    ],
+    "answer": 2,
+    "explanation": "MITRE ATT&CK (Adversarial Tactics, Techniques, and Common Knowledge) es una base de conocimiento que clasifica el comportamiento de los adversarios en tácticas (el 'por qué') y técnicas (el 'cómo'), ayudando a equipos de seguridad a entender y defender contra amenazas reales."
+  },
+  {
+    "id": 120,
+    "category": "MITRE ATT&CK",
+    "difficulty": "medium",
+    "question": "Un analista de seguridad revisa los logs del sistema y observa que un atacante utilizó el comando 'netsh advfirewall set allprofiles state off' en un equipo comprometido. Según MITRE ATT&CK, ¿a qué táctica principal pertenece esta técnica?",
+    "options": [
+      "Persistence (Persistencia)",
+      "Privilege Escalation (Escalada de privilegios)",
+      "Defense Evasion (Evasión de defensas)",
+      "Collection (Recolección)"
+    ],
+    "answer": 2,
+    "explanation": "Deshabilitar el firewall del sistema es una técnica de evasión de defensas (T1562.004 - Disable or Modify System Firewall), ya que el atacante busca evitar que el firewall bloquee su tráfico o actividades maliciosas."
   }
 ]
