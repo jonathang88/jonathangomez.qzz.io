@@ -1476,5 +1476,89 @@
     ],
     "answer": 1,
     "explanation": "PPTP tiene vulnerabilidades conocidas que permiten descifrar el tráfico. La falta de MFA permite ataques por fuerza bruta o reutilización de credenciales. Mitigar ambos riesgos tiene prioridad sobre cambios menores."
+  },
+  {
+    "id": 112,
+    "category": "Ciberataques",
+    "difficulty": "hard",
+    "question": "Un banco internacional recibe un correo electrónico dirigido al área de recursos humanos. El mensaje parece provenir del gerente general y le solicita a una analista que descargue una 'factura urgente' desde un enlace compartido en la nube. El correo utiliza el logotipo del banco, el nombre real del gerente y un tono ejecutivo. La analista descarga el archivo y posteriormente el banco sufre un cifrado masivo de sus bases de datos, junto con una nota de rescate en las pantallas. El equipo de seguridad determina que el archivo contenía un script oculto. ¿Cuál es el vector de ataque principal y qué tipo de malware se ejecutó en este caso?",
+    "options": [
+      "Inyección SQL + Spyware",
+      "Ingeniería social + Ransomware",
+      "Denegación de servicio + Adware",
+      "Suplantación de identidad + Keylogger"
+    ],
+    "answer": 1,
+    "explanation": "El correo engaña a la analista mediante manipulación psicológica (ingeniería social) y suplantación del gerente. El archivo descargado ejecuta un ransomware que cifra los datos y exige rescate."
+  },
+  {
+    "id": 113,
+    "category": "Ciberataques",
+    "difficulty": "easy",
+    "question": "Un atacante logra robar las credenciales de un usuario corporativo mediante un formulario falso que simula ser la página de inicio de sesión del portal de recursos humanos. ¿Qué tipo de ataque se está describiendo?",
+    "options": [
+      "Malware",
+      "Phishing",
+      "Ataque de cadena de suministro",
+      "Tunelización DNS"
+    ],
+    "answer": 1,
+    "explanation": "El phishing utiliza sitios o correos falsos para engañar al usuario y robar credenciales, datos personales o financieros."
+  },
+  {
+    "id": 114,
+    "category": "Ciberataques",
+    "difficulty": "medium",
+    "question": "Un empleado descontento con la empresa utiliza sus credenciales activas después de ser despedido (aún no revocadas) para descargar información confidencial de clientes. ¿Cómo se clasifica este ataque?",
+    "options": [
+      "Ataque basado en IoT",
+      "Amenaza interna",
+      "Suplantación de identidad",
+      "Ataque de denegación de servicio"
+    ],
+    "answer": 1,
+    "explanation": "Una amenaza interna proviene de personas dentro de la organización (empleados, exempleados, contratistas) con acceso autorizado o privilegiado."
+  },
+  {
+    "id": 115,
+    "category": "Ciberataques",
+    "difficulty": "medium",
+    "question": "Un atacante inyecta código malicioso en un software legítimo que una empresa descarga desde el repositorio oficial de un proveedor externo. Este código compromete la red de la empresa al momento de la instalación. ¿Qué tipo de ataque se presenta?",
+    "options": [
+      "Ataque de cadena de suministro",
+      "Ataque de inyección de código",
+      "Ataque basado en IA",
+      "Tunelización DNS"
+    ],
+    "answer": 0,
+    "explanation": "Los ataques de cadena de suministro comprometen componentes o proveedores externos para distribuir malware a través de software o hardware confiable."
+  },
+  {
+    "id": 116,
+    "category": "Ciberataques",
+    "difficulty": "medium",
+    "question": "Un atacante sobrecarga un servidor web con millones de solicitudes falsas provenientes de múltiples dispositivos IoT infectados, logrando que el sitio web quede inaccesible para usuarios legítimos. ¿Qué dos tipos de ataque se combinan aquí?",
+    "options": [
+      "Ataque basado en identidad + Inyección de código",
+      "Denegación de servicio (DoS) + Ataque basado en IoT",
+      "Malware + Phishing",
+      "Ingeniería social + Amenaza interna"
+    ],
+    "answer": 1,
+    "explanation": "Se trata de un DDoS usando una botnet de dispositivos IoT. El ataque de denegación de servicio agota recursos, y el vector proviene de IoT vulnerables."
+  },
+  {
+    "id": 117,
+    "category": "Ciberataques",
+    "difficulty": "hard",
+    "question": "Un analista de seguridad observa consultas DNS salientes hacia un dominio desconocido desde un equipo interno, con una frecuencia inusualmente alta y subdominios largos y aleatorios. No hay tráfico de red aparente más allá de estas consultas. ¿Qué técnica maliciosa debería sospechar?",
+    "options": [
+      "Ataque de fuerza bruta",
+      "Ataque de inyección SQL",
+      "Tunelización DNS",
+      "Ataque de suplantación de identidad"
+    ],
+    "answer": 2,
+    "explanation": "La tunelización DNS codifica datos o comandos en consultas DNS para evadir firewalls y extraer información o mantener C2 sin ser detectado."
   }
 ]
