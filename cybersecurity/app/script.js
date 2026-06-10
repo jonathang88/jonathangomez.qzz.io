@@ -53,6 +53,9 @@ function startQuiz(){
             [selectedQuestions[i], selectedQuestions[j]] = [selectedQuestions[j], selectedQuestions[i]];
         }
     }
+    else if(order === "reverse"){
+    selectedQuestions.reverse();
+}
     selectedQuestions = selectedQuestions.slice(0, count);
 
     currentQuestion = 0;
