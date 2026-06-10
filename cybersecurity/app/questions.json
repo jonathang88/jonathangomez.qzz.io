@@ -1602,5 +1602,74 @@
     ],
     "answer": 2,
     "explanation": "Deshabilitar el firewall del sistema es una técnica de evasión de defensas (T1562.004 - Disable or Modify System Firewall), ya que el atacante busca evitar que el firewall bloquee su tráfico o actividades maliciosas."
-  }
+  },
+  {
+  "id": 121,
+  "category": "Firewall",
+  "difficulty": "hard",
+  "question": "Una entidad pública necesita adquirir un firewall para su perímetro de red. Los requerimientos incluyen: inspección de tráfico basada en el estado de las conexiones, capacidad de identificar aplicaciones más allá de puertos y protocolos, y prevención integrada de intrusiones (IPS). La entidad maneja transacciones críticas y requiere visibilidad de la capa de aplicación. ¿Qué tipo de firewall debe seleccionar según buenas prácticas (NIST SP 800-41)?",
+  "options": [
+    "Firewall stateless (filtrado de paquetes básico)",
+    "Firewall stateful (inspección de conexiones)",
+    "NGFW (Next Generation Firewall)",
+    "WAF (Web Application Firewall)"
+  ],
+  "answer": 2,
+  "explanation": "Un NGFW (Next Generation Firewall) combina funcionalidades stateful, inspección profunda de paquetes (DPI), identificación de aplicaciones y capacidades IPS integradas. La guía NIST SP 800-41 recomienda NGFW para entornos críticos que requieren visibilidad en capa de aplicación."
+},
+{
+  "id": 122,
+  "category": "Firewall",
+  "difficulty": "hard",
+  "question": "Un analista de seguridad está revisando la configuración de un firewall perimetral. El dispositivo mantiene una tabla de conexiones activas y solo permite tráfico de respuesta si previamente hubo una solicitud desde la red interna. Sin embargo, no tiene capacidad de inspeccionar el contenido de la aplicación ni de bloquear ataques como inyección SQL. ¿Qué tipo de firewall está analizando el experto?",
+  "options": [
+    "Firewall stateless",
+    "Firewall stateful",
+    "WAF (Web Application Firewall)",
+    "Application Gateway"
+  ],
+  "answer": 1,
+  "explanation": "Un firewall stateful mantiene una tabla de conexiones y permite tráfico de respuesta basado en conexiones previamente establecidas. A diferencia del NGFW, no inspecciona aplicaciones ni previene ataques web como SQLi. Es suficiente para muchas redes pero no para entornos con aplicaciones web críticas."
+},
+{
+  "id": 123,
+  "category": "Firewall",
+  "difficulty": "hard",
+  "question": "Una entidad gubernamental expone múltiples aplicaciones web al público (portales de trámites, consultas de estados financieros, autenticación de usuarios). El equipo de seguridad ha detectado intentos de inyección SQL y cross-site scripting (XSS) dirigidos a estos portales. El firewall perimetral existente (stateful) no ha bloqueado estos ataques. ¿Qué solución específica debería implementar la entidad para proteger exclusivamente sus aplicaciones web sin reemplazar todo el perímetro?",
+  "options": [
+    "Reemplazar el firewall actual por un NGFW",
+    "Adquirir un WAF (Web Application Firewall)",
+    "Configurar reglas de filtrado por puertos (bloquear puerto 80 y dejar solo 443)",
+    "Implementar un firewall stateless en modo bridge"
+  ],
+  "answer": 1,
+  "explanation": "Un WAF (Web Application Firewall) está diseñado específicamente para proteger aplicaciones web contra ataques como SQLi, XSS, CSRF, entre otros. Se despliega delante de los servidores web y analiza el tráfico HTTP/HTTPS. No reemplaza al firewall perimetral, lo complementa."
+},
+{
+  "id": 124,
+  "category": "Firewall",
+  "difficulty": "hard",
+  "question": "Un administrador está configurando un firewall para una red pequeña que solo necesita filtrado básico de paquetes basado en IP origen/destino y puertos. El dispositivo no mantiene estado de conexiones y cada paquete se evalúa de forma independiente. Según la guía NIST SP 800-41, ¿qué limitación principal tiene este tipo de firewall en comparación con uno stateful?",
+  "options": [
+    "Es más costoso y consume más recursos",
+    "No puede bloquear tráfico basado en reglas de puertos",
+    "Es vulnerable a ataques como IP spoofing y no detecta paquetes fuera de contexto",
+    "No permite configurar reglas para tráfico saliente"
+  ],
+  "answer": 2,
+  "explanation": "Un firewall stateless evalúa cada paquete de forma independiente sin mantener una tabla de conexiones. Esto lo hace vulnerable a ataques como IP spoofing y no puede detectar paquetes que están fuera del contexto de una conexión (por ejemplo, un paquete RST sin SYN previo). La guía NIST SP 800-41 recomienda migrar de stateless a stateful o NGFW."
+},{
+  "id": 125,
+  "category": "Firewall",
+  "difficulty": "hard",
+  "question": "Una entidad pública está diseñando su arquitectura de seguridad perimetral siguiendo los lineamientos de NIST SP 800-41. Se decide implementar una zona desmilitarizada (DMZ) para alojar servidores web y de correo. El firewall debe permitir tráfico desde Internet hacia los servidores en DMZ solo en puertos específicos (80, 443, 25), pero debe bloquear todo el tráfico iniciado desde DMZ hacia la red interna excepto las respuestas a solicitudes internas válidas. ¿Qué principio de seguridad están aplicando los administradores?",
+  "options": [
+    "Permitir todo por defecto y luego bloquear excepciones",
+    "Denegar por defecto y permitir solo lo necesario (mínimo privilegio)",
+    "Balanceo de carga entre firewalls activos",
+    "Inspección TLS de todas las conexiones"
+  ],
+  "answer": 1,
+  "explanation": "El principio de denegar por defecto (default deny) establece que todo el tráfico está bloqueado a menos que exista una regla explícita que lo permita. Complementado con el principio de mínimo privilegio, se permite solo el tráfico estrictamente necesario para las funciones del negocio. La guía NIST SP 800-41 recomienda esta práctica como base para cualquier configuración de firewall."
+}
 ]
