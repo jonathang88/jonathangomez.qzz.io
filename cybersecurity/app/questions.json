@@ -1671,5 +1671,75 @@
   ],
   "answer": 1,
   "explanation": "El principio de denegar por defecto (default deny) establece que todo el tráfico está bloqueado a menos que exista una regla explícita que lo permita. Complementado con el principio de mínimo privilegio, se permite solo el tráfico estrictamente necesario para las funciones del negocio. La guía NIST SP 800-41 recomienda esta práctica como base para cualquier configuración de firewall."
+},
+{
+  "id": 126,
+  "category": "Network Security",
+  "difficulty": "hard",
+  "question": "Una entidad gubernamental publica un portal ciudadano accesible desde Internet y utiliza una base de datos que contiene información tributaria sensible. El arquitecto de seguridad propone ubicar el servidor web en una DMZ y la base de datos en la red interna. ¿Cuál es la principal ventaja de esta arquitectura?",
+  "options": [
+    "Reduce el consumo de ancho de banda de Internet",
+    "Permite que la base de datos sea accesible directamente desde Internet",
+    "Limita el impacto de una posible intrusión en el servidor web expuesto",
+    "Elimina la necesidad de utilizar firewalls"
+  ],
+  "answer": 2,
+  "explanation": "La DMZ permite aislar los servicios expuestos al público de los activos críticos internos. Si un atacante compromete el servidor web, aún deberá superar controles adicionales para acceder a la base de datos ubicada en la red interna."
+},
+{
+  "id": 127,
+  "category": "Firewall",
+  "difficulty": "hard",
+  "question": "Un firewall segmenta la infraestructura en cuatro zonas: Untrust, DMZ, Trust y Management. Durante una auditoría se detecta que la interfaz de administración del firewall es accesible desde Internet. ¿Cuál es la mejor práctica recomendada?",
+  "options": [
+    "Mover la interfaz administrativa a la zona Management y restringir el acceso a administradores autorizados",
+    "Mantener el acceso desde Internet utilizando únicamente HTTPS",
+    "Publicar la interfaz administrativa en la DMZ para facilitar la gestión remota",
+    "Permitir acceso desde cualquier zona utilizando autenticación por contraseña"
+  ],
+  "answer": 0,
+  "explanation": "Las interfaces administrativas deben ubicarse en una zona de Management separada y accesible únicamente por personal autorizado. Exponer servicios de administración a Internet incrementa significativamente la superficie de ataque."
+},
+{
+  "id": 128,
+  "category": "Network Architecture",
+  "difficulty": "hard",
+  "question": "Una organización aplica el principio de mínimo privilegio en las comunicaciones entre zonas. El servidor web ubicado en la DMZ requiere consultar una base de datos alojada en la zona Trust. ¿Cuál es la configuración más segura?",
+  "options": [
+    "Permitir todo el tráfico desde la DMZ hacia la zona Trust",
+    "Permitir únicamente el puerto y protocolo necesarios entre el servidor web y la base de datos específica",
+    "Permitir acceso completo a toda la subred Trust desde la DMZ",
+    "Mover la base de datos a la DMZ para simplificar la comunicación"
+  ],
+  "answer": 1,
+  "explanation": "El principio de mínimo privilegio establece que solo debe permitirse el tráfico estrictamente necesario. La regla debe limitar origen, destino, puerto y protocolo específicos para reducir la superficie de ataque."
+},
+{
+  "id": 129,
+  "category": "Security Zones",
+  "difficulty": "hard",
+  "question": "Un analista revisa las políticas de firewall de una entidad pública y observa que existe una regla que permite conexiones iniciadas desde la zona Untrust hacia la zona Trust. Considerando las buenas prácticas de segmentación, ¿cuál es el riesgo principal asociado a esta configuración?",
+  "options": [
+    "Incremento del consumo de CPU del firewall",
+    "Posibilidad de acceso directo de amenazas externas a recursos internos críticos",
+    "Reducción de la disponibilidad de los servicios publicados",
+    "Dificultad para realizar copias de seguridad"
+  ],
+  "answer": 1,
+  "explanation": "La zona Trust contiene los activos internos de la organización. Permitir conexiones iniciadas desde Untrust hacia Trust aumenta significativamente el riesgo de compromiso de sistemas críticos desde Internet."
+},
+{
+  "id": 130,
+  "category": "Network Security",
+  "difficulty": "hard",
+  "question": "Una alcaldía implementa una arquitectura con zonas Untrust, DMZ, Trust y Management. Durante una revisión se debe decidir dónde ubicar los siguientes activos: servidor web público, Active Directory, consola de administración de switches y estaciones de trabajo de empleados. ¿Cuál de las siguientes distribuciones es la más adecuada?",
+  "options": [
+    "Servidor web en Trust, Active Directory en DMZ, consola en Untrust, usuarios en Management",
+    "Servidor web en DMZ, Active Directory en Trust, consola en Management, usuarios en Trust",
+    "Servidor web en Untrust, Active Directory en DMZ, consola en Trust, usuarios en Management",
+    "Todos los activos en Trust protegidos por un firewall perimetral"
+  ],
+  "answer": 1,
+  "explanation": "Los servicios públicos deben ubicarse en la DMZ, los recursos críticos como Active Directory en Trust, las herramientas administrativas en Management y las estaciones de trabajo corporativas en la zona Trust."
 }
 ]
