@@ -43,19 +43,22 @@ function startQuiz(){
     const order     = document.getElementById("order").value;
     const count     = parseInt(document.getElementById("questionCount").value);
 
-    selectedQuestions = [...questions];
-    if(category !== "all"){
-        selectedQuestions = selectedQuestions.filter(q => q.category === category);
-    }
+    // 1. Filtrar primero
+    selectedQuestions = category !== "all"
+        ? questions.filter(q => q.category === category)
+        : [...questions];
+    
+    // 2. Ordenar después del filtro
     if(order === "random"){
         for(let i = selectedQuestions.length - 1; i > 0; i--){
             const j = Math.floor(Math.random() * (i + 1));
             [selectedQuestions[i], selectedQuestions[j]] = [selectedQuestions[j], selectedQuestions[i]];
         }
+    } else if(order === "reverse"){
+        selectedQuestions.reverse();  // ahora es seguro: selectedQuestions ya es copia
     }
-    else if(order === "reverse"){
-    selectedQuestions.reverse();
-}
+
+    // 3. Recortar al conteo deseado
     selectedQuestions = selectedQuestions.slice(0, count);
 
     currentQuestion = 0;
