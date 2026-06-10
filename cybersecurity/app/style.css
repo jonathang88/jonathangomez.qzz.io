@@ -92,3 +92,11 @@ button:hover {
     font-family: monospace;
     font-size: 0.95rem;
 }
+#timerBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    font-family: monospace;
+    font-size: 0.95rem;
+}
