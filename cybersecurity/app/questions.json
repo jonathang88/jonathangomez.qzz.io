@@ -1741,5 +1741,228 @@
   ],
   "answer": 1,
   "explanation": "Los servicios públicos deben ubicarse en la DMZ, los recursos críticos como Active Directory en Trust, las herramientas administrativas en Management y las estaciones de trabajo corporativas en la zona Trust."
-}
+},
+  {
+
+    "id": 131,
+
+    "category": "Network Security",
+
+    "difficulty": "medium",
+
+    "question": "Una entidad pública tiene una red LAN (192.168.1.0/24) y una DMZ (192.168.2.0/24). Un administrador requiere que únicamente el equipo 192.168.1.100 pueda administrar por SSH un servidor ubicado en 192.168.2.20. ¿Cuál es la regla más segura?",
+
+    "options": [
+
+      "Permitir cualquier origen hacia 192.168.2.20 puerto 22",
+
+      "Permitir 192.168.1.100 hacia 192.168.2.20 puerto 22",
+
+      "Permitir la red 192.168.1.0/24 hacia cualquier destino puerto 22",
+
+      "Permitir cualquier origen hacia cualquier destino puerto 22"
+
+    ],
+
+    "answer": 1,
+
+    "explanation": "La regla debe aplicar el principio de mínimo privilegio permitiendo únicamente la IP administrativa autorizada hacia el servidor objetivo."
+
+  },
+
+  {
+
+    "id": 132,
+
+    "category": "Network Security",
+
+    "difficulty": "medium",
+
+    "question": "¿Cuál es el principal beneficio de ubicar un servidor web público en una DMZ en lugar de la red interna?",
+
+    "options": [
+
+      "Mejorar la velocidad de navegación de los usuarios",
+
+      "Reducir el consumo de CPU del firewall",
+
+      "Aislar servicios expuestos a Internet de los recursos internos críticos",
+
+      "Eliminar la necesidad de aplicar reglas de firewall"
+
+    ],
+
+    "answer": 2,
+
+    "explanation": "La DMZ proporciona una capa de aislamiento entre servicios públicos y recursos internos sensibles."
+
+  },
+
+  {
+
+    "id": 133,
+
+    "category": "Network Security",
+
+    "difficulty": "hard",
+
+    "question": "En un firewall stateful como pfSense, un administrador crea una regla que permite SSH desde una estación de trabajo hacia un servidor. ¿Por qué normalmente no necesita crear una regla adicional para el tráfico de respuesta?",
+
+    "options": [
+
+      "Porque SSH utiliza UDP",
+
+      "Porque el firewall mantiene una tabla de estados y reconoce conexiones establecidas",
+
+      "Porque los servidores responden automáticamente sin pasar por el firewall",
+
+      "Porque NAT reemplaza las reglas de retorno"
+
+    ],
+
+    "answer": 1,
+
+    "explanation": "Los firewalls stateful mantienen una tabla de estados que permite automáticamente el tráfico asociado a conexiones ya establecidas."
+
+  },
+
+  {
+
+    "id": 134,
+
+    "category": "Network Security",
+
+    "difficulty": "medium",
+
+    "question": "En iptables, ¿qué configuración representa mejor una estrategia de seguridad basada en 'Default Deny'?",
+
+    "options": [
+
+      "Policy INPUT ACCEPT y reglas DROP específicas",
+
+      "Policy INPUT ACCEPT sin reglas",
+
+      "Policy INPUT DROP y reglas ACCEPT para servicios autorizados",
+
+      "Policy INPUT ACCEPT y reglas ACCEPT para todos los puertos"
+
+    ],
+
+    "answer": 2,
+
+    "explanation": "La estrategia Default Deny consiste en bloquear todo por defecto y permitir únicamente el tráfico explícitamente autorizado."
+
+  },
+
+  {
+
+    "id": 135,
+
+    "category": "Network Security",
+
+    "difficulty": "hard",
+
+    "question": "Un administrador configura un Port Forward en pfSense para publicar un servidor web de la DMZ. ¿Qué función realiza esta configuración?",
+
+    "options": [
+
+      "Filtrar tráfico ICMP hacia la DMZ",
+
+      "Traducir una dirección o puerto de destino hacia un servidor interno",
+
+      "Crear una VPN entre dos sedes",
+
+      "Cambiar la dirección IP origen del cliente"
+
+    ],
+
+    "answer": 1,
+
+    "explanation": "El Port Forward implementa Destination NAT (DNAT), redirigiendo tráfico recibido en la WAN hacia un host interno."
+
+  },
+
+  {
+
+    "id": 136,
+
+    "category": "Network Security",
+
+    "difficulty": "medium",
+
+    "question": "¿Cuál es la principal diferencia entre Outbound NAT y Port Forwarding?",
+
+    "options": [
+
+      "Outbound NAT modifica el destino y Port Forward modifica el origen",
+
+      "Ambos realizan exactamente la misma función",
+
+      "Outbound NAT modifica la dirección origen y Port Forward modifica la dirección destino",
+
+      "Port Forward solo funciona con UDP"
+
+    ],
+
+    "answer": 2,
+
+    "explanation": "Outbound NAT modifica la dirección origen para tráfico saliente, mientras que Port Forwarding modifica la dirección destino para tráfico entrante."
+
+  },
+
+  {
+
+    "id": 137,
+
+    "category": "Network Security",
+
+    "difficulty": "hard",
+
+    "question": "Un administrador cambia el puerto SSH de un servidor Linux de 22 a 2222. ¿Cuál es el objetivo principal de esta medida?",
+
+    "options": [
+
+      "Eliminar completamente el riesgo de ataques SSH",
+
+      "Cifrar el tráfico SSH con mayor fortaleza",
+
+      "Reducir escaneos automáticos y ruido generado por bots que buscan el puerto estándar",
+
+      "Aumentar la velocidad de autenticación"
+
+    ],
+
+    "answer": 2,
+
+    "explanation": "Cambiar el puerto SSH no reemplaza otras medidas de seguridad, pero reduce intentos automatizados dirigidos al puerto 22."
+
+  },
+
+  {
+
+    "id": 138,
+
+    "category": "Network Security",
+
+    "difficulty": "hard",
+
+    "question": "Una organización publica un servidor web ubicado en una DMZ mediante NAT. Durante una auditoría se solicita identificar el mayor riesgo asociado a una regla de Port Forwarding mal configurada. ¿Cuál es?",
+
+    "options": [
+
+      "Mayor consumo de ancho de banda interno",
+
+      "Exposición involuntaria de servicios internos a Internet",
+
+      "Pérdida de conectividad entre VLANs",
+
+      "Desactivación automática del firewall"
+
+    ],
+
+    "answer": 1,
+
+    "explanation": "Las reglas NAT mal configuradas pueden publicar servicios internos que no deberían estar accesibles desde Internet, aumentando la superficie de ataque."
+
+  }
 ]
