@@ -1964,5 +1964,61 @@
 
     "explanation": "Las reglas NAT mal configuradas pueden publicar servicios internos que no deberían estar accesibles desde Internet, aumentando la superficie de ataque."
 
-  }
+  },
+  {
+  "id": 139,
+  "category": "Network Security",
+  "difficulty": "hard",
+  "question": "Durante una auditoría de seguridad se detecta que existe una regla de firewall que permite tráfico desde cualquier origen hacia cualquier destino utilizando cualquier protocolo. ¿Cuál es el principal riesgo de esta configuración?",
+  "options": [
+    "Reduce el rendimiento del firewall",
+    "Incrementa el consumo de memoria del servidor",
+    "Anula el principio de mínimo privilegio y aumenta la superficie de ataque",
+    "Impide el funcionamiento de servicios publicados"
+  ],
+  "answer": 2,
+  "explanation": "Las reglas excesivamente permisivas eliminan la segmentación y exponen servicios que deberían estar restringidos, violando el principio de mínimo privilegio."
+},
+{
+  "id": 140,
+  "category": "Network Security",
+  "difficulty": "medium",
+  "question": "¿Cuál es la principal ventaja de utilizar objetos o alias en la configuración de un firewall empresarial?",
+  "options": [
+    "Reducen el uso de CPU del firewall",
+    "Permiten reutilizar grupos de direcciones, redes o servicios facilitando la administración de reglas",
+    "Eliminan la necesidad de utilizar NAT",
+    "Permiten cifrar automáticamente el tráfico"
+  ],
+  "answer": 1,
+  "explanation": "Los alias simplifican la administración, reducen errores y permiten modificar múltiples reglas actualizando un único objeto."
+},
+{
+  "id": 141,
+  "category": "Network Security",
+  "difficulty": "hard",
+  "question": "Una entidad gubernamental publica un servidor web en una DMZ. Como medida de seguridad se requiere que los usuarios de Internet puedan acceder al servidor, pero que dicho servidor no pueda iniciar conexiones hacia la red interna. ¿Qué principio de seguridad se está aplicando?",
+  "options": [
+    "Redundancia de red",
+    "Segmentación y aislamiento de zonas de seguridad",
+    "Balanceo de carga",
+    "Resolución de nombres distribuida"
+  ],
+  "answer": 1,
+  "explanation": "La DMZ se utiliza para aislar servicios expuestos a Internet y limitar su capacidad de acceso a los recursos internos."
+},
+{
+  "id": 142,
+  "category": "Network Security",
+  "difficulty": "hard",
+  "question": "Un administrador debe revisar las reglas de un firewall después de un incidente de seguridad. ¿Cuál de las siguientes actividades proporciona mayor valor para determinar si una conexión fue permitida o bloqueada?",
+  "options": [
+    "Revisar únicamente las interfaces de red configuradas",
+    "Verificar el consumo de CPU y memoria del firewall",
+    "Analizar los registros (logs) y eventos generados por las reglas de filtrado",
+    "Reiniciar el firewall y volver a generar el tráfico"
+  ],
+  "answer": 2,
+  "explanation": "Los logs del firewall permiten identificar qué regla procesó una conexión, si fue permitida o bloqueada y desde qué origen se generó el tráfico."
+}
 ]
