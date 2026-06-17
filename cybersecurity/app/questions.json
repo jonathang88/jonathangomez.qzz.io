@@ -2020,5 +2020,117 @@
   ],
   "answer": 2,
   "explanation": "Los logs del firewall permiten identificar qué regla procesó una conexión, si fue permitida o bloqueada y desde qué origen se generó el tráfico."
+},
+  {
+  "id": 143,
+  "category": "Firewall",
+  "difficulty": "hard",
+  "question": "Una entidad pública segmenta su infraestructura mediante una red LAN para usuarios internos y una DMZ donde se aloja un servidor web institucional. Durante una prueba de seguridad se observa que un analista desde la LAN puede hacer ping al servidor de la DMZ, pero no puede acceder al servicio HTTP. Tras revisar la configuración, se confirma que el servidor web está operativo y escuchando en el puerto 80. ¿Cuál es la explicación más probable de este comportamiento?",
+  "options": [
+    "Existe conectividad IP entre las redes, pero una regla de firewall está bloqueando el acceso al puerto HTTP",
+    "El protocolo ICMP requiere menos recursos que HTTP y por eso siempre funciona",
+    "La DMZ solo permite tráfico proveniente de Internet y nunca desde la LAN",
+    "El servidor web responde únicamente a equipos que utilicen HTTPS"
+  ],
+  "answer": 0,
+  "explanation": "Si el ping funciona existe conectividad de red. La imposibilidad de acceder al servicio HTTP indica que una política de filtrado o ACL está bloqueando el puerto o servicio específico."
+},
+  {
+  "id": 144,
+  "category": "Firewall",
+  "difficulty": "hard",
+  "question": "Un administrador configura un firewall siguiendo el principio de mínimo privilegio. Inicialmente elimina todas las reglas existentes y establece una política predeterminada de denegación. Posteriormente habilita únicamente el acceso SSH desde una estación administrativa autorizada hacia un servidor crítico. ¿Cuál es la principal ventaja de este enfoque?",
+  "options": [
+    "Reduce el consumo de CPU del firewall",
+    "Permite el acceso únicamente a los servicios expresamente autorizados",
+    "Evita la necesidad de revisar logs de seguridad",
+    "Garantiza que ningún servicio podrá ser vulnerado"
+  ],
+  "answer": 1,
+  "explanation": "El principio de mínimo privilegio consiste en permitir únicamente los accesos necesarios y bloquear todo lo demás por defecto, reduciendo la superficie de ataque."
+},
+  {
+  "id": 145,
+  "category": "Network Security",
+  "difficulty": "hard",
+  "question": "Durante una auditoría se revisa la arquitectura perimetral de una entidad estatal. El firewall mantiene una tabla dinámica de conexiones establecidas y permite automáticamente el tráfico de respuesta asociado a sesiones legítimas previamente iniciadas. ¿Qué característica del firewall está siendo utilizada?",
+  "options": [
+    "NAT dinámico",
+    "Inspección de contenido web",
+    "Stateful Packet Inspection",
+    "Filtrado basado en reputación"
+  ],
+  "answer": 2,
+  "explanation": "Los firewalls stateful mantienen una tabla de estados que les permite identificar conexiones establecidas y permitir automáticamente el tráfico asociado a dichas sesiones."
+},
+  {
+  "id": 146,
+  "category": "IDS/IPS",
+  "difficulty": "hard",
+  "question": "Una organización implementa Suricata en modo IDS y habilita reglas de Emerging Threats. Durante una prueba controlada con Nmap se generan múltiples alertas relacionadas con reconocimiento de servicios, pero el escaneo se completa exitosamente. ¿Cuál es la conclusión más adecuada?",
+  "options": [
+    "El IDS está funcionando correctamente porque detecta la actividad, pero no bloquea el tráfico",
+    "El firewall se encuentra mal configurado",
+    "Las reglas de Suricata están dañadas",
+    "El escaneo Nmap no logró llegar al servidor objetivo"
+  ],
+  "answer": 0,
+  "explanation": "Un IDS tiene como función principal detectar y alertar sobre actividades sospechosas. La prevención y bloqueo corresponden a un IPS."
+},
+  {
+  "id": 147,
+  "category": "IDS/IPS",
+  "difficulty": "hard",
+  "question": "Un administrador habilita el modo IPS en Suricata esperando bloquear automáticamente todo el tráfico sospechoso. Sin embargo, observa que algunas actividades continúan generando alertas sin ser bloqueadas. ¿Cuál es la explicación más precisa?",
+  "options": [
+    "El modo IPS solo funciona con tráfico HTTPS",
+    "La prevención depende de que las firmas estén configuradas con acciones de bloqueo como DROP o REJECT",
+    "Los IDS e IPS funcionan exactamente igual",
+    "Las reglas ET Open únicamente generan eventos informativos"
+  ],
+  "answer": 1,
+  "explanation": "Activar IPS no garantiza que todo tráfico sea bloqueado. Las reglas deben tener acciones de prevención configuradas para que el motor descarte o rechace paquetes."
+},
+  {
+  "id": 148,
+  "category": "IDS/IPS",
+  "difficulty": "hard",
+  "question": "Durante una investigación se detectan cientos de intentos fallidos de autenticación SSH contra un servidor Linux. El analista busca la solución con mayor capacidad para identificar qué usuarios fueron atacados y cuántos intentos fallidos ocurrieron. ¿Cuál sería la herramienta más apropiada?",
+  "options": [
+    "Un NIDS monitoreando únicamente el tráfico de red",
+    "Un firewall perimetral con NAT habilitado",
+    "Un HIDS que analice los registros locales del servidor",
+    "Un balanceador de carga"
+  ],
+  "answer": 2,
+  "explanation": "Los HIDS tienen acceso a logs locales como auth.log y pueden identificar usuarios específicos, intentos fallidos y eventos del sistema operativo."
+},
+  {
+  "id": 149,
+  "category": "Network Security",
+  "difficulty": "hard",
+  "question": "Una entidad pública recibe una alerta 'ET SCAN Possible Nmap User-Agent Observed' proveniente de un servidor web expuesto en la DMZ. ¿Cuál es la interpretación más adecuada del evento?",
+  "options": [
+    "Existe evidencia de actividad de reconocimiento y enumeración sobre el servicio web",
+    "El servidor ha sido comprometido exitosamente",
+    "Se ha producido una denegación de servicio distribuida",
+    "El firewall ha bloqueado automáticamente al atacante"
+  ],
+  "answer": 0,
+  "explanation": "Las alertas de reconocimiento indican actividades de exploración o enumeración previas a una posible explotación, pero no demuestran un compromiso exitoso."
+},
+  {
+  "id": 150,
+  "category": "Network Security",
+  "difficulty": "hard",
+  "question": "Durante una revisión posterior a un incidente, un analista observa que una misma dirección IP generó cientos de solicitudes HTTP a rutas inexistentes como /admin, /backup, /test y /old. El objetivo es determinar la fase del ataque en la que se encontraba el actor malicioso. ¿Cuál es la conclusión más probable?",
+  "options": [
+    "Se trata de una fase de exfiltración de información",
+    "Corresponde a una actividad de reconocimiento y enumeración de recursos web",
+    "Es evidencia de una escalada de privilegios",
+    "Corresponde a una fase de cifrado de archivos por ransomware"
+  ],
+  "answer": 1,
+  "explanation": "La búsqueda masiva de directorios y recursos web es una técnica típica de reconocimiento utilizada por herramientas como Gobuster, Dirb o Dirbuster para identificar superficies de ataque."
 }
 ]
