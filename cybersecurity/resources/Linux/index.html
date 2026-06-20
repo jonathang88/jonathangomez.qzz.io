@@ -1,1 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Linux // Guía de Estudio</title>
+
+</head>
+<body>
+
+<div class="topbar">
+  <div class="dots"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></div>
+  <span class="prompt">jonathan@estudio</span><span class="path">:~/linux$</span>
+  <div class="search-wrap">
+    <span class="counter" id="resultCount"></span>
+    <input id="search" type="text" placeholder="buscar comando o directorio...">
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="tag">Guía de referencia // Administración Linux</div>
+    <h1>Directorios y comandos esenciales<span class="blink">_</span></h1>
+    <p>Material de repaso para tu preparación en ciberseguridad: estructura del sistema de archivos, comandos de administración y combinaciones útiles para análisis y auditoría. Usa el buscador para filtrar por nombre, descripción o comando.</p>
+    <div class="stats">
+      <div class="stat"><div class="n">21</div><div class="l">Directorios</div></div>
+      <div class="stat"><div class="n">30</div><div class="l">Comandos</div></div>
+      <div class="stat"><div class="n">7</div><div class="l">Combos</div></div>
+    </div>
+  </div>
+
+  <div class="nav">
+    <button class="active" data-target="dirs">📁 Directorios</button>
+    <button data-target="cmds">⌘ Comandos</button>
+    <button data-target="combos">🧩 Combinados</button>
+    <button data-target="quiz">🎯 Autoevaluación</button>
+  </div>
+
+  <!-- DIRECTORIOS -->
+  <section id="dirs">
+    <div class="sec-head"><span class="idx">01</span><h2>Directorios más importantes</h2><span class="count" id="dirsCount"></span></div>
+    <div id="dirsList"></div>
+  </section>
+
+  <!-- COMANDOS -->
+  <section id="cmds">
+    <div class="sec-head"><span class="idx">02</span><h2>Comandos esenciales</h2><span class="count" id="cmdsCount"></span></div>
+    <div id="cmdsList"></div>
+  </section>
+
+  <!-- COMBOS -->
+  <section id="combos">
+    <div class="sec-head"><span class="idx">03</span><h2>Comandos combinados</h2><span class="count" id="combosCount"></span></div>
+    <div id="combosList"></div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz">
+    <div class="sec-head"><span class="idx">04</span><h2>Autoevaluación rápida</h2></div>
+    <div class="quiz-box">
+      <div class="q" id="quizQ"></div>
+      <div class="opts" id="quizOpts"></div>
+      <div class="quiz-foot">
+        <span class="quiz-score" id="quizScore">0 / 0</span>
+        <button id="nextBtn">Siguiente →</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    construido para repaso personal — <span class="accent">tip:</span> usa <strong>Ctrl+F</strong> o el buscador de arriba para localizar comandos rápido
+  </footer>
+</div>
+
+
+</body>
+</html>
 
