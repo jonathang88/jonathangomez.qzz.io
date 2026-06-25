@@ -2258,5 +2258,103 @@
   ],
   "answer": 1,
   "explanation": "La regla no detecta el escaneo SYN inicial ni el descubrimiento de puertos. Detecta un User-Agent específico durante una fase posterior de la comunicación HTTP, por lo que parte de la información ya pudo ser obtenida antes de que la firma coincidiera."
-}
+},
+{
+   "id": 161,
+   "category": "Windows Server - Event IDs",
+   "difficulty": "medium",
+   "question": "El analista de seguridad de una entidad del Estado revisa el log de Security del controlador de dominio y encuentra el Event ID 4625 registrado 52 veces en menos de 3 minutos, todos con el mismo nombre de usuario y desde la misma dirección IP. Inmediatamente después aparece el Event ID 4740 para esa cuenta. ¿Cuál es la interpretación correcta de esta secuencia de eventos?",
+   "options": [
+     "Un usuario olvidó su contraseña y la cuenta se bloqueó por política.",
+     "Se realizó un ataque de fuerza bruta contra la cuenta, que resultó en su bloqueo automático por la política de Account Lockout.",
+     "Un administrador restableció la contraseña incorrectamente varias veces.",
+     "El Event ID 4740 indica que la cuenta fue eliminada del dominio."
+   ],
+   "answer": 1,
+   "explanation": "El Event ID 4625 corresponde a un intento de inicio de sesión fallido. La repetición masiva en corto tiempo desde la misma IP es indicador de fuerza bruta. El Event ID 4740 confirma que la política de Account Lockout bloqueó la cuenta como resultado de los intentos fallidos consecutivos."
+ },
+ {
+   "id": 162,
+   "category": "Windows Server - Event IDs",
+   "difficulty": "medium",
+   "question": "Durante una auditoría de seguridad en un servidor Windows Server 2019, el auditor solicita evidencia de que se crearon cuentas de usuario no autorizadas durante el fin de semana. ¿Qué Event ID debe buscar el analista en el log Security para identificar este tipo de actividad?",
+   "options": [
+     "4624",
+     "4648",
+     "4720",
+     "4732"
+   ],
+   "answer": 2,
+   "explanation": "El Event ID 4720 se genera cada vez que se crea una nueva cuenta de usuario en el sistema o en Active Directory. Es el evento clave para detectar creación de cuentas no autorizadas. El 4624 es inicio de sesión exitoso, el 4648 es autenticación con credenciales explícitas, y el 4732 es adición a un grupo de seguridad."
+ },
+ {
+   "id": 163,
+   "category": "Windows Server - Event IDs",
+   "difficulty": "hard",
+   "question": "El SIEM de una entidad gubernamental genera una alerta por múltiples registros del Event ID 4776 provenientes de distintas estaciones de trabajo del dominio. El equipo de seguridad determina que no hubo intentos de inicio de sesión fallidos asociados. ¿Qué representa este hallazgo desde el punto de vista de seguridad y qué acción correctiva corresponde?",
+   "options": [
+     "Indica autenticación Kerberos correcta; no requiere acción.",
+     "Indica el uso del protocolo NTLM para validación de credenciales, lo cual representa un riesgo de seguridad y debe restringirse mediante GPO para forzar el uso de Kerberos.",
+     "Indica que las estaciones de trabajo no están unidas al dominio correctamente.",
+     "Indica intentos de Pass-the-Ticket; se debe reiniciar el servicio Kerberos en el DC."
+   ],
+   "answer": 1,
+   "explanation": "El Event ID 4776 se genera cuando el controlador de dominio valida credenciales usando NTLM. NTLM es un protocolo legacy vulnerable a ataques como Pass-the-Hash y relay attacks. La acción correctiva es restringir NTLM mediante GPO (Network Security: Restrict NTLM) y forzar Kerberos como protocolo de autenticación principal."
+ },
+ {
+   "id": 164,
+   "category": "Windows Server - Event IDs",
+   "difficulty": "hard",
+   "question": "El equipo de respuesta a incidentes investiga un servidor Windows Server que fue comprometido. Al revisar el Event Viewer encuentran el Event ID 7045 registrado a las 2:14 AM, fuera del horario de mantenimiento autorizado. ¿Qué indica este evento y cuál es la primera acción que debe tomar el analista según el marco NIST SP 800-61?",
+   "options": [
+     "Indica que Windows Update instaló un parche automáticamente; se debe verificar el catálogo de actualizaciones.",
+     "Indica que se instaló un nuevo servicio en el sistema, posiblemente como mecanismo de persistencia del atacante; la primera acción es contener el equipo aislándolo de la red.",
+     "Indica un fallo del servicio de replicación de Active Directory; se debe reiniciar el servidor.",
+     "Indica que un usuario inició sesión con privilegios elevados; se debe deshabilitar UAC."
+   ],
+   "answer": 1,
+   "explanation": "El Event ID 7045 se genera cuando se instala un nuevo servicio en Windows. Los atacantes frecuentemente instalan servicios maliciosos para mantener persistencia después de comprometer un sistema. Según NIST SP 800-61, la fase de Contención es la primera acción tras detectar un incidente, aislando el equipo para evitar propagación antes de proceder con la erradicación."
+ },
+ {
+   "id": 165,
+   "category": "Windows Server - Event IDs",
+   "difficulty": "hard",
+   "question": "Un analista SOC detecta el Event ID 4648 generado repetidamente desde la estación de trabajo PC-CONTAB-05, intentando autenticarse contra varios servidores del dominio usando la cuenta 'svc_backup', una cuenta de servicio. El usuario asignado a PC-CONTAB-05 no tiene permisos para usar esa cuenta. ¿Qué técnica de ataque sugiere este patrón de eventos?",
+   "options": [
+     "Fuerza bruta distribuida contra la cuenta de servicio.",
+     "Uso de credenciales explícitas desde un equipo no autorizado, indicativo de una técnica de movimiento lateral como Pass-the-Hash o robo de credenciales.",
+     "Error de configuración del servicio de backup que intenta autenticarse automáticamente.",
+     "Ataque de denegación de servicio contra el controlador de dominio."
+   ],
+   "answer": 1,
+   "explanation": "El Event ID 4648 indica un intento de inicio de sesión usando credenciales explícitas diferentes a las del usuario de la sesión actual. Cuando esto ocurre desde un equipo no relacionado con la cuenta de servicio y apuntando a múltiples servidores, es un indicador claro de movimiento lateral, posiblemente usando credenciales robadas mediante técnicas como Pass-the-Hash o volcado de credenciales con Mimikatz."
+ },
+ {
+   "id": 166,
+   "category": "Windows Server - Event IDs",
+   "difficulty": "medium",
+   "question": "La política de seguridad de una entidad pública exige registrar evidencia de cualquier modificación en la membresía de grupos privilegiados del dominio, alineada con el control A.9.2.3 de ISO 27001. Un administrador sospechoso agregó una cuenta al grupo 'Domain Admins'. ¿Qué Event ID confirma esta acción en el log Security?",
+   "options": [
+     "4720 — Se creó una cuenta de usuario.",
+     "4624 — Inicio de sesión exitoso en el dominio.",
+     "4732 — Se agregó un miembro a un grupo de seguridad local.",
+     "4756 — Se agregó un miembro a un grupo universal de seguridad."
+   ],
+   "answer": 2,
+   "explanation": "El Event ID 4732 se registra cuando se agrega un usuario a un grupo de seguridad local o global, incluyendo grupos privilegiados como Domain Admins o Administrators. Es el evento clave para auditar cambios en membresías de grupos sensibles, requerimiento directamente relacionado con el control de gestión de acceso privilegiado de ISO 27001 (A.9.2.3)."
+ },
+ {
+   "id": 167,
+   "category": "Windows Server - Event IDs",
+   "difficulty": "hard",
+   "question": "Durante la revisión de logs post-incidente en un servidor Windows Server 2022, el analista encuentra la siguiente secuencia en el log Security: 4624 (Tipo de inicio 3) → 4698 → 4624 (Tipo 3) repetido cada 15 minutos. El servidor afectado no tiene tareas programadas autorizadas en ese horario. ¿Cuál es la interpretación más adecuada de esta secuencia?",
+   "options": [
+     "Un administrador configuró una tarea de mantenimiento rutinario y accede remotamente para verificarla.",
+     "El atacante obtuvo acceso remoto a la red (4624 Tipo 3), creó una tarea programada como mecanismo de persistencia (4698) y esta ejecuta conexiones periódicas, posiblemente hacia un C2.",
+     "Windows Update programó una tarea automática para aplicar parches pendientes.",
+     "El servicio de replicación de AD genera estas entradas durante la sincronización entre controladores de dominio."
+   ],
+   "answer": 1,
+   "explanation": "El Event ID 4624 Tipo 3 corresponde a autenticación de red (acceso remoto a recursos compartidos o servicios). El Event ID 4698 indica creación de una tarea programada. La combinación de acceso remoto no autorizado seguido de creación de tarea programada con ejecuciones periódicas es un patrón clásico de persistencia post-compromiso, donde el atacante establece comunicación periódica con un servidor de comando y control (C2). Según NIST SP 800-61 se debe proceder con contención inmediata."
+ }
 ]
