@@ -2356,5 +2356,103 @@
    ],
    "answer": 1,
    "explanation": "El Event ID 4624 Tipo 3 corresponde a autenticación de red (acceso remoto a recursos compartidos o servicios). El Event ID 4698 indica creación de una tarea programada. La combinación de acceso remoto no autorizado seguido de creación de tarea programada con ejecuciones periódicas es un patrón clásico de persistencia post-compromiso, donde el atacante establece comunicación periódica con un servidor de comando y control (C2). Según NIST SP 800-61 se debe proceder con contención inmediata."
+ },
+{
+   "id": 168,
+   "category": "Linux - Comandos",
+   "difficulty": "easy",
+   "question": "Un administrador de sistemas necesita listar todos los archivos de un directorio, incluyendo los archivos ocultos, con detalles como permisos, propietario y tamaño. ¿Cuál es el comando correcto?",
+   "options": [
+     "ls -l",
+     "ls -la",
+     "ls -r",
+     "dir -all"
+   ],
+   "answer": 1,
+   "explanation": "El comando 'ls -la' combina dos flags: '-l' para formato largo con detalles (permisos, propietario, tamaño, fecha) y '-a' para mostrar archivos ocultos (los que inician con punto). Solo 'ls -l' no muestra archivos ocultos, 'ls -r' lista en orden inverso, y 'dir' es un comando de Windows."
+ },
+ {
+   "id": 169,
+   "category": "Linux - Comandos",
+   "difficulty": "easy",
+   "question": "Un analista necesita ver en tiempo real los últimos registros que se están escribiendo en el archivo /var/log/syslog para monitorear eventos del sistema. ¿Qué comando debe usar?",
+   "options": [
+     "cat /var/log/syslog",
+     "head -n 20 /var/log/syslog",
+     "tail -f /var/log/syslog",
+     "grep -r /var/log/syslog"
+   ],
+   "answer": 2,
+   "explanation": "El comando 'tail -f' (follow) muestra las últimas líneas de un archivo y permanece activo actualizando la salida en tiempo real a medida que se escriben nuevas líneas. Es el comando estándar para monitoreo en vivo de logs. 'cat' muestra todo el archivo de una vez, 'head' muestra las primeras líneas, y 'grep' sirve para buscar patrones pero no hace seguimiento en tiempo real."
+ },
+ {
+   "id": 170,
+   "category": "Linux - Comandos",
+   "difficulty": "easy",
+   "question": "El administrador necesita conocer el espacio disponible en los sistemas de archivos montados en el servidor Linux, mostrando los tamaños en formato legible para humanos (GB, MB). ¿Qué comando utiliza?",
+   "options": [
+     "du -sh /*",
+     "df -h",
+     "free -m",
+     "lsblk -a"
+   ],
+   "answer": 1,
+   "explanation": "El comando 'df -h' (disk free, human readable) muestra el espacio total, usado y disponible de cada sistema de archivos montado en formato legible (GB, MB). 'du -sh' muestra el tamaño de directorios específicos, no del sistema de archivos completo. 'free -m' muestra memoria RAM, no disco. 'lsblk' lista dispositivos de bloque pero no el uso de espacio."
+ },
+ {
+   "id": 171,
+   "category": "Linux - Comandos",
+   "difficulty": "medium",
+   "question": "Durante una investigación de incidente, el analista necesita identificar todos los puertos TCP en estado LISTEN en un servidor Linux para detectar servicios no autorizados. ¿Cuál de los siguientes comandos es el más adecuado?",
+   "options": [
+     "ifconfig -a",
+     "netstat -tlnp",
+     "ping -c 4 localhost",
+     "route -n"
+   ],
+   "answer": 1,
+   "explanation": "El comando 'netstat -tlnp' combina los flags: '-t' para TCP, '-l' para puertos en escucha (LISTEN), '-n' para mostrar IPs y puertos en formato numérico sin resolver DNS, y '-p' para mostrar el proceso y PID asociado a cada puerto. Es el comando estándar para auditar servicios activos. En sistemas modernos también se usa 'ss -tlnp' como alternativa más actualizada."
+ },
+ {
+   "id": 172,
+   "category": "Linux - Comandos",
+   "difficulty": "medium",
+   "question": "Un administrador necesita buscar en todos los archivos del directorio /etc y sus subdirectorios, cualquier línea que contenga la cadena 'PermitRootLogin' para auditar la configuración de SSH. ¿Qué comando es el correcto?",
+   "options": [
+     "find /etc -name 'PermitRootLogin'",
+     "grep -r 'PermitRootLogin' /etc/",
+     "cat /etc/ | grep 'PermitRootLogin'",
+     "locate PermitRootLogin /etc/"
+   ],
+   "answer": 1,
+   "explanation": "El comando 'grep -r' realiza búsqueda recursiva del patrón especificado dentro de todos los archivos del directorio indicado y sus subdirectorios. Es el método correcto para buscar contenido dentro de archivos de configuración. 'find' busca archivos por nombre, no por contenido. 'cat /etc/' falla porque /etc es un directorio. 'locate' busca rutas de archivos en una base de datos indexada, no contenido dentro de archivos."
+ },
+ {
+   "id": 173,
+   "category": "Linux - Comandos",
+   "difficulty": "medium",
+   "question": "En el marco de la respuesta a un incidente, el analista debe identificar qué procesos están realizando conexiones de red activas en un servidor Linux comprometido, mostrando el PID y el nombre del proceso asociado a cada conexión establecida. ¿Qué comando proporciona esta información?",
+   "options": [
+     "ps aux | grep network",
+     "ss -tnp state established",
+     "top -b -n 1",
+     "lsof /var/log/syslog"
+   ],
+   "answer": 1,
+   "explanation": "El comando 'ss -tnp state established' muestra todas las conexiones TCP establecidas (-t), en formato numérico (-n), con el proceso asociado (-p), filtrando solo las conexiones en estado established. Es fundamental en respuesta a incidentes para identificar conexiones activas hacia posibles servidores C2. 'ps aux' muestra procesos pero sin información de red. 'top' es monitor de recursos en tiempo real. 'lsof' sin parámetros adecuados no filtra conexiones de red."
+ },
+ {
+   "id": 174,
+   "category": "Linux - Comandos",
+   "difficulty": "hard",
+   "question": "Durante una auditoría de seguridad en un servidor Linux, el analista encuentra que un archivo binario tiene configurado el bit SUID activo. El archivo pertenece al usuario root. ¿Qué representa este hallazgo y qué comando se usó para encontrar todos los archivos con esta característica en el sistema?",
+   "options": [
+     "El archivo está cifrado con permisos especiales; se encontró con 'ls -la / --recursive'.",
+     "El archivo se ejecuta con los privilegios del propietario (root) sin importar qué usuario lo invoque, representando un riesgo de escalada de privilegios; se encontró con 'find / -perm -4000 -type f 2>/dev/null'.",
+     "El archivo tiene permisos de escritura para todos los usuarios; se encontró con 'chmod -R 4000 /'.",
+     "El archivo pertenece a un grupo privilegiado del sistema; se encontró con 'grep -r SUID /etc/permissions'."
+   ],
+   "answer": 1,
+   "explanation": "El bit SUID (Set User ID) en un binario propiedad de root permite que cualquier usuario lo ejecute con privilegios de root, independientemente de sus propios permisos. Es un vector clásico de escalada de privilegios (privilege escalation). El comando 'find / -perm -4000 -type f 2>/dev/null' busca recursivamente en todo el sistema archivos con el bit SUID activo (-perm -4000), filtrando solo archivos regulares (-type f) y descartando errores de permisos (2>/dev/null). Es un comando estándar en auditorías de seguridad y pentesting."
  }
 ]
