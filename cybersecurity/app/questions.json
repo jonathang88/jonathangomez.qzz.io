@@ -2454,5 +2454,103 @@
    ],
    "answer": 1,
    "explanation": "El bit SUID (Set User ID) en un binario propiedad de root permite que cualquier usuario lo ejecute con privilegios de root, independientemente de sus propios permisos. Es un vector clásico de escalada de privilegios (privilege escalation). El comando 'find / -perm -4000 -type f 2>/dev/null' busca recursivamente en todo el sistema archivos con el bit SUID activo (-perm -4000), filtrando solo archivos regulares (-type f) y descartando errores de permisos (2>/dev/null). Es un comando estándar en auditorías de seguridad y pentesting."
- }
+ },
+  {
+  "id": 175,
+  "category": "OWASP Top 10",
+  "difficulty": "medium",
+  "question": "Durante una prueba funcional, un usuario autenticado modifica manualmente el parámetro 'userId=105' por 'userId=106' en la URL y logra visualizar la información personal de otro usuario sin que el sistema valide los permisos. ¿A qué categoría del OWASP Top 10 corresponde principalmente esta vulnerabilidad?",
+  "options": [
+    "Security Misconfiguration",
+    "Broken Access Control",
+    "Injection",
+    "Software and Data Integrity Failures"
+  ],
+  "answer": 1,
+  "explanation": "La vulnerabilidad corresponde a Broken Access Control (A01). El sistema no verifica que el usuario autenticado tenga autorización para acceder al recurso solicitado. Este escenario es un ejemplo clásico de IDOR (Insecure Direct Object Reference), una de las fallas más comunes dentro del control de acceso."
+},
+  {
+  "id": 176,
+  "category": "OWASP Top 10",
+  "difficulty": "medium",
+  "question": "Durante una auditoría se detecta que una aplicación almacena las contraseñas de los usuarios utilizando el algoritmo MD5 sin salt. ¿Cuál es la mejor recomendación de seguridad?",
+  "options": [
+    "Mantener MD5 porque consume pocos recursos.",
+    "Migrar a SHA-1 para mejorar la seguridad.",
+    "Utilizar algoritmos diseñados para almacenamiento de contraseñas como Argon2 o bcrypt.",
+    "Codificar las contraseñas en Base64 antes de almacenarlas."
+  ],
+  "answer": 2,
+  "explanation": "MD5 y SHA-1 ya no son adecuados para proteger contraseñas debido a su rapidez y vulnerabilidad frente a ataques de fuerza bruta y tablas arcoíris. Los algoritmos recomendados actualmente son Argon2 y bcrypt, ya que incorporan mecanismos para ralentizar el cálculo del hash y aumentar la resistencia frente a ataques."
+},
+  {
+  "id": 176,
+  "category": "OWASP Top 10",
+  "difficulty": "medium",
+  "question": "Durante una auditoría se detecta que una aplicación almacena las contraseñas de los usuarios utilizando el algoritmo MD5 sin salt. ¿Cuál es la mejor recomendación de seguridad?",
+  "options": [
+    "Mantener MD5 porque consume pocos recursos.",
+    "Migrar a SHA-1 para mejorar la seguridad.",
+    "Utilizar algoritmos diseñados para almacenamiento de contraseñas como Argon2 o bcrypt.",
+    "Codificar las contraseñas en Base64 antes de almacenarlas."
+  ],
+  "answer": 2,
+  "explanation": "MD5 y SHA-1 ya no son adecuados para proteger contraseñas debido a su rapidez y vulnerabilidad frente a ataques de fuerza bruta y tablas arcoíris. Los algoritmos recomendados actualmente son Argon2 y bcrypt, ya que incorporan mecanismos para ralentizar el cálculo del hash y aumentar la resistencia frente a ataques."
+},
+  {
+  "id": 177,
+  "category": "OWASP Top 10",
+  "difficulty": "hard",
+  "question": "Un servidor web ejecuta consultas SQL construidas concatenando directamente los valores ingresados por el usuario en el formulario de autenticación. ¿Cuál es la medida más efectiva para prevenir ataques de SQL Injection?",
+  "options": [
+    "Validar únicamente que los campos no estén vacíos.",
+    "Utilizar consultas parametrizadas (Prepared Statements).",
+    "Ocultar los mensajes de error de la base de datos.",
+    "Implementar HTTPS en todas las comunicaciones."
+  ],
+  "answer": 1,
+  "explanation": "Las consultas parametrizadas separan el código SQL de los datos proporcionados por el usuario, evitando que la entrada sea interpretada como parte de la consulta. Es el mecanismo más efectivo para prevenir SQL Injection. Validar entradas y ocultar errores son controles complementarios, pero no sustituyen el uso de consultas parametrizadas."
+},
+  {
+  "id": 178,
+  "category": "OWASP Top 10",
+  "difficulty": "hard",
+  "question": "Una organización mantiene en producción una versión de un framework web para la cual existe un CVE con puntuación CVSS 9.8 y un parche publicado hace seis meses. ¿Qué categoría del OWASP Top 10 describe mejor esta situación?",
+  "options": [
+    "Security Misconfiguration",
+    "Broken Access Control",
+    "Vulnerable and Outdated Components",
+    "Security Logging and Monitoring Failures"
+  ],
+  "answer": 2,
+  "explanation": "La organización está utilizando un componente con una vulnerabilidad conocida y un parche disponible. Esto corresponde a A06: Vulnerable and Outdated Components, una de las principales causas de compromisos de seguridad debido a la falta de gestión de actualizaciones."
+},
+  {
+  "id": 179,
+  "category": "OWASP Top 10",
+  "difficulty": "hard",
+  "question": "Durante una prueba de seguridad se evidencia que una aplicación permite un número ilimitado de intentos de autenticación sin bloqueo temporal, CAPTCHA ni autenticación multifactor. ¿Cuál es el riesgo principal asociado a esta implementación?",
+  "options": [
+    "Server-Side Request Forgery.",
+    "Ataques de fuerza bruta contra las credenciales.",
+    "Ejecución remota de código.",
+    "Deserialización insegura."
+  ],
+  "answer": 1,
+  "explanation": "La ausencia de mecanismos de protección como bloqueo temporal, limitación de intentos o autenticación multifactor facilita ataques de fuerza bruta (Brute Force) y Credential Stuffing, clasificados dentro de A07: Identification and Authentication Failures."
+},
+  {
+  "id": 180,
+  "category": "OWASP Top 10",
+  "difficulty": "hard",
+  "question": "Una aplicación descarga automáticamente imágenes desde cualquier URL proporcionada por el usuario. Un atacante suministra la dirección 'http://127.0.0.1/admin', logrando que el servidor acceda a recursos internos. ¿Qué vulnerabilidad del OWASP Top 10 se está explotando?",
+  "options": [
+    "Cross-Site Scripting (XSS).",
+    "Server-Side Request Forgery (SSRF).",
+    "SQL Injection.",
+    "Broken Authentication."
+  ],
+  "answer": 1,
+  "explanation": "El servidor realiza una solicitud HTTP hacia un recurso especificado por el atacante, permitiendo el acceso a servicios internos normalmente inaccesibles desde el exterior. Este comportamiento corresponde a A10: Server-Side Request Forgery (SSRF)."
+}
 ]
