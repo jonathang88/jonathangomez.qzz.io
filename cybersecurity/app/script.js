@@ -87,11 +87,17 @@ function showQuestion(){
 
     const optionsContainer = document.getElementById("options");
     optionsContainer.innerHTML = "";
-    q.options.forEach((option, index) => {
+
+    // Barajar opciones manteniendo el índice original
+    const shuffledOptions = q.options
+        .map((text, originalIndex) => ({ text, originalIndex }))
+        .sort(() => Math.random() - 0.5);
+
+    shuffledOptions.forEach((option) => {
         const div = document.createElement("div");
         div.className = "option";
-        div.textContent = option;
-        div.onclick = () => selectOption(div, index);
+        div.textContent = option.text;
+        div.onclick = () => selectOption(div, option.originalIndex);
         optionsContainer.appendChild(div);
     });
 
