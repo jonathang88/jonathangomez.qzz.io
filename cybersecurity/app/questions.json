@@ -2552,5 +2552,75 @@
   ],
   "answer": 1,
   "explanation": "El servidor realiza una solicitud HTTP hacia un recurso especificado por el atacante, permitiendo el acceso a servicios internos normalmente inaccesibles desde el exterior. Este comportamiento corresponde a A10: Server-Side Request Forgery (SSRF)."
-}
+},
+  {
+    "id": 181,
+    "category": "Firewall",
+    "difficulty": "hard",
+    "question": "Una entidad pública adquiere un firewall stateful para su perímetro de red. El equipo de infraestructura debe diseñar una arquitectura que permita: servidores web y de correo accesibles desde Internet (puertos 80, 443, 25). Los servidores en esta zona no pueden iniciar conexiones hacia la red interna, salvo respuestas a solicitudes internas válidas. Los equipos internos deben salir a Internet usando una única IP pública. El administrador configura el firewall con las siguientes políticas: Regla 1: Permitir desde ANY hacia IP_Servidor_Web puerto 443 (TCP). Regla 2: Permitir desde ANY hacia IP_Servidor_Correo puerto 25 (TCP). Regla 3: Denegar desde Zona_DMZ hacia Zona_Interna (todo tráfico). Regla 4: Permitir desde Zona_Interna hacia ANY puerto 443 (TCP). NAT: Configura MASQUERADE para el tráfico saliente de Zona_Interna. ¿Qué problema de seguridad o funcionalidad presenta esta configuración?",
+    "options": [
+      "El firewall es stateless, por lo que no puede mantener conexiones.",
+      "No se permite el tráfico de respuesta desde los servidores DMZ hacia los clientes externos que iniciaron la conexión, porque la regla 3 bloquea todo.",
+      "La regla 4 debería ser hacia la DMZ y no hacia ANY, porque expone la red interna.",
+      "La regla 3 es correcta y la regla 4 debe eliminarse porque la NAT ya permite el tráfico saliente."
+    ],
+    "answer": 1,
+    "explanation": "La regla 3 bloquea todo el tráfico desde DMZ hacia Interna, incluyendo las respuestas a solicitudes HTTP/HTTPS que los clientes internos hicieron hacia servidores externos. Aunque la regla 4 permite salir, la respuesta (tráfico de retorno) viaja de DMZ a Interna y es bloqueada. Un firewall stateful debería permitir tráfico de respuesta asociado a conexiones establecidas sin necesidad de reglas explícitas."
+  },
+  {
+    "id": 182,
+    "category": "IDS/IPS",
+    "difficulty": "hard",
+    "question": "La entidad implementa un sensor NIDS con Suricata y el conjunto de reglas ET Open (Emerging Threats Open) en modo inline (IPS) en el firewall perimetral. Durante las primeras horas, el sistema genera múltiples alertas de tipo 'ET SCAN Nmap Scan' y 'ET WEB_SERVER Generic SQL Injection Attempt' dirigidas a los servidores web públicos. Un analista revisa las alertas y determina que: las alertas por escaneo Nmap coinciden con pruebas de seguridad autorizadas por el equipo de ciberseguridad. Las alertas por inyección SQL son falsos positivos generados por consultas legítimas de un sistema externo que utiliza parámetros con caracteres especiales. ¿Cuál debe ser la acción del analista para manejar esta situación sin afectar la operación ni perder visibilidad?",
+    "options": [
+      "Desactivar todas las reglas de ET Open para evitar falsos positivos.",
+      "Configurar excepciones (suppress) para las reglas específicas durante las pruebas autorizadas y ajustar las reglas de SQL para evitar falsos positivos, sin deshabilitar la protección general.",
+      "Cambiar Suricata a modo IDS (solo alerta) para que no bloquee nada y revisar manualmente todas las alertas.",
+      "Bloquear las IPs que generan las alertas de escaneo y SQL para prevenir ataques."
+    ],
+    "answer": 1,
+    "explanation": "La mejor práctica es gestionar excepciones sin deshabilitar la protección. Para escaneos autorizados, se puede usar suppress por IP o por regla durante el período autorizado. Para falsos positivos de SQL, se puede ajustar la regla o crear una regla de bypass para ese tráfico legítimo. Desactivar todo elimina protección, cambiar a solo IDS pierde capacidad de bloqueo."
+  },
+  {
+    "id": 183,
+    "category": "IDS/IPS",
+    "difficulty": "hard",
+    "question": "Durante una investigación de un incidente de seguridad, el analista sospecha que un servidor de bases de datos interno ha sido comprometido. Se requiere determinar si hubo exfiltración de datos hacia el exterior. Actualmente la entidad cuenta con: NIDS (Suricata) en el perímetro, solo en modo IDS (pasivo), con un switch mirroring hacia el puerto de monitoreo. HIDS (OSSEC) instalado en todos los servidores críticos, monitoreando integridad de archivos y logs. ¿Cuál de los siguientes enfoques proporcionará la mejor evidencia para determinar si hubo exfiltración de datos desde el servidor de bases de datos?",
+    "options": [
+      "Revisar los logs de Suricata en el perímetro para ver si hay alertas de datos salientes.",
+      "Analizar los logs del HIDS en el servidor de bases de datos para ver si hubo acceso no autorizado.",
+      "Capturar y analizar el tráfico de red en el switch más cercano al servidor (usando tcpdump o un TAP), buscando conexiones salientes inusuales con grandes volúmenes de datos.",
+      "Revisar los logs del firewall perimetral para ver si hay reglas que permitan tráfico desde el servidor de bases de datos hacia Internet."
+    ],
+    "answer": 2,
+    "explanation": "Para determinar exfiltración, la mejor evidencia es analizar el tráfico de red cerca del servidor. Un NIDS en el perímetro podría ver datos salientes solo si salen de la red. El HIDS podría detectar archivos modificados pero no volumen de datos transferidos. La captura en el switch cercano permite ver todo el tráfico saliente del servidor, incluyendo destino y tamaño de datos."
+  },
+  {
+    "id": 184,
+    "category": "Firewall",
+    "difficulty": "hard",
+    "question": "Un administrador de seguridad recibe un reporte de que usuarios internos no pueden acceder a un servicio web externo en el puerto 8443. El firewall pfSense tiene las siguientes reglas en la interfaz LAN: Regla 1: Permitir desde LAN_net hacia cualquier destino, puerto 443 (TCP). Regla 2: Permitir desde LAN_net hacia cualquier destino, puerto 80 (TCP). Regla 3: Permitir desde LAN_net hacia cualquier destino, puerto 53 (UDP). Regla 4: Denegar desde LAN_net hacia cualquier destino, puerto 8443 (TCP). Regla 5: Permitir desde LAN_net hacia cualquier destino (todos los puertos) - solo para el grupo de administradores. Los usuarios reportan que intentan acceder a https://portalexterno.gob:8443. ¿Cuál es la causa más probable del bloqueo y cómo debe corregirse sin comprometer la seguridad?",
+    "options": [
+      "El pfSense no soporta puertos no estándar como 8443; debe cambiarse a 443.",
+      "La regla 4 está por encima de la regla 5 y bloquea el acceso al puerto 8443 para todos los usuarios, incluyendo administradores.",
+      "El tráfico en puerto 8443 no pasa por pfSense porque está fuera del rango de puertos conocidos.",
+      "La regla 3 (DNS) está bloqueando el tráfico HTTPS debido a inspección profunda de paquetes."
+    ],
+    "answer": 1,
+    "explanation": "Los firewalls procesan reglas en orden. La regla 4 deniega específicamente el puerto 8443, y esta regla se aplica antes que la regla 5 (Permitir todo para administradores). Como la regla 4 es más específica y aparece primero, bloquea incluso a los administradores. La solución es mover la regla 4 después de la regla 5."
+  },
+  {
+    "id": 185,
+    "category": "IDS/IPS",
+    "difficulty": "hard",
+    "question": "Un analista de seguridad recibe las siguientes alertas de Suricata en modo IPS durante una mañana: Alerta 1: 'ET SCAN Nmap Scan (possible scan)' desde IP 10.0.0.200 hacia el servidor web (10.0.0.10) puerto 443. Alerta 2: 'ET WEB_SERVER Apache Generic SQL Injection Attempt' desde IP 190.200.30.40 hacia el mismo servidor web. Alerta 3: 'ET WEB_SPECIFIC_APPS PHPMyAdmin Bruteforce Attempt' desde IP 10.0.0.50 hacia el servidor web. El analista sabe que: 10.0.0.200 es la IP del equipo del equipo de pruebas de penetración interno. 10.0.0.50 es un servidor de aplicaciones legítimo. 190.200.30.40 es una IP externa desconocida. El servidor web solo debe recibir tráfico HTTPS desde el exterior y desde aplicaciones internas autorizadas. ¿Cuál debe ser la prioridad de acción del analista basándose en las alertas y el contexto?",
+    "options": [
+      "Bloquear 190.200.30.40, luego investigar 10.0.0.50, luego coordinar con pruebas de penetración.",
+      "Coordinar con pruebas de penetración, luego investigar 190.200.30.40, luego revisar 10.0.0.50.",
+      "Bloquear 10.0.0.200 y 10.0.0.50 inmediatamente, luego investigar 190.200.30.40.",
+      "Descartar todas las alertas por ser falsos positivos y revisar el sistema al final del día."
+    ],
+    "answer": 0,
+    "explanation": "La prioridad debe ser: 1) Proteger el activo bloqueando la IP externa desconocida (190.200.30.40) que intenta inyección SQL. 2) Investigar el servidor interno (10.0.0.50) que está haciendo intentos de fuerza bruta contra PHPMyAdmin. 3) Coordinar con el equipo de pruebas para que sus escaneos (10.0.0.200) no generen ruido."
+  }
 ]
