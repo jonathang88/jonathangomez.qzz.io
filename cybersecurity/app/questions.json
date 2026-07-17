@@ -2553,74 +2553,172 @@
   "answer": 1,
   "explanation": "El servidor realiza una solicitud HTTP hacia un recurso especificado por el atacante, permitiendo el acceso a servicios internos normalmente inaccesibles desde el exterior. Este comportamiento corresponde a A10: Server-Side Request Forgery (SSRF)."
 },
-  {
+    {
     "id": 181,
-    "category": "Firewall",
-    "difficulty": "hard",
-    "question": "Una entidad pública adquiere un firewall stateful para su perímetro de red. El equipo de infraestructura debe diseñar una arquitectura que permita: servidores web y de correo accesibles desde Internet (puertos 80, 443, 25). Los servidores en esta zona no pueden iniciar conexiones hacia la red interna, salvo respuestas a solicitudes internas válidas. Los equipos internos deben salir a Internet usando una única IP pública. El administrador configura el firewall con las siguientes políticas: Regla 1: Permitir desde ANY hacia IP_Servidor_Web puerto 443 (TCP). Regla 2: Permitir desde ANY hacia IP_Servidor_Correo puerto 25 (TCP). Regla 3: Denegar desde Zona_DMZ hacia Zona_Interna (todo tráfico). Regla 4: Permitir desde Zona_Interna hacia ANY puerto 443 (TCP). NAT: Configura MASQUERADE para el tráfico saliente de Zona_Interna. ¿Qué problema de seguridad o funcionalidad presenta esta configuración?",
+    "category": "Respuesta a Incidentes",
+    "difficulty": "easy",
+    "question": "¿Cuál es la diferencia principal entre un evento y un incidente de seguridad?",
     "options": [
-      "El firewall es stateless, por lo que no puede mantener conexiones.",
-      "No se permite el tráfico de respuesta desde los servidores DMZ hacia los clientes externos que iniciaron la conexión, porque la regla 3 bloquea todo.",
-      "La regla 4 debería ser hacia la DMZ y no hacia ANY, porque expone la red interna.",
-      "La regla 3 es correcta y la regla 4 debe eliminarse porque la NAT ya permite el tráfico saliente."
+      "Un evento siempre causa daño; un incidente no necesariamente.",
+      "Un incidente compromete o amenaza la CIA de activos; un evento es cualquier ocurrencia observable.",
+      "Los eventos son internos y los incidentes son externos.",
+      "Solo los incidentes son registrados en logs."
     ],
     "answer": 1,
-    "explanation": "La regla 3 bloquea todo el tráfico desde DMZ hacia Interna, incluyendo las respuestas a solicitudes HTTP/HTTPS que los clientes internos hicieron hacia servidores externos. Aunque la regla 4 permite salir, la respuesta (tráfico de retorno) viaja de DMZ a Interna y es bloqueada. Un firewall stateful debería permitir tráfico de respuesta asociado a conexiones establecidas sin necesidad de reglas explícitas."
+    "explanation": "Un evento es cualquier ocurrencia observable en un sistema (login, tráfico de red, cambio de archivo). Un incidente es un evento que compromete o amenaza la Confidencialidad, Integridad o Disponibilidad (CIA) de activos de información."
   },
   {
     "id": 182,
-    "category": "IDS/IPS",
-    "difficulty": "hard",
-    "question": "La entidad implementa un sensor NIDS con Suricata y el conjunto de reglas ET Open (Emerging Threats Open) en modo inline (IPS) en el firewall perimetral. Durante las primeras horas, el sistema genera múltiples alertas de tipo 'ET SCAN Nmap Scan' y 'ET WEB_SERVER Generic SQL Injection Attempt' dirigidas a los servidores web públicos. Un analista revisa las alertas y determina que: las alertas por escaneo Nmap coinciden con pruebas de seguridad autorizadas por el equipo de ciberseguridad. Las alertas por inyección SQL son falsos positivos generados por consultas legítimas de un sistema externo que utiliza parámetros con caracteres especiales. ¿Cuál debe ser la acción del analista para manejar esta situación sin afectar la operación ni perder visibilidad?",
+    "category": "Respuesta a Incidentes",
+    "difficulty": "easy",
+    "question": "¿Cuántas fases define el ciclo de respuesta a incidentes según NIST SP 800-61?",
     "options": [
-      "Desactivar todas las reglas de ET Open para evitar falsos positivos.",
-      "Configurar excepciones (suppress) para las reglas específicas durante las pruebas autorizadas y ajustar las reglas de SQL para evitar falsos positivos, sin deshabilitar la protección general.",
-      "Cambiar Suricata a modo IDS (solo alerta) para que no bloquee nada y revisar manualmente todas las alertas.",
-      "Bloquear las IPs que generan las alertas de escaneo y SQL para prevenir ataques."
+      "3",
+      "5",
+      "4",
+      "6"
     ],
-    "answer": 1,
-    "explanation": "La mejor práctica es gestionar excepciones sin deshabilitar la protección. Para escaneos autorizados, se puede usar suppress por IP o por regla durante el período autorizado. Para falsos positivos de SQL, se puede ajustar la regla o crear una regla de bypass para ese tráfico legítimo. Desactivar todo elimina protección, cambiar a solo IDS pierde capacidad de bloqueo."
+    "answer": 2,
+    "explanation": "NIST SP 800-61 define 4 fases: (1) Preparación, (2) Detección y Análisis, (3) Contención, Erradicación y Recuperación, y (4) Actividad Post-Incidente."
   },
   {
     "id": 183,
-    "category": "IDS/IPS",
-    "difficulty": "hard",
-    "question": "Durante una investigación de un incidente de seguridad, el analista sospecha que un servidor de bases de datos interno ha sido comprometido. Se requiere determinar si hubo exfiltración de datos hacia el exterior. Actualmente la entidad cuenta con: NIDS (Suricata) en el perímetro, solo en modo IDS (pasivo), con un switch mirroring hacia el puerto de monitoreo. HIDS (OSSEC) instalado en todos los servidores críticos, monitoreando integridad de archivos y logs. ¿Cuál de los siguientes enfoques proporcionará la mejor evidencia para determinar si hubo exfiltración de datos desde el servidor de bases de datos?",
+    "category": "Respuesta a Incidentes",
+    "difficulty": "medium",
+    "question": "Durante la fase de Contención según NIST SP 800-61, ¿cuál es una consideración crítica antes de aislar un sistema comprometido?",
     "options": [
-      "Revisar los logs de Suricata en el perímetro para ver si hay alertas de datos salientes.",
-      "Analizar los logs del HIDS en el servidor de bases de datos para ver si hubo acceso no autorizado.",
-      "Capturar y analizar el tráfico de red en el switch más cercano al servidor (usando tcpdump o un TAP), buscando conexiones salientes inusuales con grandes volúmenes de datos.",
-      "Revisar los logs del firewall perimetral para ver si hay reglas que permitan tráfico desde el servidor de bases de datos hacia Internet."
+      "Notificar al proveedor del sistema operativo.",
+      "Preservar evidencia forense antes de alterar el sistema.",
+      "Actualizar el antivirus del sistema afectado.",
+      "Reiniciar el sistema para eliminar procesos maliciosos."
     ],
-    "answer": 2,
-    "explanation": "Para determinar exfiltración, la mejor evidencia es analizar el tráfico de red cerca del servidor. Un NIDS en el perímetro podría ver datos salientes solo si salen de la red. El HIDS podría detectar archivos modificados pero no volumen de datos transferidos. La captura en el switch cercano permite ver todo el tráfico saliente del servidor, incluyendo destino y tamaño de datos."
+    "answer": 1,
+    "explanation": "Antes de contener o aislar un sistema, se debe preservar la evidencia forense (volcado de memoria, logs, imágenes de disco). Reiniciar o modificar el sistema puede destruir evidencia volátil crítica para el análisis posterior."
   },
   {
     "id": 184,
-    "category": "Firewall",
-    "difficulty": "hard",
-    "question": "Un administrador de seguridad recibe un reporte de que usuarios internos no pueden acceder a un servicio web externo en el puerto 8443. El firewall pfSense tiene las siguientes reglas en la interfaz LAN: Regla 1: Permitir desde LAN_net hacia cualquier destino, puerto 443 (TCP). Regla 2: Permitir desde LAN_net hacia cualquier destino, puerto 80 (TCP). Regla 3: Permitir desde LAN_net hacia cualquier destino, puerto 53 (UDP). Regla 4: Denegar desde LAN_net hacia cualquier destino, puerto 8443 (TCP). Regla 5: Permitir desde LAN_net hacia cualquier destino (todos los puertos) - solo para el grupo de administradores. Los usuarios reportan que intentan acceder a https://portalexterno.gob:8443. ¿Cuál es la causa más probable del bloqueo y cómo debe corregirse sin comprometer la seguridad?",
+    "category": "Respuesta a Incidentes",
+    "difficulty": "medium",
+    "question": "¿Qué fase de NIST SP 800-61 retroalimenta directamente la mejora de la fase de Preparación?",
     "options": [
-      "El pfSense no soporta puertos no estándar como 8443; debe cambiarse a 443.",
-      "La regla 4 está por encima de la regla 5 y bloquea el acceso al puerto 8443 para todos los usuarios, incluyendo administradores.",
-      "El tráfico en puerto 8443 no pasa por pfSense porque está fuera del rango de puertos conocidos.",
-      "La regla 3 (DNS) está bloqueando el tráfico HTTPS debido a inspección profunda de paquetes."
+      "Detección y Análisis.",
+      "Contención.",
+      "Actividad Post-Incidente (Lessons Learned).",
+      "Erradicación."
     ],
-    "answer": 1,
-    "explanation": "Los firewalls procesan reglas en orden. La regla 4 deniega específicamente el puerto 8443, y esta regla se aplica antes que la regla 5 (Permitir todo para administradores). Como la regla 4 es más específica y aparece primero, bloquea incluso a los administradores. La solución es mover la regla 4 después de la regla 5."
+    "answer": 2,
+    "explanation": "La fase Post-Incidente genera lecciones aprendidas, actualizaciones de playbooks y mejoras de controles. Esto retroalimenta directamente la fase de Preparación, haciendo el ciclo continuo y evolutivo."
   },
   {
     "id": 185,
-    "category": "IDS/IPS",
-    "difficulty": "hard",
-    "question": "Un analista de seguridad recibe las siguientes alertas de Suricata en modo IPS durante una mañana: Alerta 1: 'ET SCAN Nmap Scan (possible scan)' desde IP 10.0.0.200 hacia el servidor web (10.0.0.10) puerto 443. Alerta 2: 'ET WEB_SERVER Apache Generic SQL Injection Attempt' desde IP 190.200.30.40 hacia el mismo servidor web. Alerta 3: 'ET WEB_SPECIFIC_APPS PHPMyAdmin Bruteforce Attempt' desde IP 10.0.0.50 hacia el servidor web. El analista sabe que: 10.0.0.200 es la IP del equipo del equipo de pruebas de penetración interno. 10.0.0.50 es un servidor de aplicaciones legítimo. 190.200.30.40 es una IP externa desconocida. El servidor web solo debe recibir tráfico HTTPS desde el exterior y desde aplicaciones internas autorizadas. ¿Cuál debe ser la prioridad de acción del analista basándose en las alertas y el contexto?",
+    "category": "Respuesta a Incidentes",
+    "difficulty": "medium",
+    "question": "¿Cuál de las siguientes describe mejor la diferencia entre NIST SP 800-61 e ISO/IEC 27035?",
     "options": [
-      "Bloquear 190.200.30.40, luego investigar 10.0.0.50, luego coordinar con pruebas de penetración.",
-      "Coordinar con pruebas de penetración, luego investigar 190.200.30.40, luego revisar 10.0.0.50.",
-      "Bloquear 10.0.0.200 y 10.0.0.50 inmediatamente, luego investigar 190.200.30.40.",
-      "Descartar todas las alertas por ser falsos positivos y revisar el sistema al final del día."
+      "ISO 27035 es solo para empresas europeas; NIST aplica globalmente.",
+      "NIST es un marco de gobierno; ISO 27035 es una guía técnica operativa.",
+      "NIST es técnico-operativo; ISO 27035 es un marco de gestión integrable con ISO 27001.",
+      "Ambos frameworks son equivalentes y no tienen diferencias relevantes."
     ],
-    "answer": 0,
-    "explanation": "La prioridad debe ser: 1) Proteger el activo bloqueando la IP externa desconocida (190.200.30.40) que intenta inyección SQL. 2) Investigar el servidor interno (10.0.0.50) que está haciendo intentos de fuerza bruta contra PHPMyAdmin. 3) Coordinar con el equipo de pruebas para que sus escaneos (10.0.0.200) no generen ruido."
+    "answer": 2,
+    "explanation": "NIST SP 800-61 es detallado y técnico, orientado a equipos de respuesta (CSIRT, SOC). ISO/IEC 27035 es un marco de gestión que se integra con ISO 27001 y está orientado tanto a gestión como a aspectos técnicos. Muchas organizaciones usan ambos de forma complementaria."
+  },
+  {
+    "id": 186,
+    "category": "Respuesta a Incidentes",
+    "difficulty": "hard",
+    "question": "ISO/IEC 27035 incluye una fase que NIST SP 800-61 no tiene como etapa independiente. ¿Cuál es?",
+    "options": [
+      "Preparación.",
+      "Detect & Report (Detección y Reporte como fase separada).",
+      "Erradicación.",
+      "Análisis forense."
+    ],
+    "answer": 1,
+    "explanation": "ISO 27035 tiene 5 fases: Plan & Prepare, Detect & Report, Assess & Decide, Respond y Lessons Learned. El 'Reporte' es una fase independiente, mientras que en NIST SP 800-61 está integrado dentro de Detección y Análisis."
+  },
+  {
+    "id": 187,
+    "category": "Respuesta a Incidentes",
+    "difficulty": "easy",
+    "question": "Un servidor de bases de datos con información de ciudadanos fue cifrado por ransomware y los servicios están completamente caídos. ¿Qué nivel de severidad corresponde a este incidente?",
+    "options": [
+      "Bajo.",
+      "Medio.",
+      "Alto.",
+      "Crítico."
+    ],
+    "answer": 3,
+    "explanation": "Ransomware en servidores core con servicios detenidos representa impacto masivo en disponibilidad e integridad de datos. Esto corresponde al nivel Crítico: operación detenida, datos comprometidos, requiere respuesta inmediata."
+  },
+  {
+    "id": 188,
+    "category": "Respuesta a Incidentes",
+    "difficulty": "medium",
+    "question": "¿Cuáles son los dos ejes principales para clasificar la severidad de un incidente de seguridad?",
+    "options": [
+      "Origen (interno/externo) y vector de ataque.",
+      "Impacto y urgencia.",
+      "Tipo de activo y costo de recuperación.",
+      "Número de sistemas afectados y tiempo de detección."
+    ],
+    "answer": 1,
+    "explanation": "La severidad de un incidente se determina combinando Impacto (qué tan grave es el daño a la CIA de los activos) y Urgencia (qué tan rápido se debe responder para evitar que el daño escale). Estos dos ejes generan la matriz de priorización."
+  },
+  {
+    "id": 189,
+    "category": "Respuesta a Incidentes",
+    "difficulty": "medium",
+    "question": "¿Para qué sirve principalmente el framework MITRE ATT&CK en el contexto de respuesta a incidentes?",
+    "options": [
+      "Para calcular el puntaje CVSS de vulnerabilidades.",
+      "Para contextualizar las tácticas, técnicas y procedimientos (TTPs) usados por el atacante.",
+      "Para determinar el costo económico del incidente.",
+      "Para asignar roles dentro del CSIRT."
+    ],
+    "answer": 1,
+    "explanation": "MITRE ATT&CK es una base de conocimiento de TTPs de actores de amenaza. En respuesta a incidentes, permite mapear el comportamiento del atacante, identificar la fase del ataque y anticipar siguientes movimientos."
+  },
+  {
+    "id": 190,
+    "category": "Respuesta a Incidentes",
+    "difficulty": "easy",
+    "question": "¿Cuál es la responsabilidad principal del Incident Manager dentro de un CSIRT?",
+    "options": [
+      "Realizar el análisis forense de los sistemas comprometidos.",
+      "Coordinar la respuesta, tomar decisiones de escalado y ser el punto de contacto con directivos.",
+      "Monitorear alertas del SIEM en tiempo real.",
+      "Redactar los reportes técnicos de vulnerabilidades."
+    ],
+    "answer": 1,
+    "explanation": "El Incident Manager coordina todo el proceso de respuesta: asigna tareas, decide cuándo escalar, comunica el estado a la dirección y asegura que las fases se ejecuten correctamente. No necesariamente ejecuta las tareas técnicas."
+  },
+  {
+    "id": 191,
+    "category": "Respuesta a Incidentes",
+    "difficulty": "medium",
+    "question": "En un CSIRT pequeño con recursos limitados, ¿cuál es la práctica aceptable respecto a los roles del equipo?",
+    "options": [
+      "Operar sin roles definidos para ganar agilidad.",
+      "Contratar personal externo para cada rol obligatoriamente.",
+      "Una persona puede cubrir múltiples roles, siempre que los roles estén definidos y documentados.",
+      "Delegar toda la respuesta a un proveedor de servicios administrados."
+    ],
+    "answer": 2,
+    "explanation": "Lo fundamental es que los roles existan y estén documentados, no que haya una persona diferente por rol. En organizaciones pequeñas es normal que un analista cubra triage y análisis forense. Lo que no se puede hacer es que los roles sean ambiguos o inexistentes."
+  },
+  {
+    "id": 192,
+    "category": "Respuesta a Incidentes",
+    "difficulty": "hard",
+    "question": "Durante un incidente activo de exfiltración de datos, el analista forense identifica IOCs (Indicadores de Compromiso). ¿Qué rol del CSIRT es responsable de correlacionar esos IOCs con actores de amenaza conocidos?",
+    "options": [
+      "Incident Manager.",
+      "Analista de Triage L1.",
+      "Threat Intelligence Analyst.",
+      "Especialista en Comunicaciones."
+    ],
+    "answer": 2,
+    "explanation": "El Threat Intelligence Analyst correlaciona los IOCs (hashes, IPs, dominios, TTPs) con bases de datos de inteligencia de amenazas (MITRE ATT&CK, VirusTotal, ISACs) para atribuir el ataque a grupos conocidos y anticipar sus próximas acciones."
   }
 ]
