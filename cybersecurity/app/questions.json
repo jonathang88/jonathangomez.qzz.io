@@ -2720,5 +2720,257 @@
     ],
     "answer": 2,
     "explanation": "El Threat Intelligence Analyst correlaciona los IOCs (hashes, IPs, dominios, TTPs) con bases de datos de inteligencia de amenazas (MITRE ATT&CK, VirusTotal, ISACs) para atribuir el ataque a grupos conocidos y anticipar sus próximas acciones."
+  },
+  {
+    "id": 193,
+    "category": "Informática Forense",
+    "difficulty": "easy",
+    "question": "¿Qué establece el Principio de Locard en informática forense?",
+    "options": [
+      "Todo incidente debe ser documentado antes de su análisis.",
+      "Todo contacto entre un atacante y un sistema deja un rastro.",
+      "Toda evidencia debe almacenarse en la nube.",
+      "Todo análisis debe realizarse sobre el equipo original."
+    ],
+    "answer": 1,
+    "explanation": "El Principio de Locard establece que toda interacción deja evidencia. En informática forense esto significa que un atacante siempre deja rastros que pueden ser analizados."
+  },
+  {
+    "id": 194,
+    "category": "Informática Forense",
+    "difficulty": "easy",
+    "question": "¿Cuál es el objetivo principal de la cadena de custodia?",
+    "options": [
+      "Reducir el tiempo del análisis forense.",
+      "Garantizar la integridad y trazabilidad de la evidencia digital.",
+      "Eliminar archivos maliciosos.",
+      "Respaldar automáticamente los servidores."
+    ],
+    "answer": 1,
+    "explanation": "La cadena de custodia documenta quién tuvo acceso a la evidencia, cuándo y cómo fue manipulada, garantizando su integridad."
+  },
+  {
+    "id": 195,
+    "category": "Informática Forense",
+    "difficulty": "medium",
+    "question": "¿Por qué se calcula un hash SHA-256 antes y después de crear una imagen forense?",
+    "options": [
+      "Para comprimir la imagen.",
+      "Para verificar que la copia es idéntica al original.",
+      "Para acelerar el análisis.",
+      "Para cifrar la evidencia."
+    ],
+    "answer": 1,
+    "explanation": "El hash permite demostrar que la evidencia no fue alterada durante la adquisición o el análisis."
+  },
+  {
+    "id": 196,
+    "category": "Informática Forense",
+    "difficulty": "medium",
+    "question": "¿Qué herramienta de Linux se utiliza comúnmente para realizar una copia bit a bit de un disco?",
+    "options": [
+      "tar",
+      "cp",
+      "dd",
+      "scp"
+    ],
+    "answer": 2,
+    "explanation": "El comando dd permite crear imágenes forenses copiando todos los sectores del dispositivo."
+  },
+  {
+    "id": 197,
+    "category": "Informática Forense",
+    "difficulty": "medium",
+    "question": "¿Qué característica distingue una imagen forense de una copia tradicional de archivos?",
+    "options": [
+      "Solo copia archivos visibles.",
+      "Incluye únicamente documentos del usuario.",
+      "Copia todos los sectores del dispositivo, incluyendo espacio libre y eliminado.",
+      "Comprime automáticamente la información."
+    ],
+    "answer": 2,
+    "explanation": "Una imagen forense captura todos los sectores del medio, incluso los archivos eliminados y el espacio libre."
+  },
+  {
+    "id": 198,
+    "category": "Informática Forense",
+    "difficulty": "easy",
+    "question": "¿Cuál es la principal función de FTK Imager?",
+    "options": [
+      "Eliminar malware.",
+      "Crear y examinar imágenes forenses sin alterar la evidencia.",
+      "Realizar análisis de vulnerabilidades.",
+      "Monitorear tráfico de red."
+    ],
+    "answer": 1,
+    "explanation": "FTK Imager es una herramienta utilizada para adquirir y revisar imágenes forenses preservando la integridad de la evidencia."
+  },
+  {
+    "id": 199,
+    "category": "Informática Forense",
+    "difficulty": "medium",
+    "question": "¿Qué artefacto de Windows permite conocer qué programas se ejecutaron recientemente?",
+    "options": [
+      "Registry.",
+      "Prefetch.",
+      "Recycle Bin.",
+      "Pagefile."
+    ],
+    "answer": 1,
+    "explanation": "Los archivos Prefetch almacenan información sobre aplicaciones ejecutadas y su última ejecución."
+  },
+  {
+    "id": 200,
+    "category": "Informática Forense",
+    "difficulty": "medium",
+    "question": "¿Qué identificador de evento de Windows registra un inicio de sesión exitoso?",
+    "options": [
+      "4624",
+      "4625",
+      "4720",
+      "4672"
+    ],
+    "answer": 0,
+    "explanation": "El evento 4624 corresponde a un inicio de sesión exitoso en Windows."
+  },
+  {
+    "id": 201,
+    "category": "Informática Forense",
+    "difficulty": "medium",
+    "question": "¿Qué identificador de evento registra un intento de inicio de sesión fallido en Windows?",
+    "options": [
+      "4624",
+      "4625",
+      "4672",
+      "4728"
+    ],
+    "answer": 1,
+    "explanation": "El evento 4625 indica un intento de autenticación fallido."
+  },
+  {
+    "id": 202,
+    "category": "Informática Forense",
+    "difficulty": "medium",
+    "question": "¿Qué componente del Registro de Windows suele ser utilizado por el malware para lograr persistencia?",
+    "options": [
+      "HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "HKLM\\SAM",
+      "HKLM\\BCD",
+      "HKLM\\Drivers"
+    ],
+    "answer": 0,
+    "explanation": "Las claves Run y RunOnce son utilizadas frecuentemente para ejecutar programas automáticamente al iniciar Windows."
+  },
+  {
+    "id": 203,
+    "category": "Informática Forense",
+    "difficulty": "medium",
+    "question": "¿Qué herramienta de código abierto es ampliamente utilizada para analizar imágenes forenses de discos?",
+    "options": [
+      "Volatility",
+      "Autopsy",
+      "Wireshark",
+      "Nmap"
+    ],
+    "answer": 1,
+    "explanation": "Autopsy permite analizar sistemas de archivos, recuperar archivos eliminados y generar líneas de tiempo."
+  },
+  {
+    "id": 204,
+    "category": "Informática Forense",
+    "difficulty": "medium",
+    "question": "¿Cuál es la principal finalidad de Volatility?",
+    "options": [
+      "Analizar discos duros.",
+      "Analizar memoria RAM capturada.",
+      "Realizar escaneos de puertos.",
+      "Administrar firewalls."
+    ],
+    "answer": 1,
+    "explanation": "Volatility está especializada en el análisis de memoria RAM para identificar procesos, conexiones y malware residente en memoria."
+  },
+  {
+    "id": 205,
+    "category": "Respuesta a Incidentes",
+    "difficulty": "easy",
+    "question": "¿Cuál es el objetivo principal de la fase de contención de un incidente?",
+    "options": [
+      "Eliminar el malware.",
+      "Restaurar el servicio.",
+      "Evitar que el incidente continúe propagándose.",
+      "Documentar el incidente."
+    ],
+    "answer": 2,
+    "explanation": "La contención busca limitar el impacto del incidente evitando su propagación."
+  },
+  {
+    "id": 206,
+    "category": "Respuesta a Incidentes",
+    "difficulty": "medium",
+    "question": "Durante un ataque de ransomware, ¿cuál debería ser la primera acción?",
+    "options": [
+      "Restaurar el backup.",
+      "Apagar el servidor definitivamente.",
+      "Aislar el sistema comprometido de la red.",
+      "Eliminar todos los archivos cifrados."
+    ],
+    "answer": 2,
+    "explanation": "La prioridad es contener el incidente aislando el sistema para evitar la propagación."
+  },
+  {
+    "id": 207,
+    "category": "Respuesta a Incidentes",
+    "difficulty": "medium",
+    "question": "¿En qué fase de respuesta a incidentes se eliminan el malware y los mecanismos de persistencia?",
+    "options": [
+      "Contención.",
+      "Erradicación.",
+      "Recuperación.",
+      "Preparación."
+    ],
+    "answer": 1,
+    "explanation": "La erradicación elimina completamente la causa del incidente."
+  },
+  {
+    "id": 208,
+    "category": "Respuesta a Incidentes",
+    "difficulty": "medium",
+    "question": "¿Cuál es una actividad propia de la fase de recuperación?",
+    "options": [
+      "Revocar credenciales.",
+      "Restaurar sistemas desde respaldos confiables.",
+      "Bloquear cuentas comprometidas.",
+      "Capturar memoria RAM."
+    ],
+    "answer": 1,
+    "explanation": "La recuperación restablece los servicios utilizando respaldos limpios y aplicando las correcciones necesarias."
+  },
+  {
+    "id": 209,
+    "category": "Respuesta a Incidentes",
+    "difficulty": "medium",
+    "question": "¿Cuál es el propósito principal de una reunión de lecciones aprendidas (Post-Mortem)?",
+    "options": [
+      "Buscar responsables.",
+      "Eliminar evidencia.",
+      "Identificar mejoras para evitar incidentes similares.",
+      "Restaurar servidores."
+    ],
+    "answer": 2,
+    "explanation": "El Post-Mortem busca identificar la causa raíz y establecer acciones de mejora para fortalecer la seguridad."
+  },
+  {
+    "id": 210,
+    "category": "Informática Forense",
+    "difficulty": "hard",
+    "question": "Un analista necesita demostrar que una imagen forense presentada en un proceso judicial corresponde exactamente al disco original. ¿Qué evidencia técnica tiene mayor valor para demostrar su integridad?",
+    "options": [
+      "El nombre del archivo de imagen.",
+      "La fecha de creación de la imagen.",
+      "La coincidencia de los hashes criptográficos del original y la copia.",
+      "El tamaño del archivo de imagen."
+    ],
+    "answer": 2,
+    "explanation": "La comparación de hashes (SHA-256, SHA-1 o MD5) es el mecanismo estándar para demostrar la integridad de una imagen forense."
   }
 ]
