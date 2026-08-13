@@ -2973,144 +2973,144 @@
     "answer": 2,
     "explanation": "La comparación de hashes (SHA-256, SHA-1 o MD5) es el mecanismo estándar para demostrar la integridad de una imagen forense."
   },
-  {
-    "id": 211,
-    "category": "ISO 27001",
-    "difficulty": "hard",
-    "question": "Una entidad desea implementar un Sistema de Gestión de Seguridad de la Información (SGSI) conforme a ISO/IEC 27001. ¿Cuál es el propósito principal del SGSI?",
-    "options": [
-      "Garantizar únicamente la confidencialidad de la información crítica.",
-      "Gestionar de manera sistemática los riesgos de seguridad de la información mediante políticas, procesos, controles y mejora continua.",
-      "Implementar exclusivamente controles tecnológicos para proteger los servidores.",
-      "Eliminar completamente todos los riesgos relacionados con la información."
-    ],
-    "answer": 2,
-    "explanation": "El SGSI permite gestionar de manera sistemática la seguridad de la información, considerando riesgos, personas, procesos y tecnología. ISO/IEC 27001 no busca eliminar todos los riesgos, sino gestionarlos hasta niveles aceptables definidos por la organización."
-  },
-  {
-    "id": 212,
-    "category": "ISO 27001",
-    "difficulty": "hard",
-    "question": "Durante la implementación de ISO/IEC 27001, una entidad identifica que un servidor crítico presenta una vulnerabilidad que podría permitir acceso no autorizado. ¿Cuál debería ser el enfoque correcto antes de seleccionar una medida de tratamiento?",
-    "options": [
-      "Implementar inmediatamente todos los controles disponibles.",
-      "Ignorar la vulnerabilidad si todavía no se ha producido un incidente.",
-      "Evaluar el riesgo considerando la probabilidad y el impacto, y posteriormente determinar el tratamiento apropiado.",
-      "Eliminar el servidor independientemente de su importancia para el negocio."
-    ],
-    "answer": 3,
-    "explanation": "ISO/IEC 27001 utiliza un enfoque basado en riesgos. Primero se debe evaluar el riesgo considerando aspectos como probabilidad e impacto; posteriormente se determina si el riesgo será evitado, reducido, transferido o aceptado."
-  },
-  {
-    "id": 213,
-    "category": "ISO 27001",
-    "difficulty": "hard",
-    "question": "Una organización realiza una evaluación de riesgos y determina que un riesgo residual permanece después de implementar los controles seleccionados. ¿Qué acción es más apropiada?",
-    "options": [
-      "Considerar automáticamente que existe incumplimiento de ISO 27001.",
-      "Eliminar todos los controles existentes y comenzar nuevamente el análisis.",
-      "Comparar el riesgo residual con los criterios de aceptación de riesgo establecidos por la organización.",
-      "Ignorar el riesgo residual porque ya existen controles implementados."
-    ],
-    "answer": 3,
-    "explanation": "El riesgo residual es el riesgo que permanece después de aplicar controles. Debe compararse con los criterios de aceptación definidos por la organización para determinar si puede ser aceptado o requiere tratamiento adicional."
-  },
-  {
-    "id": 214,
-    "category": "ISO 27001",
-    "difficulty": "hard",
-    "question": "¿Qué documento permite justificar qué controles del Anexo A de ISO/IEC 27001 son aplicables, cuáles no y las razones correspondientes?",
-    "options": [
-      "Plan de recuperación ante desastres.",
-      "Declaración de Aplicabilidad (Statement of Applicability - SoA).",
-      "Inventario de activos tecnológicos.",
-      "Registro de incidentes de seguridad."
-    ],
-    "answer": 2,
-    "explanation": "La Declaración de Aplicabilidad (SoA) documenta los controles aplicables del Anexo A, su estado de implementación y la justificación de inclusión o exclusión según el tratamiento de riesgos y el contexto de la organización."
-  },
-  {
-    "id": 215,
-    "category": "ISO 27001",
-    "difficulty": "hard",
-    "question": "Una entidad implementa controles de acceso, MFA, segmentación de red y monitoreo de eventos para reducir el riesgo de accesos no autorizados. ¿Cuál es la relación correcta entre estos controles y la gestión de riesgos de ISO/IEC 27001?",
-    "options": [
-      "Los controles sustituyen completamente la evaluación de riesgos.",
-      "Los controles deben seleccionarse de manera independiente del análisis de riesgos.",
-      "Los controles constituyen medidas de tratamiento utilizadas para modificar los riesgos identificados.",
-      "Los controles solamente son necesarios después de que ocurra un incidente."
-    ],
-    "answer": 3,
-    "explanation": "En ISO/IEC 27001, los controles forman parte del tratamiento del riesgo. La organización identifica y evalúa riesgos, determina cómo tratarlos y selecciona controles apropiados para modificar esos riesgos."
-  },
-  {
-    "id": 216,
-    "category": "ISO 27001",
-    "difficulty": "hard",
-    "question": "Durante una auditoría interna del SGSI se encuentra que varios procedimientos de seguridad no se están ejecutando como fueron definidos. ¿Cuál es la respuesta más adecuada?",
-    "options": [
-      "Modificar inmediatamente todos los procedimientos sin analizar la causa.",
-      "Registrar la no conformidad, determinar su causa, implementar acciones correctivas y verificar su eficacia.",
-      "Eliminar los procedimientos que no se están cumpliendo.",
-      "Esperar hasta la auditoría de certificación para decidir qué hacer."
-    ],
-    "answer": 2,
-    "explanation": "ISO/IEC 27001 exige gestionar las no conformidades mediante acciones correctivas. Esto implica identificar la no conformidad, analizar su causa, implementar acciones y verificar si estas fueron eficaces para evitar su recurrencia."
-  },
-  {
-    "id": 217,
-    "category": "ISO 27001",
-    "difficulty": "hard",
-    "question": "Una entidad pública desea demostrar que su SGSI continúa siendo adecuado frente a nuevos riesgos, cambios tecnológicos y resultados de auditorías. ¿Qué principio de ISO/IEC 27001 resulta fundamental?",
-    "options": [
-      "Implementación única de controles.",
-      "Mejora continua del SGSI.",
-      "Eliminación de todos los activos antiguos.",
-      "Sustitución de las políticas después de cada incidente."
-    ],
-    "answer": 2,
-    "explanation": "ISO/IEC 27001 establece un enfoque de mejora continua. El SGSI debe revisarse y mejorarse considerando cambios en el contexto, resultados de auditorías, incidentes, riesgos, desempeño y oportunidades de mejora."
-  },
-  {
-    "id": 218,
-    "category": "ISO 27001",
-    "difficulty": "hard",
-    "question": "La alta dirección de una entidad debe demostrar compromiso con el SGSI. ¿Cuál de las siguientes acciones representa mejor este compromiso?",
-    "options": [
-      "Delegar toda la responsabilidad de seguridad al área de TI.",
-      "Aprobar únicamente la compra de herramientas de seguridad.",
-      "Asegurar que la política y los objetivos de seguridad estén alineados con la dirección estratégica, asignando recursos y responsabilidades.",
-      "Permitir que cada funcionario establezca sus propias reglas de seguridad."
-    ],
-    "answer": 3,
-    "explanation": "El liderazgo de la alta dirección es fundamental en ISO/IEC 27001. La dirección debe integrar el SGSI con los objetivos de la organización, establecer responsabilidades, proporcionar recursos y promover la importancia de la seguridad de la información."
-  },
-  {
-    "id": 219,
-    "category": "ISO 27001",
-    "difficulty": "hard",
-    "question": "Una organización debe decidir cómo responder a un riesgo identificado sobre información sensible. ¿Cuál de las siguientes opciones NO corresponde a una estrategia habitual de tratamiento del riesgo?",
-    "options": [
-      "Evitar el riesgo.",
-      "Reducir o modificar el riesgo mediante controles.",
-      "Transferir o compartir el riesgo.",
-      "Eliminar automáticamente todos los activos relacionados con el riesgo."
-    ],
-    "answer": 4,
-    "explanation": "Las estrategias habituales incluyen evitar, modificar/reducir, compartir/transferir o retener/aceptar el riesgo. Eliminar automáticamente todos los activos no constituye una estrategia obligatoria de tratamiento y puede resultar desproporcionado para la organización."
-  },
-  {
-    "id": 220,
-    "category": "ISO 27001",
-    "difficulty": "hard",
-    "question": "Una entidad ha implementado un SGSI y desea determinar si sus controles están funcionando de manera efectiva. ¿Cuál de las siguientes actividades proporciona evidencia más adecuada para evaluar su desempeño?",
-    "options": [
-      "Verificar únicamente que los controles estén documentados.",
-      "Realizar seguimiento, medición, análisis y evaluación del desempeño del SGSI mediante criterios e indicadores definidos.",
-      "Preguntar informalmente a los funcionarios si consideran que la seguridad es adecuada.",
-      "Revisar únicamente el número de herramientas de seguridad adquiridas."
-    ],
-    "answer": 2,
-    "explanation": "ISO/IEC 27001 requiere evaluar el desempeño y eficacia del SGSI mediante seguimiento, medición, análisis y evaluación. La existencia de documentación o herramientas no demuestra por sí misma que los controles sean efectivos."
-  }
+{
+  "id": 211,
+  "category": "ISO 27001",
+  "difficulty": "hard",
+  "question": "Una entidad desea implementar un Sistema de Gestión de Seguridad de la Información (SGSI) conforme a ISO/IEC 27001. ¿Cuál es el propósito principal del SGSI?",
+  "options": [
+    "Garantizar únicamente la confidencialidad de la información crítica.",
+    "Gestionar de manera sistemática los riesgos de seguridad de la información mediante políticas, procesos, controles y mejora continua.",
+    "Implementar exclusivamente controles tecnológicos para proteger los servidores.",
+    "Eliminar completamente todos los riesgos relacionados con la información."
+  ],
+  "answer": 1,
+  "explanation": "El SGSI permite gestionar de manera sistemática la seguridad de la información, considerando riesgos, personas, procesos y tecnología. ISO/IEC 27001 no busca eliminar todos los riesgos, sino gestionarlos hasta niveles aceptables definidos por la organización."
+},
+{
+  "id": 212,
+  "category": "ISO 27001",
+  "difficulty": "hard",
+  "question": "Durante la implementación de ISO/IEC 27001, una entidad identifica que un servidor crítico presenta una vulnerabilidad que podría permitir acceso no autorizado. ¿Cuál debería ser el enfoque correcto antes de seleccionar una medida de tratamiento?",
+  "options": [
+    "Implementar inmediatamente todos los controles disponibles.",
+    "Ignorar la vulnerabilidad si todavía no se ha producido un incidente.",
+    "Evaluar el riesgo considerando la probabilidad y el impacto, y posteriormente determinar el tratamiento apropiado.",
+    "Eliminar el servidor independientemente de su importancia para el negocio."
+  ],
+  "answer": 2,
+  "explanation": "ISO/IEC 27001 utiliza un enfoque basado en riesgos. Primero se debe evaluar el riesgo considerando aspectos como probabilidad e impacto; posteriormente se determina si el riesgo será evitado, reducido, transferido o aceptado."
+},
+{
+  "id": 213,
+  "category": "ISO 27001",
+  "difficulty": "hard",
+  "question": "Una organización realiza una evaluación de riesgos y determina que un riesgo residual permanece después de implementar los controles seleccionados. ¿Qué acción es más apropiada?",
+  "options": [
+    "Considerar automáticamente que existe incumplimiento de ISO 27001.",
+    "Eliminar todos los controles existentes y comenzar nuevamente el análisis.",
+    "Comparar el riesgo residual con los criterios de aceptación de riesgo establecidos por la organización.",
+    "Ignorar el riesgo residual porque ya existen controles implementados."
+  ],
+  "answer": 2,
+  "explanation": "El riesgo residual es el riesgo que permanece después de aplicar controles. Debe compararse con los criterios de aceptación definidos por la organización para determinar si puede ser aceptado o requiere tratamiento adicional."
+},
+{
+  "id": 214,
+  "category": "ISO 27001",
+  "difficulty": "hard",
+  "question": "¿Qué documento permite justificar qué controles del Anexo A de ISO/IEC 27001 son aplicables, cuáles no y las razones correspondientes?",
+  "options": [
+    "Plan de recuperación ante desastres.",
+    "Declaración de Aplicabilidad (Statement of Applicability - SoA).",
+    "Inventario de activos tecnológicos.",
+    "Registro de incidentes de seguridad."
+  ],
+  "answer": 1,
+  "explanation": "La Declaración de Aplicabilidad (SoA) documenta los controles aplicables del Anexo A, su estado de implementación y la justificación de inclusión o exclusión según el tratamiento de riesgos y el contexto de la organización."
+},
+{
+  "id": 215,
+  "category": "ISO 27001",
+  "difficulty": "hard",
+  "question": "Una entidad implementa controles de acceso, MFA, segmentación de red y monitoreo de eventos para reducir el riesgo de accesos no autorizados. ¿Cuál es la relación correcta entre estos controles y la gestión de riesgos de ISO/IEC 27001?",
+  "options": [
+    "Los controles sustituyen completamente la evaluación de riesgos.",
+    "Los controles deben seleccionarse de manera independiente del análisis de riesgos.",
+    "Los controles constituyen medidas de tratamiento utilizadas para modificar los riesgos identificados.",
+    "Los controles solamente son necesarios después de que ocurra un incidente."
+  ],
+  "answer": 2,
+  "explanation": "En ISO/IEC 27001, los controles forman parte del tratamiento del riesgo. La organización identifica y evalúa riesgos, determina cómo tratarlos y selecciona controles apropiados para modificar esos riesgos."
+},
+{
+  "id": 216,
+  "category": "ISO 27001",
+  "difficulty": "hard",
+  "question": "Durante una auditoría interna del SGSI se encuentra que varios procedimientos de seguridad no se están ejecutando como fueron definidos. ¿Cuál es la respuesta más adecuada?",
+  "options": [
+    "Modificar inmediatamente todos los procedimientos sin analizar la causa.",
+    "Registrar la no conformidad, determinar su causa, implementar acciones correctivas y verificar su eficacia.",
+    "Eliminar los procedimientos que no se están cumpliendo.",
+    "Esperar hasta la auditoría de certificación para decidir qué hacer."
+  ],
+  "answer": 1,
+  "explanation": "ISO/IEC 27001 exige gestionar las no conformidades mediante acciones correctivas. Esto implica identificar la no conformidad, analizar su causa, implementar acciones y verificar si estas fueron eficaces para evitar su recurrencia."
+},
+{
+  "id": 217,
+  "category": "ISO 27001",
+  "difficulty": "hard",
+  "question": "Una entidad pública desea demostrar que su SGSI continúa siendo adecuado frente a nuevos riesgos, cambios tecnológicos y resultados de auditorías. ¿Qué principio de ISO/IEC 27001 resulta fundamental?",
+  "options": [
+    "Implementación única de controles.",
+    "Mejora continua del SGSI.",
+    "Eliminación de todos los activos antiguos.",
+    "Sustitución de las políticas después de cada incidente."
+  ],
+  "answer": 1,
+  "explanation": "ISO/IEC 27001 establece un enfoque de mejora continua. El SGSI debe revisarse y mejorarse considerando cambios en el contexto, resultados de auditorías, incidentes, riesgos, desempeño y oportunidades de mejora."
+},
+{
+  "id": 218,
+  "category": "ISO 27001",
+  "difficulty": "hard",
+  "question": "La alta dirección de una entidad debe demostrar compromiso con el SGSI. ¿Cuál de las siguientes acciones representa mejor este compromiso?",
+  "options": [
+    "Delegar toda la responsabilidad de seguridad al área de TI.",
+    "Aprobar únicamente la compra de herramientas de seguridad.",
+    "Asegurar que la política y los objetivos de seguridad estén alineados con la dirección estratégica, asignando recursos y responsabilidades.",
+    "Permitir que cada funcionario establezca sus propias reglas de seguridad."
+  ],
+  "answer": 2,
+  "explanation": "El liderazgo de la alta dirección es fundamental en ISO/IEC 27001. La dirección debe integrar el SGSI con los objetivos de la organización, establecer responsabilidades, proporcionar recursos y promover la importancia de la seguridad de la información."
+},
+{
+  "id": 219,
+  "category": "ISO 27001",
+  "difficulty": "hard",
+  "question": "Una organización debe decidir cómo responder a un riesgo identificado sobre información sensible. ¿Cuál de las siguientes opciones NO corresponde a una estrategia habitual de tratamiento del riesgo?",
+  "options": [
+    "Evitar el riesgo.",
+    "Reducir o modificar el riesgo mediante controles.",
+    "Transferir o compartir el riesgo.",
+    "Eliminar automáticamente todos los activos relacionados con el riesgo."
+  ],
+  "answer": 3,
+  "explanation": "Las estrategias habituales incluyen evitar, modificar/reducir, compartir/transferir o retener/aceptar el riesgo. Eliminar automáticamente todos los activos no constituye una estrategia obligatoria de tratamiento y puede resultar desproporcionado para la organización."
+},
+{
+  "id": 220,
+  "category": "ISO 27001",
+  "difficulty": "hard",
+  "question": "Una entidad ha implementado un SGSI y desea determinar si sus controles están funcionando de manera efectiva. ¿Cuál de las siguientes actividades proporciona evidencia más adecuada para evaluar su desempeño?",
+  "options": [
+    "Verificar únicamente que los controles estén documentados.",
+    "Realizar seguimiento, medición, análisis y evaluación del desempeño del SGSI mediante criterios e indicadores definidos.",
+    "Preguntar informalmente a los funcionarios si consideran que la seguridad es adecuada.",
+    "Revisar únicamente el número de herramientas de seguridad adquiridas."
+  ],
+  "answer": 1,
+  "explanation": "ISO/IEC 27001 requiere evaluar el desempeño y eficacia del SGSI mediante seguimiento, medición, análisis y evaluación. La existencia de documentación o herramientas no demuestra por sí misma que los controles sean efectivos."
+}
 ]
