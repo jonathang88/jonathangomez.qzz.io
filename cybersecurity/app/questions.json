@@ -3125,5 +3125,61 @@
   ],
   "answer": 2,
   "explanation": "La definición detallada de las tecnologías específicas para digitalizar los trámites no corresponde a la etapa inicial de \"Reflexión inicial\" del Direccionamiento Estratégico. Esta etapa se concentra en comprender el propósito fundamental de la entidad, revisar su misión y visión, analizar el marco normativo y las funciones y competencias, y estudiar el contexto y las necesidades de los grupos de valor. La digitalización puede ser relevante para otras dimensiones y políticas de MIPG, pero no constituye un paso fundamental de esta reflexión inicial."
-}
+},
+   {
+    "id": 222,
+    "category": "MIPG - Control Interno",
+    "difficulty": "hard",
+    "question": "El Jefe de la Oficina de Control Interno de una entidad pública descubre que un miembro de su equipo de auditoría tuvo una relación laboral directa y muy cercana con el jefe del área de Contratación hace seis meses. Actualmente, se está planificando una auditoría al proceso de contratación. ¿Qué acción debe tomar el Jefe de Control Interno para cumplir con las Normas Internacionales de Auditoría Interna?",
+    "options": [
+      "Permitir que el auditor participe, pero solicitarle que declare por escrito que no tiene conflicto de intereses.",
+      "Asignar al auditor a la revisión de un proceso diferente para evitar cualquier posible impedimento a la objetividad.",
+      "Ignorar la situación, ya que la relación laboral pasada fue hace más de tres meses.",
+      "Continuar con la asignación del auditor al equipo, confiando en su profesionalismo para mantener la objetividad."
+    ],
+    "answer": 1,
+    "explanation": "La Norma 1130.A1 establece que se presume un impedimento de objetividad si un auditor interno proporciona servicios de aseguramiento para una actividad de la cual tuvo responsabilidades en el año inmediato anterior. Para salvaguardar la independencia y objetividad, lo más adecuado es reasignar al auditor."
+  },
+  {
+    "id": 223,
+    "category": "MIPG - Información y Comunicación",
+    "difficulty": "hard",
+    "question": "Una entidad pública está implementando su Programa de Gestión Documental (PGD). Durante una reunión, el equipo discute la importancia de asegurar que el PGD facilite la identificación, gestión, clasificación, organización, conservación y disposición de la información pública. ¿Cuál es el objetivo principal que se busca al cumplir con estos aspectos del PGD en el marco de la dimensión de Información y Comunicación del MIPG?",
+    "options": [
+      "Centralizar toda la documentación de la entidad en una única base de datos digital.",
+      "Reducir al mínimo el uso de papel en todas las dependencias de la entidad.",
+      "Cumplir únicamente con los requisitos legales para evitar sanciones por parte del Archivo General de la Nación.",
+      "Garantizar la trazabilidad de la gestión, la seguridad de los datos y facilitar la operación de la entidad y el acceso a la información."
+    ],
+    "answer": 3,
+    "explanation": "El PGD busca facilitar la operación de la entidad, el desarrollo de sus funciones, la seguridad y protección de datos, y garantizar la trazabilidad de la gestión, además de promover la transparencia y el acceso a la información. Si bien la reducción de papel puede ser un beneficio, no es el objetivo principal."
+  },
+  {
+    "id": 224,
+    "category": "MIPG - Gestión por Procesos",
+    "difficulty": "hard",
+    "question": "La Alcaldía del Municipio X está reestructurando su modelo de operación y ha decidido adoptar un enfoque por procesos. El equipo de trabajo, liderado por el Jefe de Planeación, está en la fase de identificación de los productos o servicios que entrega la entidad. Un miembro del equipo sugiere listar \"elaboración de informes internos\" como un producto final para los grupos de valor. ¿Es esta sugerencia adecuada según la metodología de gestión por procesos del MIPG?",
+    "options": [
+      "No, porque los productos o servicios deben ser las salidas finales que llegan directamente a los grupos de valor externos o ciudadanos.",
+      "Sí, siempre y cuando estos informes internos sean luego publicados para consulta ciudadana.",
+      "Sí, porque los informes internos son necesarios para el funcionamiento de la entidad.",
+      "No, porque la identificación de productos es una tarea exclusiva de la alta dirección y no del equipo de trabajo."
+    ],
+    "answer": 0,
+    "explanation": "En la identificación de productos o servicios, el MIPG enfatiza que estos deben ser las salidas finales que llegan a los grupos de valor. Los informes internos, aunque importantes para la gestión, suelen ser insumos o actividades de procesos de apoyo, no el producto final que recibe el ciudadano."
+  },
+  {
+    "id": 225,
+    "category": "MIPG - Transparencia y Acceso a la Información",
+    "difficulty": "hard",
+    "question": "Un ciudadano presenta un derecho de petición a una entidad pública solicitando información sobre los contratos celebrados en la última vigencia. La entidad niega la información argumentando que su divulgación podría afectar la seguridad nacional. Sin embargo, la información solicitada no tiene relación aparente con este tema. ¿Qué principio fundamental de la Ley 1712 de 2014 sobre Transparencia y Acceso a la Información Pública podría estar vulnerando la entidad?",
+    "options": [
+      "Principio de divulgación proactiva, ya que la entidad no publicó la información antes de ser solicitada.",
+      "Principio de gratuidad, ya que no se le están cobrando costos de reproducción.",
+      "Principio de máxima publicidad, al restringir el acceso a información que debería ser pública sin una justificación válida y legal.",
+      "Principio de responsabilidad en el uso de la información, pues el ciudadano podría usarla indebidamente."
+    ],
+    "answer": 2,
+    "explanation": "El principio de máxima publicidad establece que toda información en posesión de los sujetos obligados se presume pública y solo puede ser restringida por excepciones legales. Negar información sin una justificación válida y contemplada en la ley vulnera este principio."
+  }
 ]
