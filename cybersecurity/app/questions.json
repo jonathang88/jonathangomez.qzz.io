@@ -3531,5 +3531,145 @@
     ],
     "answer": 2,
     "explanation": "La Norma 2600 establece que si el director ejecutivo de auditoría determina que el asunto no ha sido resuelto, debe comunicar esta situación al Consejo o al órgano de gobierno equivalente."
+  },
+   {
+    "id": 251,
+    "category": "ISO 27001 - Contexto y SGSI",
+    "difficulty": "hard",
+    "question": "Una entidad pública decide implementar un SGSI conforme a ISO/IEC 27001. Antes de definir los controles de seguridad, la organización analiza sus objetivos estratégicos, las partes interesadas, los requisitos legales aplicables y los factores internos y externos que pueden afectar la seguridad de la información. ¿Qué propósito tiene principalmente esta actividad?",
+    "options": [
+      "Determinar directamente qué controles del Anexo A deben implementarse sin realizar una evaluación de riesgos.",
+      "Establecer el contexto de la organización para determinar los factores relevantes para el SGSI.",
+      "Sustituir la auditoría interna del SGSI.",
+      "Definir exclusivamente los procedimientos técnicos de respuesta a incidentes."
+    ],
+    "answer": 1,
+    "explanation": "ISO/IEC 27001 requiere comprender el contexto de la organización antes de establecer y operar el SGSI. Esto incluye considerar factores internos y externos, las partes interesadas y sus requisitos, así como la relación del SGSI con los objetivos de la organización."
+  },
+  {
+    "id": 252,
+    "category": "ISO 27001 - Gestión de Riesgos",
+    "difficulty": "hard",
+    "question": "Durante una evaluación de riesgos de seguridad de la información, una entidad identifica que una base de datos contiene información crítica y que una interrupción prolongada del servicio tendría un impacto significativo sobre la operación institucional. ¿Cuál sería el enfoque más adecuado dentro del SGSI?",
+    "options": [
+      "Implementar todos los controles del Anexo A relacionados con disponibilidad, independientemente del nivel de riesgo.",
+      "Evaluar el riesgo y determinar un tratamiento proporcional al nivel de riesgo y a los criterios de aceptación establecidos por la organización.",
+      "Aceptar automáticamente el riesgo porque la base de datos es un activo tecnológico.",
+      "Eliminar la base de datos para evitar completamente cualquier riesgo."
+    ],
+    "answer": 1,
+    "explanation": "ISO/IEC 27001 utiliza un enfoque basado en riesgos. La organización debe evaluar los riesgos considerando su probabilidad e impacto, compararlos con sus criterios de aceptación y determinar un tratamiento proporcional. No existe una obligación de implementar indiscriminadamente todos los controles."
+  },
+  {
+    "id": 253,
+    "category": "ISO 27001 - Tratamiento del Riesgo",
+    "difficulty": "hard",
+    "question": "Una entidad identifica un riesgo de acceso no autorizado a sistemas críticos. Después de implementar controles de autenticación multifactor y segmentación de red, el riesgo disminuye, pero no desaparece completamente. ¿Cómo se denomina el riesgo que permanece después de aplicar las medidas de tratamiento?",
+    "options": [
+      "Riesgo inherente.",
+      "Riesgo residual.",
+      "Riesgo eliminado.",
+      "Riesgo transferido."
+    ],
+    "answer": 1,
+    "explanation": "El riesgo residual es el riesgo que permanece después de implementar las medidas de tratamiento seleccionadas. La organización debe determinar si este nivel residual se encuentra dentro de sus criterios de aceptación o si requiere tratamiento adicional."
+  },
+  {
+    "id": 254,
+    "category": "ISO 27001 - Declaración de Aplicabilidad",
+    "difficulty": "hard",
+    "question": "Una organización ha determinado sus controles necesarios mediante el proceso de tratamiento de riesgos y posteriormente los compara con los controles de referencia del Anexo A de ISO/IEC 27001. ¿Cuál es uno de los principales propósitos de esta comparación?",
+    "options": [
+      "Obligar a la organización a implementar automáticamente los 93 controles del Anexo A.",
+      "Verificar que no se haya omitido ningún control necesario y documentar la aplicabilidad de los controles en la Declaración de Aplicabilidad.",
+      "Reemplazar el proceso de evaluación de riesgos por una lista estándar de controles.",
+      "Demostrar que todos los controles tecnológicos ya fueron implementados."
+    ],
+    "answer": 1,
+    "explanation": "El Anexo A funciona como un conjunto de controles de referencia. La organización determina primero los controles necesarios para el tratamiento de sus riesgos y los compara con el Anexo A para verificar que no se hayan omitido controles necesarios. La Declaración de Aplicabilidad documenta la aplicabilidad y las justificaciones correspondientes."
+  },
+  {
+    "id": 255,
+    "category": "ISO 27001 - Seguridad de la Información",
+    "difficulty": "hard",
+    "question": "Una entidad descubre que varios funcionarios pueden modificar registros críticos sin autorización y que no existe un mecanismo adecuado para detectar dichos cambios. ¿Cuál de los principios fundamentales de seguridad de la información se encuentra principalmente comprometido?",
+    "options": [
+      "Confidencialidad.",
+      "Integridad.",
+      "Disponibilidad.",
+      "No repudio."
+    ],
+    "answer": 1,
+    "explanation": "La integridad busca preservar la exactitud y completitud de la información y evitar modificaciones no autorizadas. En este caso, la capacidad de modificar registros críticos sin autorización compromete principalmente la integridad."
+  },
+  {
+    "id": 256,
+    "category": "ISO 27001 - Auditoría Interna",
+    "difficulty": "hard",
+    "question": "Durante una auditoría interna del SGSI se evidencia que un procedimiento establecido por la entidad no se está ejecutando conforme a lo definido. ¿Cuál debería ser la respuesta más adecuada?",
+    "options": [
+      "Eliminar inmediatamente el procedimiento para evitar que vuelva a incumplirse.",
+      "Registrar la situación como una posible no conformidad, analizar sus causas y establecer acciones correctivas cuando corresponda.",
+      "Ignorarla si no se ha producido todavía un incidente de seguridad.",
+      "Implementar controles adicionales sin analizar primero la causa del incumplimiento."
+    ],
+    "answer": 1,
+    "explanation": "Cuando se identifica una no conformidad, la organización debe gestionarla mediante un proceso de corrección y acción correctiva apropiado, incluyendo el análisis de la causa y la evaluación de la eficacia de las acciones implementadas."
+  },
+  {
+    "id": 257,
+    "category": "ISO 27001 - Mejora Continua",
+    "difficulty": "hard",
+    "question": "Una entidad revisa periódicamente los resultados de sus auditorías, incidentes de seguridad, cambios en los riesgos y desempeño del SGSI para identificar oportunidades de mejora. ¿Qué principio de ISO/IEC 27001 se refleja principalmente en esta actividad?",
+    "options": [
+      "Implementación única de controles.",
+      "Mejora continua del SGSI.",
+      "Eliminación automática de riesgos.",
+      "Centralización de todas las funciones de seguridad en el área de TI."
+    ],
+    "answer": 1,
+    "explanation": "ISO/IEC 27001 exige que el SGSI se mantenga y mejore continuamente. Los resultados de auditorías, cambios en el contexto, incidentes, desempeño y evolución de los riesgos pueden generar oportunidades de mejora."
+  },
+  {
+    "id": 258,
+    "category": "ISO 27001 - Liderazgo",
+    "difficulty": "hard",
+    "question": "La alta dirección de una entidad considera que la seguridad de la información es exclusivamente responsabilidad del área de tecnología y decide no participar en la definición de objetivos ni en la asignación de recursos para el SGSI. ¿Cuál es el principal problema frente a ISO/IEC 27001?",
+    "options": [
+      "El SGSI solo puede funcionar si todos los controles son administrados directamente por la alta dirección.",
+      "La dirección debe demostrar liderazgo y compromiso con el SGSI y asegurar su integración con los objetivos de la organización.",
+      "ISO/IEC 27001 prohíbe que el área de tecnología participe en la gestión de seguridad.",
+      "La responsabilidad de seguridad debe recaer exclusivamente en los auditores internos."
+    ],
+    "answer": 1,
+    "explanation": "La seguridad de la información no debe tratarse únicamente como una responsabilidad técnica. ISO/IEC 27001 requiere liderazgo y compromiso de la dirección, incluyendo la integración del SGSI con la estrategia, la asignación de responsabilidades y la disponibilidad de recursos."
+  },
+  {
+    "id": 259,
+    "category": "ISO 27001 - Evaluación del Desempeño",
+    "difficulty": "hard",
+    "question": "Una entidad desea determinar si su SGSI está alcanzando los resultados previstos. Para ello establece indicadores, realiza seguimiento de los controles, analiza resultados de auditorías y revisa periódicamente el desempeño del sistema. ¿Qué componente del SGSI está aplicando principalmente?",
+    "options": [
+      "Evaluación del desempeño.",
+      "Definición del contexto organizacional.",
+      "Tratamiento inicial de los activos.",
+      "Eliminación del riesgo residual."
+    ],
+    "answer": 0,
+    "explanation": "El seguimiento, la medición, el análisis y la evaluación permiten determinar el desempeño y la eficacia del SGSI. La organización debe utilizar criterios e información apropiados para evaluar si el sistema está logrando los resultados previstos."
+  },
+  {
+    "id": 260,
+    "category": "ISO 27001 - Gestión de Riesgos y Controles",
+    "difficulty": "hard",
+    "question": "Una organización determina, a partir de su evaluación de riesgos y de sus obligaciones legales y contractuales, que necesita un control de seguridad que no aparece específicamente en el Anexo A de ISO/IEC 27001. ¿Qué debería hacer la organización?",
+    "options": [
+      "Descartar el control porque únicamente pueden utilizarse controles incluidos en el Anexo A.",
+      "Implementar el control si es necesario para el tratamiento del riesgo y documentar adecuadamente su aplicación dentro del SGSI.",
+      "Implementar obligatoriamente todos los controles del Anexo A antes de considerar cualquier control adicional.",
+      "Sustituir la evaluación de riesgos por el control encontrado en otra norma."
+    ],
+    "answer": 1,
+    "explanation": "ISO/IEC 27001 permite que la organización determine controles necesarios según sus riesgos, requisitos legales, contractuales y necesidades particulares. Estos controles no tienen que limitarse exclusivamente al Anexo A. El Anexo A es un conjunto de referencia utilizado para comparar y verificar que no se hayan omitido controles necesarios."
   }
 ]
