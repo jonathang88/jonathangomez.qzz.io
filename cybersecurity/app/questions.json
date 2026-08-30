@@ -3112,5 +3112,18 @@
   ],
   "answer": 1,
   "explanation": "ISO/IEC 27001 requiere evaluar el desempeño y eficacia del SGSI mediante seguimiento, medición, análisis y evaluación. La existencia de documentación o herramientas no demuestra por sí misma que los controles sean efectivos."
+}, {
+  "id": 221,
+  "category": "MIPG - Direccionamiento Estratégico",
+  "difficulty": "hard",
+  "question": "La Oficina Asesora de Planeación del Municipio de Sión está iniciando la formulación de su Plan de Acción Anual. Según el Modelo Integrado de Planeación y Gestión (MIPG), ¿cuál de las siguientes acciones NO sería un paso fundamental en la etapa inicial de \"Reflexión inicial\" para el Direccionamiento Estratégico?",
+  "options": [
+    "Revisar la coherencia de la misión y visión actuales con el propósito fundamental del municipio y las necesidades de sus grupos de valor.",
+    "Analizar el acto administrativo de creación del municipio y las normas que le asignan funciones y competencias.",
+    "Definir detalladamente las tecnologías específicas a utilizar para la digitalización de todos los trámites municipales.",
+    "Realizar un análisis DOFA para identificar las debilidades, oportunidades, fortalezas y amenazas del municipio."
+  ],
+  "answer": 2,
+  "explanation": "La definición detallada de las tecnologías específicas para digitalizar los trámites no corresponde a la etapa inicial de \"Reflexión inicial\" del Direccionamiento Estratégico. Esta etapa se concentra en comprender el propósito fundamental de la entidad, revisar su misión y visión, analizar el marco normativo y las funciones y competencias, y estudiar el contexto y las necesidades de los grupos de valor. La digitalización puede ser relevante para otras dimensiones y políticas de MIPG, pero no constituye un paso fundamental de esta reflexión inicial."
 }
 ]
