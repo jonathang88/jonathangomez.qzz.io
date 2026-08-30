@@ -3181,5 +3181,355 @@
     ],
     "answer": 2,
     "explanation": "El principio de máxima publicidad establece que toda información en posesión de los sujetos obligados se presume pública y solo puede ser restringida por excepciones legales. Negar información sin una justificación válida y contemplada en la ley vulnera este principio."
+  },
+   {
+    "id": 226,
+    "category": "MIPG - Talento Humano",
+    "difficulty": "hard",
+    "question": "El Director de Talento Humano de una entidad está diseñando el Plan Institucional de Capacitación (PIC). Para asegurar que el PIC esté alineado con la estrategia de la entidad y contribuya efectivamente al desarrollo de los servidores, ¿cuál de las siguientes acciones es la MENOS prioritaria durante la fase de diagnóstico de necesidades de capacitación según el Plan Nacional de Formación y Capacitación?",
+    "options": [
+      "Tener en cuenta las competencias comportamentales y técnicas que se deben fortalecer para el cumplimiento de los objetivos institucionales.",
+      "Analizar las demandas y dinámicas del entorno en el cual se desarrollan las actividades misionales de la entidad.",
+      "Considerar los resultados de las evaluaciones de desempeño de los servidores públicos.",
+      "Incluir únicamente los cursos de idiomas más solicitados por los empleados en encuestas informales."
+    ],
+    "answer": 3,
+    "explanation": "Si bien las preferencias de los empleados pueden ser un insumo, el diagnóstico de necesidades debe basarse en un análisis estratégico que incluya el desempeño, las necesidades de la entidad, las competencias requeridas y los objetivos institucionales, no únicamente en solicitudes informales de cursos populares."
+  },
+  {
+    "id": 227,
+    "category": "MIPG - Gestión y Desempeño Institucional",
+    "difficulty": "hard",
+    "question": "Una entidad pública desea mejorar la eficiencia de su proceso de \"Atención de Peticiones, Quejas, Reclamos y Sugerencias (PQRS)\". Actualmente, el indicador de gestión para este proceso es \"% de PQR atendidas dentro del término legal\". Para obtener una visión más completa de la eficiencia, ¿qué otro tipo de indicador sería más pertinente añadir según los tipos de indicadores mencionados en el contexto de MIPG?",
+    "options": [
+      "Un indicador de efectividad que mida el número total de PQR recibidas mensualmente.",
+      "Un indicador de eficacia que mida la satisfacción del ciudadano con la respuesta recibida.",
+      "Un indicador de eficiencia que mida el costo promedio de atención por cada PQR.",
+      "Un indicador de economía que mida el presupuesto total asignado al área de atención al ciudadano."
+    ],
+    "answer": 2,
+    "explanation": "Los indicadores de eficiencia se enfocan en el control de los recursos y su grado de aprovechamiento. Medir el costo promedio por PQR atendida es un claro ejemplo de un indicador de eficiencia que complementaría el actual. La satisfacción es más de eficacia o efectividad, el presupuesto total es de economía, y el número de PQR recibidas es más un dato de volumen."
+  },
+  {
+    "id": 228,
+    "category": "MIPG - Control Interno",
+    "difficulty": "hard",
+    "question": "El Comité Institucional de Coordinación de Control Interno de la Entidad ABC se reúne para aprobar el Estatuto de Auditoría Interna. Durante la revisión, surge un debate sobre el nivel jerárquico al que debe reportar el Director Ejecutivo de Auditoría para asegurar su independencia. ¿Cuál es la recomendación de las Normas Internacionales para lograr una independencia efectiva dentro de la organización?",
+    "options": [
+      "Con los planes de mejoramiento individuales de los jefes de cada dependencia.",
+      "Con el marco internacional para la práctica de auditoría interna.",
+      "Únicamente con las directrices específicas emitidas por el representante legal de la entidad.",
+      "Exclusivamente con los hallazgos y recomendaciones de la Contraloría General de la República."
+    ],
+    "answer": 1,
+    "explanation": "El Modelo de Estatuto de Auditoría menciona que la oficina de control interno debe desarrollar auditorías internas alineadas con el marco internacional para la práctica de auditoría interna, con el propósito de fortalecer su labor de evaluación y seguimiento."
+  },
+  {
+    "id": 229,
+    "category": "MIPG - Gobierno Digital",
+    "difficulty": "hard",
+    "question": "Una entidad pública está implementando la Política de Gobierno Digital. En el marco del componente \"TIC para el Estado\", se busca mejorar los procesos internos. ¿Cuál de los siguientes propósitos de la política de Gobierno Digital se alinea directamente con la optimización de estos procesos internos?",
+    "options": [
+      "Impulso en el desarrollo de territorios y ciudades inteligentes.",
+      "Procesos internos, seguros y eficientes a partir de las capacidades de gestión TI.",
+      "Servicios digitales de confianza y calidad ofrecidos a la ciudadanía.",
+      "Empoderamiento ciudadano a través de la consolidación de un Estado abierto."
+    ],
+    "answer": 1,
+    "explanation": "La política de Gobierno Digital tiene como uno de sus propósitos lograr procesos internos, seguros y eficientes a partir de las capacidades de gestión TI. Esto se enmarca dentro del componente TIC para el Estado, que busca mejorar la operación interna de las entidades."
+  },
+  {
+    "id": 230,
+    "category": "MIPG - Gestión por Procesos",
+    "difficulty": "hard",
+    "question": "Durante el proceso de caracterización de un proceso misional en una Alcaldía, el equipo identifica que una de las entradas clave es el \"Presupuesto asignado para proyectos sociales\". Siguiendo el esquema de caracterización del MIPG, ¿cuál sería el siguiente paso lógico después de identificar esta entrada?",
+    "options": [
+      "Identificar los proveedores de esta entrada (Ej: Secretaría de Hacienda, Concejo Municipal).",
+      "Documentar los riesgos asociados a la falta de presupuesto.",
+      "Establecer los indicadores de resultado del proceso.",
+      "Definir inmediatamente las actividades detalladas del proceso."
+    ],
+    "answer": 0,
+    "explanation": "Según el esquema práctico para caracterizar procesos en MIPG, después de identificar las entradas, el siguiente paso es identificar los proveedores de dichas entradas. En este caso, corresponde determinar qué actores o dependencias suministran el presupuesto asignado al proceso."
+  },
+  {
+    "id": 231,
+    "category": "MIPG - Control Interno",
+    "difficulty": "hard",
+    "question": "El Director de la Oficina de Auditoría Interna de una entidad está elaborando el plan anual de auditoría. Para ello, debe considerar diversos factores. De acuerdo con la Norma 2010 - Planificación, ¿cuál es el elemento fundamental sobre el cual debe establecerse dicho plan?",
+    "options": [
+      "La disponibilidad de auditores y los recursos financieros asignados a la oficina de auditoría.",
+      "Un plan basado en riesgos, consistente con las metas de la organización.",
+      "El plan de auditoría del año anterior, con ajustes menores según los hallazgos recurrentes.",
+      "Las solicitudes específicas de auditoría realizadas por los jefes de cada dependencia."
+    ],
+    "answer": 1,
+    "explanation": "La Norma 2010 establece que el director ejecutivo de auditoría debe establecer un plan basado en riesgos, a fin de determinar las prioridades de la actividad de auditoría interna. Dichos planes deberán ser consistentes con las metas de la organización."
+  },
+  {
+    "id": 232,
+    "category": "MIPG - Talento Humano",
+    "difficulty": "hard",
+    "question": "Una entidad pública ha decidido fortalecer la Gestión Estratégica del Talento Humano (GETH) como parte de la implementación del MIPG. El primer paso que se proponen es mejorar el proceso de \"Ingreso\" de los servidores. ¿Cuál de las siguientes acciones NO corresponde directamente a las buenas prácticas para la etapa de ingreso según la Guía de GETH?",
+    "options": [
+      "Verificar que se realice adecuadamente la evaluación del periodo de prueba a los servidores nuevos de carrera administrativa.",
+      "Gestionar oportunamente la provisión de vacantes definitivas de acuerdo con el plan anual de vacantes.",
+      "Realizar un programa de inducción completo a todo servidor público que se vincule a la entidad.",
+      "Realizar la evaluación de desempeño anual a los servidores que recién ingresaron por periodo de prueba."
+    ],
+    "answer": 3,
+    "explanation": "La evaluación de desempeño anual se realiza a servidores con derechos de carrera o en provisionalidad que han superado el periodo de prueba y cumplido un tiempo específico. Para los recién ingresados, la evaluación crucial en la etapa de ingreso es la del periodo de prueba. La evaluación anual corresponde más a la etapa de desarrollo."
+  },
+  {
+    "id": 233,
+    "category": "MIPG - Indicadores de Gestión",
+    "difficulty": "hard",
+    "question": "La Alcaldía del Municipio de Sión busca medir la eficacia de su programa de \"Boletines de Prensa\" dentro del proceso de Comunicación y Relaciones Públicas. Según la matriz de indicadores proporcionada, la fórmula es \"(Número de boletines Prensa realizados / Número de boletines Prensa proyectados) * 100\". Si se realizaron 292 boletines y se proyectaron 450, ¿qué tipo de conclusión se podría derivar respecto a la meta (asumiendo una meta ideal del 100% o 1)?",
+    "options": [
+      "Se cumplió la meta de eficacia proyectada para la divulgación de información.",
+      "El indicador de efectividad muestra un impacto positivo en la imagen del municipio.",
+      "El proceso fue altamente eficiente en el uso de recursos para la creación de boletines.",
+      "No se alcanzó la meta de eficacia, logrando aproximadamente un 65% de lo proyectado."
+    ],
+    "answer": 3,
+    "explanation": "El cálculo (292/450)*100 da como resultado 64.88%, lo que indica que no se alcanzó la meta proyectada del 100%. Este indicador mide la eficacia en la producción de boletines según lo planeado, no directamente la eficiencia de recursos o la efectividad del impacto."
+  },
+  {
+    "id": 234,
+    "category": "MIPG - Gestión por Procesos",
+    "difficulty": "hard",
+    "question": "Una entidad pública, al aplicar el MIPG, está definiendo el objetivo para su proceso de \"Gestión de la Contratación\". ¿Cuál de los siguientes enunciados cumple mejor con los criterios para la formulación de un objetivo de proceso (específico, medible, realista y relevante)?",
+    "options": [
+      "Contratar bienes y servicios de manera rápida.",
+      "Realizar muchos contratos cada año.",
+      "Mejorar la contratación pública.",
+      "Asegurar la transparencia y eficiencia en todos los procesos contractuales de la entidad, cumpliendo con la normatividad vigente y los plazos establecidos."
+    ],
+    "answer": 3,
+    "explanation": "El enunciado \"Asegurar la transparencia y eficiencia en todos los procesos contractuales de la entidad, cumpliendo con la normatividad vigente y los plazos establecidos\" es específico, permite establecer indicadores de cumplimiento normativo y de plazos, es relevante para la entidad y puede ser utilizado como base para medir el desempeño del proceso. Las otras opciones son demasiado generales o se concentran en un solo aspecto."
+  },
+  {
+    "id": 235,
+    "category": "MIPG - Gestión de Riesgos",
+    "difficulty": "hard",
+    "question": "Un auditor interno está realizando una evaluación sobre la eficacia de los procesos de gestión de riesgos en su entidad. Según la Norma 2120 - Gestión de Riesgos, ¿cuál de los siguientes elementos NO es un criterio fundamental para determinar si dichos procesos son eficaces?",
+    "options": [
+      "Que los objetivos de la organización apoyen su misión y estén alineados con ella.",
+      "Que se hayan eliminado por completo todos los riesgos identificados en la organización.",
+      "Que se hayan seleccionado respuestas apropiadas al riesgo que alinean los riesgos con la aceptación de riesgos por parte de la organización.",
+      "Que se capte información sobre riesgos relevantes y se comunique oportunamente a través de la organización."
+    ],
+    "answer": 1,
+    "explanation": "La gestión de riesgos busca identificar, evaluar y responder a los riesgos para mantenerlos en un nivel aceptable, no necesariamente eliminarlos por completo, ya que esto podría ser imposible o implicar un costo desproporcionado."
+  },
+  {
+    "id": 236,
+    "category": "MIPG - Gobierno Digital",
+    "difficulty": "hard",
+    "question": "La Oficina de Atención al Ciudadano de una entidad está recibiendo un alto volumen de PQRSD. Para mejorar la gestión, deciden implementar una herramienta tecnológica que permita radicar y hacer seguimiento en línea. ¿Dentro de qué componente de la política de Gobierno Digital se enmarcaría principalmente esta iniciativa?",
+    "options": [
+      "Habilitador transversal de Arquitectura.",
+      "TIC para el Estado, específicamente en el propósito de Servicios Digitales de Confianza y Calidad.",
+      "TIC para la Sociedad, específicamente en el propósito de Empoderamiento Ciudadano.",
+      "Habilitador transversal de Seguridad y Privacidad."
+    ],
+    "answer": 1,
+    "explanation": "Implementar una herramienta para radicar y hacer seguimiento a PQRSD en línea busca mejorar la forma en que la entidad presta este servicio a los ciudadanos, haciéndolo más accesible y eficiente, lo cual se alinea con el propósito de Servicios Digitales de Confianza y Calidad dentro del componente TIC para el Estado."
+  },
+  {
+    "id": 237,
+    "category": "MIPG - Gestión Documental",
+    "difficulty": "hard",
+    "question": "Una entidad territorial está elaborando su Plan Institucional de Archivos (PINAR). Uno de los componentes clave de este instrumento es el \"Contexto estratégico\". ¿Qué tipo de información debería incluirse en este apartado del PINAR?",
+    "options": [
+      "Los nombres y cargos de los responsables de cada archivo de gestión.",
+      "La visión y misión de la entidad, así como otros elementos del direccionamiento estratégico que dan soporte a la función archivística.",
+      "El presupuesto detallado asignado para la implementación de tecnologías de gestión documental.",
+      "El listado detallado de todos los documentos físicos y electrónicos que posee la entidad."
+    ],
+    "answer": 1,
+    "explanation": "El \"Contexto estratégico\" del PINAR incluye una relación del contexto que da soporte al plan, como la visión y misión de la entidad, entre otros elementos del direccionamiento que justifican y orientan la función archivística."
+  },
+  {
+    "id": 238,
+    "category": "MIPG - Indicadores de Gestión",
+    "difficulty": "hard",
+    "question": "El responsable del proceso de \"Desarrollo y Sostenibilidad Ambiental\" en el Municipio de Sión debe presentar un informe sobre el cumplimiento de las metas. Uno de los indicadores es \"Campañas ambientales programadas realizadas\", cuya fórmula es \"Número de Campañas Ambientales Realizadas / Total de Campañas Ambientales programadas\". Si se realizaron 8 campañas de 8 programadas, ¿cómo se interpreta el resultado \"1\" de este indicador de eficiencia?",
+    "options": [
+      "Se logró el 100% de la meta de eficiencia, utilizando óptimamente los recursos programados para las campañas.",
+      "Se requiere programar más campañas para la siguiente vigencia.",
+      "El impacto de las campañas en la comunidad fue máximo.",
+      "Se cumplió con el total de las campañas programadas, alcanzando la meta establecida para este indicador."
+    ],
+    "answer": 3,
+    "explanation": "Un resultado de \"1\" (o 100%) en este indicador significa que todas las campañas que fueron programadas efectivamente se realizaron. Esto demuestra el cumplimiento de la meta de ejecución de lo programado para dicho indicador, que en este caso es de eficiencia. No mide directamente el uso óptimo de todos los recursos ni el impacto."
+  },
+  {
+    "id": 239,
+    "category": "MIPG - Talento Humano",
+    "difficulty": "hard",
+    "question": "En el marco de la Guía de Gestión Estratégica del Talento Humano (GETH), una entidad está buscando fortalecer la \"Ruta del crecimiento: liderando talento\". ¿Cuál de las siguientes acciones NO se alinea directamente con el propósito de esta ruta de creación de valor?",
+    "options": [
+      "Fomentar un liderazgo basado en valores éticos y que se preocupe por el bienestar del talento humano orientado al logro.",
+      "Priorizar la contratación de personal externo para todos los cargos directivos con el fin de traer nuevas ideas.",
+      "Desarrollar programas de formación para que los líderes capaciten a sus equipos y aseguren que los servidores saben lo que hacen.",
+      "Implementar una cultura de liderazgo que fomente el trabajo en equipo y el reconocimiento de los logros de los servidores."
+    ],
+    "answer": 1,
+    "explanation": "La \"Ruta del crecimiento\" se enfoca en el desarrollo del talento interno y en cómo los líderes fomentan este crecimiento. Si bien el talento externo puede ser valioso, la priorización sistemática de externos para cargos directivos sin considerar el desarrollo interno no se alinea con el espíritu de esta ruta, que busca que los líderes formen y desarrollen a su personal."
+  },
+  {
+    "id": 240,
+    "category": "MIPG - Talento Humano",
+    "difficulty": "hard",
+    "question": "Un nuevo servidor público se vincula a una entidad. Según el Plan Nacional de Formación y Capacitación, la entidad tiene la obligación de diseñar y aplicar un programa de inducción en su núcleo específico. ¿Cuál es la intensidad horaria mínima que debe tener este programa de inducción específico de la entidad, complementario al núcleo común virtual de la ESAP?",
+    "options": [
+      "20 horas.",
+      "60 horas.",
+      "No existe una intensidad horaria mínima definida, depende de cada entidad.",
+      "40 horas."
+    ],
+    "answer": 1,
+    "explanation": "El Plan Nacional de Formación y Capacitación establece que el programa de inducción en su núcleo específico, correspondiente al de la entidad, tendrá una intensidad horaria mínima de 60 horas, que se complementarán con el proceso virtual de inducción de la ESAP correspondiente al núcleo común."
+  },
+  {
+    "id": 241,
+    "category": "MIPG - Control Interno",
+    "difficulty": "hard",
+    "question": "La Oficina de Control Interno, en su rol de evaluación y seguimiento, debe desarrollar auditorías internas. Según el Modelo de Estatuto de Auditoría, ¿con qué referente principal deben estar alineadas estas auditorías internas?",
+    "options": [
+      "Con los planes de mejoramiento individuales de los jefes de cada dependencia.",
+      "Con el marco internacional para la práctica de auditoría interna.",
+      "Exclusivamente con los hallazgos y recomendaciones de la Contraloría General de la República.",
+      "Únicamente con las directrices específicas emitidas por el representante legal de la entidad."
+    ],
+    "answer": 1,
+    "explanation": "El Modelo de Estatuto de Auditoría menciona que la oficina de control interno debe desarrollar auditorías internas alineadas con el marco internacional para la práctica de auditoría interna, con el propósito de fortalecer su labor de evaluación y seguimiento."
+  },
+  {
+    "id": 242,
+    "category": "MIPG - Gobierno Digital",
+    "difficulty": "hard",
+    "question": "Una entidad pública está definiendo los responsables para la implementación de la política de Gobierno Digital. Si el Representante Legal es el responsable institucional de la política, ¿quién es el responsable de orientar la implementación a nivel general dentro de la entidad, según la nueva institucionalidad?",
+    "options": [
+      "El Director, jefe o coordinador de tecnologías y sistemas de información únicamente.",
+      "El Jefe de la Oficina de Planeación.",
+      "El Comité Institucional de Gestión y Desempeño.",
+      "Cada jefe de dependencia de manera individual."
+    ],
+    "answer": 2,
+    "explanation": "Según la institucionalidad de la Política de Gobierno Digital, el Comité Institucional de Gestión y Desempeño es el responsable de orientar la implementación de la política a nivel institucional."
+  },
+  {
+    "id": 243,
+    "category": "MIPG - Indicadores de Gestión",
+    "difficulty": "hard",
+    "question": "En el proceso de \"Planeación Territorial\" del Municipio de Sión, uno de los objetivos del indicador es \"Determinar las intervenciones y Ocupación de Espacio Público de conformidad con las normas urbanísticas\". El indicador se denomina \"Licencias de intervención y Ocupación de Espacio Público generados\" y es de tipo \"Eficacia\". Si se expidieron 183 licencias de 190 solicitadas, ¿qué indica este resultado (aproximadamente 96%)?",
+    "options": [
+      "Que el 96% del espacio público del municipio está debidamente intervenido y ocupado.",
+      "Que se alcanzó un 96% de eficacia en responder a las solicitudes de licencias de intervención y ocupación.",
+      "Que el proceso fue 96% eficiente en el uso de recursos para expedir licencias.",
+      "Que el nivel de efectividad en la planeación territorial es del 96%."
+    ],
+    "answer": 1,
+    "explanation": "El indicador mide el número de licencias expedidas sobre el total de solicitadas, lo cual refleja la eficacia del proceso en gestionar y dar salida a las solicitudes recibidas. No mide directamente eficiencia de recursos, la totalidad del espacio público, ni la efectividad global de la planeación territorial."
+  },
+   {
+    "id": 244,
+    "category": "MIPG - Código de Integridad",
+    "difficulty": "hard",
+    "question": "Una entidad está llevando a cabo la \"Armonización de Valores\" entre su código de ética existente y el Código de Integridad del MIPG. Durante el ejercicio, identifican que el valor \"Lealtad Institucional\" de su código de ética no tiene un equivalente directo en los cinco valores del Código de Integridad (Honestidad, Respeto, Compromiso, Diligencia, Justicia). ¿Cuál sería el siguiente paso según el \"CANVAS ARMONIZACIÓN DE VALORES\"?",
+    "options": [
+      "Revisar cómo está definido \"Lealtad Institucional\" y qué principios de acción lo acompañan, para luego compararlos con los principios de acción del Código de Integridad e identificar puntos de encuentro.",
+      "Eliminar el valor \"Lealtad Institucional\" por no estar en el Código de Integridad.",
+      "Sustituir \"Lealtad Institucional\" automáticamente por el valor \"Compromiso\" del Código de Integridad.",
+      "Mantener \"Lealtad Institucional\" como un valor adicional sin intentar relacionarlo con el Código de Integridad."
+    ],
+    "answer": 0,
+    "explanation": "El paso 3 del Canvas indica que para los valores del Código de Ética que no tienen relación evidente, se debe revisar su definición y principios de acción, para luego compararlos con los del Código de Integridad y buscar puntos de encuentro."
+  },
+  {
+    "id": 245,
+    "category": "MIPG - Control Interno",
+    "difficulty": "hard",
+    "question": "El Jefe de la Oficina de Auditoría Interna debe comunicar los resultados de un trabajo de aseguramiento. La comunicación debe ser precisa, objetiva, clara, concisa, constructiva, completa y oportuna. Si durante la redacción del informe, el auditor incluye extensas secciones de jerga técnica muy compleja que solo unos pocos expertos en la entidad podrían entender, ¿qué cualidad de la comunicación, según la Norma 2420, se estaría comprometiendo principalmente?",
+    "options": [
+      "Completitud.",
+      "Objetividad.",
+      "Claridad.",
+      "Precisión."
+    ],
+    "answer": 2,
+    "explanation": "La Norma 2420 establece que las comunicaciones claras son fácilmente comprensibles y lógicas, evitando el lenguaje técnico innecesario. El uso excesivo de jerga técnica compleja compromete la claridad del informe para una audiencia más amplia."
+  },
+  {
+    "id": 246,
+    "category": "MIPG - Transparencia y Acceso a la Información",
+    "difficulty": "hard",
+    "question": "Una entidad pública desea asegurar que la información sobre su presupuesto y planes de gasto público sea fácilmente accesible para los ciudadanos, sin que estos tengan que realizar una solicitud formal. ¿Qué obligación, en el marco de la Ley 1712 de 2014, está cumpliendo la entidad al publicar esta información en su página web de forma rutinaria y actualizada?",
+    "options": [
+      "Transparencia Activa.",
+      "Gestión de Índices de Información Clasificada.",
+      "Transparencia Pasiva.",
+      "Registro de Activos de Información."
+    ],
+    "answer": 0,
+    "explanation": "La Transparencia Activa implica la obligación de los sujetos obligados de publicar y divulgar proactivamente información mínima obligatoria, como presupuesto y planes de gasto, y de interés público, sin que medie una solicitud."
+  },
+  {
+    "id": 247,
+    "category": "MIPG - Talento Humano",
+    "difficulty": "hard",
+    "question": "El equipo de Talento Humano de una alcaldía está planeando el programa de bienestar e incentivos para la próxima vigencia. Según la Guía GETH, al elaborar este plan, ¿qué elemento es fundamental considerar para asegurar que el plan responda a las necesidades reales de los servidores?",
+    "options": [
+      "Realizar un diagnóstico de necesidades con base en un instrumento de recolección de información aplicado a los servidores públicos de la entidad.",
+      "Priorizar únicamente actividades deportivas, ya que suelen ser las más populares.",
+      "Copiar el plan de bienestar de la alcaldía vecina que tuvo buenos resultados.",
+      "Basarse únicamente en las directrices generales emitidas por el Departamento Administrativo de la Función Pública."
+    ],
+    "answer": 0,
+    "explanation": "La Guía GETH enfatiza la importancia de realizar un diagnóstico de necesidades con base en un instrumento de recolección de información aplicado a los servidores para elaborar el plan de bienestar e incentivos. Esto asegura que el plan sea pertinente."
+  },
+   {
+    "id": 248,
+    "category": "MIPG - Control Interno",
+    "difficulty": "hard",
+    "question": "La alta dirección de una entidad está preocupada por posibles actos de corrupción. El Jefe de Control Interno, según el Modelo de Estatuto de Auditoría Interna, tiene responsabilidades al respecto. ¿Cuál es una de estas responsabilidades fundamentales?",
+    "options": [
+      "Actuar como el principal denunciante de todos los casos de corrupción ante los entes externos.",
+      "Investigar y sancionar directamente a los funcionarios involucrados en actos de corrupción.",
+      "Evaluar el riesgo sobre posibles actos de corrupción y cómo la organización gestiona este riesgo.",
+      "Diseñar e implementar todos los controles preventivos contra la corrupción en la entidad."
+    ],
+    "answer": 2,
+    "explanation": "El Artículo 4 del Modelo de Estatuto de Auditoría indica entre las responsabilidades de la Auditoría Interna: \"Evaluar el riesgo sobre posibles actos de corrupción y cómo la organización gestiona este riesgo\". La investigación y sanción directa suelen ser de otras instancias, y el diseño de controles es responsabilidad de la administración."
+  },
+  {
+    "id": 249,
+    "category": "MIPG - Gestión por Procesos",
+    "difficulty": "hard",
+    "question": "Una entidad está trabajando en la documentación de sus procesos. Se identifica una actividad dentro de un proceso misional que no parece agregar valor directo al ciudadano ni tiene un soporte normativo legal que obligue su ejecución. Según las orientaciones del MIPG para la definición de actividades de cada proceso, ¿cuál sería la acción más adecuada?",
+    "options": [
+      "Eliminar la actividad del proceso.",
+      "Modificar la actividad para que parezca más útil, aunque no agregue valor real.",
+      "Mantener la actividad, ya que siempre se ha hecho de esa manera.",
+      "Asignar más recursos a la actividad para intentar que agregue valor."
+    ],
+    "answer": 0,
+    "explanation": "El MIPG sugiere que, al revisar el conjunto de actividades, aquellas que se determinen que no agregan valor y tampoco tienen soporte normativo legal deberían eliminarse para optimizar el proceso."
+  },
+  {
+    "id": 250,
+    "category": "MIPG - Control Interno",
+    "difficulty": "hard",
+    "question": "El Director Ejecutivo de Auditoría (DEA) de una entidad ha concluido que la dirección ha aceptado un nivel de riesgo en un proyecto que él considera inaceptable para la organización. Ya ha tratado el asunto con la alta dirección, pero no se ha llegado a una resolución que él considere adecuada. Según la Norma 2600 - Comunicación de la aceptación de los riesgos, ¿cuál es el siguiente paso que DEBE tomar el DEA?",
+    "options": [
+      "Implementar él mismo las acciones para mitigar el riesgo, asumiendo temporalmente responsabilidades de gestión.",
+      "Presentar una denuncia anónima a los entes de control externos.",
+      "Comunicar esta situación al Consejo (o el órgano de gobierno equivalente).",
+      "Documentar su desacuerdo en los papeles de trabajo y no realizar más acciones al respecto."
+    ],
+    "answer": 2,
+    "explanation": "La Norma 2600 establece que si el director ejecutivo de auditoría determina que el asunto no ha sido resuelto, debe comunicar esta situación al Consejo o al órgano de gobierno equivalente."
   }
 ]
