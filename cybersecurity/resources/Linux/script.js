@@ -24,6 +24,14 @@ const dirs = [
 
 const cmds = [
   {k:"ls -la", d:"Lista archivos con detalles", cmd:"ls -la /var/log/   # ver permisos y fechas de logs"},
+    {k:"ip a", d:"Muestra mis interfaces de red e IPs", cmd:'ip a   # mis interfaces e IPs'},
+  {k:"ip r", d:"Muestra las rutas y el gateway", cmd:'ip r   # rutas y gateway'},
+  {k:"ss", d:"Lista los puertos en escucha y el proceso que los usa", cmd:'ss -tulnp   # puertos en escucha y qué proceso (netstat -tulnp en Metasploitable)'},
+  {k:"ss", d:"Muestra las conexiones establecidas", cmd:'ss -antp   # conexiones establecidas'},
+  {k:"nc", d:"Prueba si un puerto responde", cmd:'nc -zv 192.168.1.13 22   # probar si un puerto responde'},
+  {k:"curl", d:"Muestra las cabeceras del servidor web", cmd:'curl -I http://IP   # ver cabeceras del servidor web'},
+  {k:"tcpdump", d:"Captura el tráfico de un puerto", cmd:'tcpdump -i eth0 -nn port 80   # capturar tráfico de un puerto'},
+  {k:"dig", d:"Consulta registros DNS de un dominio", cmd:'dig dominio.com   # consulta DNS'},
   {k:"cd", d:"Cambia de directorio", cmd:"cd /var/log/   # ir al directorio de logs"},
   {k:"pwd", d:"Muestra directorio actual", cmd:"pwd   # saber dónde estás"},
   {k:"cat", d:"Muestra contenido de archivo", cmd:"cat /etc/passwd   # ver usuarios del sistema"},
